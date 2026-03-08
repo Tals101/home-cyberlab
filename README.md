@@ -1,70 +1,38 @@
-\# Home Cyber Lab
+# Home Cyber Lab
 
+This repository showcases hands-on cybersecurity lab projects built to strengthen practical skills in defensive security, system administration, monitoring, detection, and investigation within a home lab environment.
 
+## Projects
 
-This repository contains my hands-on cybersecurity lab projects, built to practice defensive security concepts, system administration, monitoring, detection, and investigation in a home lab environment.
+### [Wazuh Lab](./wazuh-lab)
+A home SOC lab focused on SIEM deployment, endpoint visibility, alert monitoring, and security investigation using Wazuh.
 
+### [Snort Lab](./snort-lab)
+A network intrusion detection lab focused on installing, configuring, and tuning Snort for traffic inspection, alert generation, and detection validation.
 
-
-\## Projects
-
-
-
-\### \[Wazuh Lab](./wazuh-lab)
-
-A home SOC lab focused on SIEM deployment, endpoint visibility, alert monitoring, and investigation using Wazuh.
-
-
-
-\### \[Snort Lab](./snort-lab)
-
-A network intrusion detection lab focused on installing, configuring, and preparing Snort for traffic inspection and alert generation.
-
-
-
-\## Repository Structure
-
-
+## Repository Structure
 
 ```text
-
 home-cyberlab/
-
 ├── README.md
-
 ├── wazuh-lab/
-
 └── snort-lab/
-
 ```
 
+## What This Repository Demonstrates
 
+This repository highlights practical cybersecurity work across multiple lab projects. It includes setup documentation, configurations, screenshots, reports, and notes that reflect hands-on learning, technical troubleshooting, and validation of security concepts in a controlled environment.
 
-\## What This Repository Shows
+## Skills Demonstrated
 
-This repository documents practical cybersecurity work across multiple lab activities. It includes setup documentation, configurations, screenshots, reports, and notes that reflect hands-on learning and technical validation.
+- SIEM deployment and monitoring
+- Intrusion detection system configuration
+- Linux system administration
+- Windows endpoint visibility
+- Alert triage and investigation
+- Network security monitoring
+- Lab documentation and technical reporting
 
+## Purpose
 
-
-\## Skills Demonstrated
-
-\- SIEM deployment and monitoring
-
-\- Intrusion detection system setup
-
-\- Linux administration
-
-\- Windows endpoint visibility
-
-\- Alert triage and investigation
-
-\- Network security monitoring
-
-\- Lab documentation and technical reporting
-
-
-
-\## Purpose
-
-The goal of this repository is to present cybersecurity lab work in a structured and professional format that can be shared as part of a portfolio.
-
+The purpose of this repository is to present my cybersecurity lab work in a structured, professional format that can be used as part of a technical portfolio.
