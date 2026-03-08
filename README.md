@@ -1,6 +1,12 @@
 # Home SOC Lab with Wazuh | SIEM Monitoring and Alert Investigation
 
-![Wazuh Home Screen](screenshots/wazuh-home-screen.png)
+<p align="center">
+  <img src="screenshots/wazuh-home-screen.png" alt="Wazuh Home Screen" width="900">
+</p>
+
+<p align="center">
+  Home SOC lab built to practice SIEM monitoring, endpoint visibility, alert triage, and investigation of suspicious activity.
+</p>
 
 ## Project Summary
 This project documents a home Security Operations Center (SOC) lab built with Wazuh, Ubuntu Server, VirtualBox, and a Windows endpoint. The lab was created to practice core SOC analyst skills such as log monitoring, endpoint visibility, alert triage, and investigation of suspicious activity generated through controlled testing.
@@ -93,6 +99,7 @@ This project demonstrates several foundational blue-team concepts:
 - Create custom Wazuh detection rules
 - Expand the lab with additional monitored endpoints
 - Perform more structured alert tuning to reduce noise
+
 
 
 
