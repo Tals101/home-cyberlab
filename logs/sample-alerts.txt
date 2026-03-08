@@ -1,0 +1,5 @@
+Example alerts observed:
+- Agent connected successfully
+- Endpoint logs ingested
+- Network scan activity visible
+- Security events available for review
