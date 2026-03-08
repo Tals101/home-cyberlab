@@ -21,8 +21,9 @@ This lab demonstrates practical, hands-on cybersecurity experience in a simulate
 - Endpoint Visibility
 - Threat Detection
 - Security Investigation
-- Network Reconnaissance Awareness
-- Basic Incident Triage
+- Reconnaissance Detection
+- Incident Triage
+- Security Event Analysis
 
 ## Objectives
 - Build a functional SOC lab in a virtualized environment
@@ -99,6 +100,7 @@ This project demonstrates several foundational blue-team concepts:
 - Create custom Wazuh detection rules
 - Expand the lab with additional monitored endpoints
 - Perform more structured alert tuning to reduce noise
+
 
 
 
