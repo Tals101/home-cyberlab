@@ -1,38 +1,95 @@
-# Home Cyber Lab
+Home Cybersecurity Lab
 
-This repository showcases hands-on cybersecurity lab projects built to strengthen practical skills in defensive security, system administration, monitoring, detection, and investigation within a home lab environment.
+This repository documents a hands-on home cybersecurity lab used to practice blue-team security operations, vulnerability scanning, and network monitoring.
 
-## Projects
+The lab environment consists of multiple virtual machines used to simulate real-world network security scenarios.
 
-### [Wazuh Lab](./wazuh-lab)
-A home SOC lab focused on SIEM deployment, endpoint visibility, alert monitoring, and security investigation using Wazuh.
+Lab Projects
+Wazuh SIEM Lab
 
-### [Snort Lab](./snort-lab)
-A network intrusion detection lab focused on installing, configuring, and tuning Snort for traffic inspection, alert generation, and detection validation.
+Deployment and configuration of Wazuh for security monitoring and log analysis.
 
-## Repository Structure
+Skills demonstrated
 
-```text
-home-cyberlab/
-├── README.md
-├── wazuh-lab/
-└── snort-lab/
-```
+SIEM deployment
 
-## What This Repository Demonstrates
+Log analysis
 
-This repository highlights practical cybersecurity work across multiple lab projects. It includes setup documentation, configurations, screenshots, reports, and notes that reflect hands-on learning, technical troubleshooting, and validation of security concepts in a controlled environment.
+Security event monitoring
 
-## Skills Demonstrated
+Endpoint threat detection
 
-- SIEM deployment and monitoring
-- Intrusion detection system configuration
-- Linux system administration
-- Windows endpoint visibility
-- Alert triage and investigation
-- Network security monitoring
-- Lab documentation and technical reporting
+Project folder: wazuh-lab
 
-## Purpose
+Snort IDS Lab
 
-The purpose of this repository is to present my cybersecurity lab work in a structured, professional format that can be used as part of a technical portfolio.
+Installation and configuration of the Snort Network Intrusion Detection System to monitor network traffic and detect malicious activity.
+
+Skills demonstrated
+
+IDS deployment
+
+Network traffic inspection
+
+Snort rule configuration
+
+Threat detection
+
+Project folder: snort-lab
+
+Vulnerability Assessment Lab
+
+Network vulnerability scanning and enumeration performed against a controlled lab network using Nmap and OpenVAS.
+
+Skills demonstrated
+
+Network discovery
+
+Service enumeration
+
+Vulnerability scanning
+
+Packet capture analysis
+
+Security reporting
+
+Project folder: vulnerability-assessment-lab
+
+Tools Used
+
+Wazuh
+
+Snort
+
+Nmap
+
+OpenVAS / Greenbone
+
+Wireshark
+
+Kali Linux
+
+Ubuntu
+
+Windows
+
+VirtualBox
+
+Lab Network
+
+Private lab subnet used for testing:
+
+192.168.56.0/24
+
+Scanner
+Kali Linux
+
+Targets
+Ubuntu Linux VM
+Windows VM
+
+Purpose
+
+This lab was built to develop practical experience with security monitoring, vulnerability assessment, and network defense tools commonly used in real-world security operations.
+
+The goal is to simulate security analyst workflows including detection, investigation, and vulnerability identification.
