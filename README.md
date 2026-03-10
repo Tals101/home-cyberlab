@@ -1,95 +1,124 @@
-Home Cybersecurity Lab
+# Home Cybersecurity Lab
 
-This repository documents a hands-on home cybersecurity lab used to practice blue-team security operations, vulnerability scanning, and network monitoring.
+A hands-on cybersecurity lab repository documenting practical projects across **security monitoring**, **network intrusion detection**, and **beginner malware analysis** in a virtualized home lab environment.
 
-The lab environment consists of multiple virtual machines used to simulate real-world network security scenarios.
+This repository is designed to show technical growth through real lab work, evidence collection, documentation, and repeatable workflows.
 
-Lab Projects
-Wazuh SIEM Lab
+## Overview
 
-Deployment and configuration of Wazuh for security monitoring and log analysis.
+This repo contains multiple cybersecurity lab projects built to develop practical skills in blue-team operations, network monitoring, endpoint visibility, packet analysis, and security tooling. Each lab is organized in its own folder with supporting screenshots, notes, reports, and other evidence.
 
-Skills demonstrated
+The goal of this repository is to demonstrate the ability to:
 
-SIEM deployment
+- Build and manage a home cybersecurity lab
+- Work with security monitoring and detection tools
+- Capture and analyze host and network activity
+- Document technical workflows and findings
+- Present projects in a structured, professional format
 
-Log analysis
+## Lab Areas Covered
 
-Security event monitoring
+This repository currently focuses on:
 
-Endpoint threat detection
+- **Security monitoring and detection**
+- **Network traffic inspection**
+- **Intrusion detection system (IDS) setup**
+- **Malware analysis fundamentals**
+- **Evidence collection and reporting**
+- **Virtual machine lab administration**
 
-Project folder: wazuh-lab
+## Current Projects
 
-Snort IDS Lab
+### Wazuh Lab
+A lab focused on security monitoring, alerting, and defensive visibility using Wazuh. This project demonstrates endpoint monitoring, alert generation, and basic SOC-style workflows.
 
-Installation and configuration of the Snort Network Intrusion Detection System to monitor network traffic and detect malicious activity.
+### Snort Lab
+A lab focused on installing, configuring, and validating Snort in a home lab environment. This project demonstrates IDS deployment, rule structure awareness, and packet inspection fundamentals.
 
-Skills demonstrated
+### Malware Analysis Lab
+A beginner malware analysis project built in an isolated environment using REMnux, a Windows VM, Procmon, Wireshark, and the official EICAR anti-malware test file. This project demonstrates safe sample handling, monitoring setup, network capture, and evidence collection.
 
-IDS deployment
+## Repository Structure
 
-Network traffic inspection
+```text
+home-cyberlab
+├── README.md
+├── malware-analysis-lab
+│   ├── README.md
+│   ├── notes
+│   ├── pcaps
+│   ├── report
+│   └── screenshots
+├── snort-lab
+│   ├── README.md
+│   ├── config
+│   ├── notes
+│   ├── report
+│   └── screenshots
+└── wazuh-lab
+    ├── README.md
+    ├── notes
+    ├── report
+    └── screenshots
+```
 
-Snort rule configuration
+## What This Repository Demonstrates
 
-Threat detection
+- Building and maintaining a virtual cybersecurity lab
+- Working with defensive security tools in realistic practice environments
+- Capturing packet data and reviewing traffic
+- Monitoring endpoint or host-level activity
+- Validating security alerts and defensive responses
+- Organizing findings into notes, screenshots, reports, and GitHub documentation
+- Using Git and GitHub to present technical projects professionally
 
-Project folder: snort-lab
+## Tools and Technologies Used
 
-Vulnerability Assessment Lab
+- **VirtualBox**
+- **Windows virtual machines**
+- **REMnux**
+- **Wazuh**
+- **Snort**
+- **Wireshark**
+- **Process Monitor (Procmon)**
+- **Windows Defender**
+- **Linux command line**
+- **Git / GitHub**
 
-Network vulnerability scanning and enumeration performed against a controlled lab network using Nmap and OpenVAS.
+## Skills Demonstrated
 
-Skills demonstrated
+- Home lab setup and administration
+- VM deployment and isolation
+- Network monitoring
+- Packet capture and traffic review
+- Intrusion detection fundamentals
+- Endpoint monitoring
+- Security alert validation
+- Malware analysis workflow fundamentals
+- Evidence collection and reporting
+- Technical documentation
 
-Network discovery
+## Why This Repository Matters
 
-Service enumeration
+This repository reflects hands-on learning rather than only theoretical study. Each project is intended to show practical setup, testing, troubleshooting, and documentation. The work here is structured to demonstrate both technical ability and the discipline to present findings clearly.
 
-Vulnerability scanning
+## Project Documentation Style
 
-Packet capture analysis
+Each lab folder is intended to include:
 
-Security reporting
+- A project-specific `README.md`
+- Notes from the lab
+- Screenshots or other visual evidence
+- Report files or write-ups
+- Any supporting captures, configs, or artifacts relevant to the project
 
-Project folder: vulnerability-assessment-lab
+## Future Additions
 
-Tools Used
+This repository is intended to grow over time with additional lab projects such as:
 
-Wazuh
+- Expanded malware-analysis exercises
+- Additional IDS and SIEM work
+- Detection engineering practice
+- Network defense and traffic analysis projects
+- Incident-response style simulations
 
-Snort
-
-Nmap
-
-OpenVAS / Greenbone
-
-Wireshark
-
-Kali Linux
-
-Ubuntu
-
-Windows
-
-VirtualBox
-
-Lab Network
-
-Private lab subnet used for testing:
-
-192.168.56.0/24
-
-Scanner
-Kali Linux
-
-Targets
-Ubuntu Linux VM
-Windows VM
-
-Purpose
-
-This lab was built to develop practical experience with security monitoring, vulnerability assessment, and network defense tools commonly used in real-world security operations.
-
-The goal is to simulate security analyst workflows including detection, investigation, and vulnerability identification.
