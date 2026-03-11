@@ -1,294 +1,194 @@
-\# AWS Cloud Security Lab
+# AWS Cloud Security Lab
 
+## Overview
 
+This lab demonstrates foundational cloud security concepts in Amazon Web Services (AWS) through the implementation of secure identity controls, infrastructure logging, and configuration review. The project was designed to simulate the type of basic security hardening and visibility setup that would be expected in a small AWS environment.
 
-\## Project Overview
+The lab focused on three core areas:
 
-
-
-This project demonstrates foundational cloud security practices using Amazon Web Services (AWS).  
-
-The goal of the lab was to build a secure AWS environment, implement identity and access management controls, enable infrastructure logging, and review cloud configurations for potential security risks.
-
-
-
-The lab focuses on several key cloud security principles:
-
-
-
-\- Least privilege access
-
-\- Multi-factor authentication
-
-\- Infrastructure logging
-
-\- Security configuration review
-
-
+- Identity and access management
+- Audit logging and visibility
+- Security configuration review
 
 ---
 
+## Objectives
 
+The objectives of this lab were to:
 
-\## Technologies Used
-
-
-
-\- AWS IAM
-
-\- AWS CloudTrail
-
-\- AWS S3
-
-
+- Secure privileged access to the AWS account
+- Create separate IAM users for administration and limited security review
+- Apply least-privilege principles where appropriate
+- Enable CloudTrail logging across AWS regions
+- Verify that account activity was being recorded
+- Review the environment for common security weaknesses
 
 ---
 
+## Technologies Used
 
-
-\## Lab Architecture
-
-
-
-The AWS environment includes:
-
-
-
-\- Root account secured with MFA
-
-\- Administrative IAM user (`lab-admin`)
-
-\- Low-privilege IAM security auditor (`security-auditor-lab`)
-
-\- Multi-region CloudTrail logging enabled
-
-\- CloudTrail logs stored in S3
-
-
+- AWS IAM
+- AWS CloudTrail
+- Amazon S3
 
 ---
 
+## Environment Summary
 
+The AWS environment for this lab included:
 
-\## Identity and Access Management
-
-
-
-Two IAM users were created to demonstrate access control and least privilege design.
-
-
-
-\### lab-admin
-
-
-
-Administrative user used for configuring the AWS environment.
-
-
-
-Permissions:
-
-
-
-\- `AdministratorAccess`
-
-
-
-\### security-auditor-lab
-
-
-
-Low privilege security auditing account.
-
-
-
-Permissions allow read-only access to:
-
-
-
-\- IAM
-
-\- CloudTrail
-
-
-
-This separation prevents the root account from being used for normal activities and follows AWS security best practices.
-
-
+- Root account protected with multi-factor authentication (MFA)
+- One administrative IAM user: `lab-admin`
+- One limited IAM user: `security-auditor-lab`
+- A multi-region CloudTrail trail
+- CloudTrail logs delivered to Amazon S3
 
 ---
 
+## IAM Configuration
 
+### `lab-admin`
 
-\## Multi-Factor Authentication
+This account was created for administrative tasks instead of using the root account for daily work.
 
+**Purpose:**
 
+- Perform AWS configuration tasks
+- Manage users, policies, and logging setup
 
-Multi-factor authentication (MFA) was enabled for the root account to protect privileged access.
+**Permissions:**
 
+- `AdministratorAccess`
 
+### `security-auditor-lab`
 
-MFA significantly reduces the risk of credential compromise and unauthorized account access.
+This account was created to represent a low-privilege security reviewer.
 
+**Purpose:**
 
+- Review IAM configuration
+- Review CloudTrail settings and activity
+- Demonstrate separation of duties
 
----
+**Permissions:**
 
+- Read-only visibility into IAM and CloudTrail through a custom policy
 
-
-\## CloudTrail Logging
-
-
-
-AWS CloudTrail was configured to capture account activity across all AWS regions.
-
-
-
-Configuration:
-
-
-
-\- Multi-region trail enabled
-
-\- Read and write management events enabled
-
-\- Logs stored in an S3 bucket
-
-
-
-CloudTrail records events such as:
-
-
-
-\- Console logins
-
-\- IAM policy changes
-
-\- API activity
-
-\- account configuration updates
-
-
-
-These logs provide critical audit visibility into AWS environments.
-
-
+This structure reflects a more secure access model than relying on a single highly privileged account for all activity.
 
 ---
 
+## Multi-Factor Authentication
 
+MFA was enabled for the AWS root account to strengthen protection of the most privileged identity in the environment.
 
-\## Event Monitoring
-
-
-
-After enabling CloudTrail, several actions were performed in the AWS console to generate activity logs.
-
-
-
-Examples of events captured include:
-
-
-
-\- `ConsoleLogin`
-
-\- `ListUsers`
-
-\- `GetUser`
-
-
-
-These events confirm that CloudTrail successfully records account activity for security auditing and investigation.
-
-
+This is an important security control because it reduces the risk of account compromise due to stolen or reused credentials.
 
 ---
 
+## CloudTrail Logging
 
+AWS CloudTrail was configured to capture management activity across all enabled AWS regions.
 
-\## Security Review
+### CloudTrail Configuration
 
+- Multi-region trail enabled
+- Management events enabled
+- Read events enabled
+- Write events enabled
+- Logs stored in Amazon S3
 
+### Why It Matters
 
-The AWS environment was reviewed for potential security weaknesses.
+CloudTrail provides audit visibility into actions taken in the AWS account, including:
 
+- Console logins
+- IAM activity
+- API calls
+- Configuration changes
 
-
-Findings included:
-
-
-
-1\. Administrative permissions assigned broadly to the admin account.
-
-2\. MFA not enabled for IAM users.
-
-3\. IAM permissions could be further restricted using least privilege policies.
-
-
-
-These findings represent common configuration risks identified during cloud security assessments.
-
-
+This logging is essential for both security monitoring and incident investigation.
 
 ---
 
+## Event Validation
 
+After CloudTrail was enabled, account activity was generated through normal console interaction and then reviewed in CloudTrail Event History.
 
-\## Skills Demonstrated
+Examples of recorded events included:
 
+- `ConsoleLogin`
+- `ListUsers`
+- `GetUser`
 
-
-\- AWS Identity and Access Management configuration
-
-\- Least privilege access design
-
-\- Multi-factor authentication implementation
-
-\- CloudTrail infrastructure logging
-
-\- Cloud security configuration auditing
-
-
+The presence of these events confirmed that audit logging was functioning correctly.
 
 ---
 
+## Security Review and Findings
 
+A basic security review of the lab environment identified several areas for improvement.
 
-\## Screenshots
+### Key Findings
 
+1. **Administrative access was broad**
+   - The `lab-admin` account used the `AdministratorAccess` policy, which is useful for setup but broader than necessary for long-term use.
 
+2. **MFA was not enabled for IAM users**
+   - While the root account was protected with MFA, the IAM users had not yet been configured with MFA.
 
-Screenshots demonstrating the lab steps are located in the `screenshots` directory.
-
-
-
-Examples include:
-
-
-
-\- IAM users configuration
-
-\- MFA enabled for root
-
-\- CloudTrail trail configuration
-
-\- CloudTrail event history
-
-
+3. **Permissions could be reduced further**
+   - Additional access scoping would improve adherence to least-privilege principles.
 
 ---
 
+## Skills Demonstrated
 
+This project demonstrates experience with:
 
-\## Future Improvements
+- AWS identity and access management
+- Least-privilege account design
+- MFA implementation
+- CloudTrail configuration and validation
+- Cloud security review
+- Basic AWS security hardening
 
+---
 
+## Project Evidence
 
-\- Enable AWS GuardDuty for threat detection
+The `screenshots` folder contains supporting evidence from the lab, including:
 
-\- Integrate AWS Security Hub for centralized security findings
+- IAM users
+- Root MFA configuration
+- CloudTrail trail settings
+- CloudTrail event history
 
-\- Implement automated alerting for suspicious activity
+---
 
-\- Implement IAM role-based access instead of long-term users
+## Future Improvements
 
+Planned future enhancements include:
+
+- Enabling GuardDuty for threat detection
+- Adding Security Hub for centralized security visibility
+- Replacing broad administrative access with more scoped policies
+- Enabling MFA for all human IAM users
+- Expanding monitoring and alerting capabilities
+
+---
+
+## Repository Structure
+
+```text
+aws-cloud-security-lab/
+├── notes/
+│   └── remediation-notes.md
+├── report/
+│   └── aws-cloud-security-report.md
+├── screenshots/
+│   ├── iam-users.png
+│   ├── mfa-enabled.png
+│   ├── cloudtrail-trail.png
+│   └── cloudtrail-events.png
+└── README.md
