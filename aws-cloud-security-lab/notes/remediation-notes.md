@@ -1,176 +1,103 @@
-\# AWS Security Remediation Notes
+# AWS Security Remediation Notes
 
+## Overview
 
-
-\## Purpose
-
-
-
-This document summarizes the primary security improvements identified during the AWS cloud security lab.
-
-
+This document outlines the primary security weaknesses identified during the AWS Cloud Security Lab and the recommended steps to improve the environment. The purpose of these notes is to show how the current configuration can be strengthened through better access control, stronger identity protection, and improved monitoring.
 
 ---
 
+## Remediation Item 1: Reduce Excessive Administrative Access
 
+### Issue
+The `lab-admin` account was assigned the AWS-managed `AdministratorAccess` policy. While this was useful for initial setup and lab configuration, it grants unrestricted access across the AWS account.
 
-\## Identified Issues
+### Risk
+If the `lab-admin` account were compromised, an attacker could make unrestricted changes to IAM, logging, storage, and other AWS services.
 
+### Recommended Fix
+Replace `AdministratorAccess` with a smaller set of permissions based on the tasks the account actually needs to perform.
 
-
-\### 1. Administrative Access Was Too Broad
-
-
-
-The `lab-admin` account used the AWS-managed `AdministratorAccess` policy.
-
-
-
-\*\*Concern:\*\*  
-
-This grants full access across the account and exceeds least-privilege requirements for normal day-to-day administration.
-
-
-
-\*\*Recommended Remediation:\*\*
-
-
-
-\- Replace `AdministratorAccess` with scoped permissions based on actual tasks
-
-\- Separate administrative duties where possible
-
-
+### Suggested Improvement
+- Use scoped IAM policies instead of full administrative access
+- Separate setup tasks from day-to-day review tasks
+- Grant only the permissions required for the role
 
 ---
 
+## Remediation Item 2: Enable MFA for IAM Users
 
+### Issue
+Multi-factor authentication was enabled for the root account, but not yet enabled for IAM users.
 
-\### 2. MFA Was Not Enabled for IAM Users
+### Risk
+Without MFA, IAM user accounts are more vulnerable to unauthorized access if passwords are stolen, guessed, or reused.
 
+### Recommended Fix
+Enable MFA for all human IAM users, especially any account with elevated permissions.
 
-
-MFA was enabled for the root account, but not yet enabled for IAM users.
-
-
-
-\*\*Concern:\*\*  
-
-Human users without MFA are more vulnerable to unauthorized access if credentials are exposed.
-
-
-
-\*\*Recommended Remediation:\*\*
-
-
-
-\- Enable MFA for all human IAM users
-
-\- Prioritize MFA for all accounts with elevated privileges
-
-
+### Suggested Improvement
+- Require MFA for `lab-admin`
+- Require MFA for any future human IAM users
+- Treat MFA as a standard baseline control, not just a root-account safeguard
 
 ---
 
+## Remediation Item 3: Continue Tightening Least Privilege
 
+### Issue
+The `security-auditor-lab` account used a custom limited policy, which was a strong step toward least privilege. However, access controls across the environment can still be refined further.
 
-\### 3. Least Privilege Could Be Improved Further
+### Risk
+Overly broad permissions increase the blast radius of compromised credentials and make it easier for users to access resources beyond their intended role.
 
+### Recommended Fix
+Review user permissions regularly and narrow access wherever possible.
 
-
-The `security-auditor-lab` account used a custom limited policy, which was a positive step, but additional access reduction is still possible in the environment overall.
-
-
-
-\*\*Concern:\*\*  
-
-Overly broad permissions increase the blast radius of compromised credentials.
-
-
-
-\*\*Recommended Remediation:\*\*
-
-
-
-\- Continue refining IAM policies
-
-\- Grant only the permissions required for each role
-
-\- Periodically review attached policies and user access
-
-
+### Suggested Improvement
+- Keep using custom policies instead of broad AWS-managed policies when possible
+- Restrict permissions to only the services and actions needed
+- Periodically review users, groups, and attached policies
 
 ---
 
+## Remediation Item 4: Strengthen Monitoring Maturity
 
+### Issue
+CloudTrail was successfully enabled and validated, but the environment currently relies only on basic audit logging.
 
-\### 4. Monitoring Capabilities Can Be Expanded
+### Risk
+Logging alone provides visibility, but without additional monitoring or alerting it may be harder to identify suspicious behavior quickly.
 
+### Recommended Fix
+Build on the current CloudTrail setup by adding stronger monitoring and detection capabilities over time.
 
-
-CloudTrail was enabled and validated successfully, but the environment would benefit from additional security visibility tools in the future.
-
-
-
-\*\*Recommended Remediation:\*\*
-
-
-
-\- Add threat detection capabilities
-
-\- Add centralized security monitoring
-
-\- Develop a repeatable review process for log activity
-
-
+### Suggested Improvement
+- Review CloudTrail logs regularly
+- Document what normal activity looks like
+- Add AWS-native security monitoring tools as the lab expands
+- Create a repeatable process for reviewing security events
 
 ---
 
+## Priority Summary
 
+### High Priority
+- Enable MFA for all IAM users
+- Replace broad administrative permissions with scoped access
 
-\## Priority Actions
+### Medium Priority
+- Continue refining least-privilege policies
+- Review IAM users and permissions on a recurring basis
 
-
-
-\### High Priority
-
-
-
-\- Enable MFA for all IAM users
-
-\- Reduce administrative permissions
-
-
-
-\### Medium Priority
-
-
-
-\- Review IAM policies on a regular basis
-
-\- Document intended access for each user
-
-
-
-\### Future Enhancements
-
-
-
-\- Expand security monitoring
-
-\- Improve alerting and visibility
-
-\- Add additional AWS-native detection services
-
-
+### Future Improvements
+- Expand monitoring and detection capabilities
+- Add alerting and centralized security visibility
+- Continue improving the AWS security baseline
 
 ---
 
+## Conclusion
 
+The lab successfully implemented several important AWS security controls, including root account MFA, separate IAM users, custom limited access, and CloudTrail logging. The next phase of improvement should focus on reducing unnecessary privileges, extending MFA coverage, and building stronger monitoring processes.
 
-\## Outcome
-
-
-
-The lab successfully implemented several important AWS security controls, and the remaining items are clear next-step improvements that would strengthen the account’s overall security posture.
-
+These remediation steps help demonstrate not only how to configure AWS services, but also how to evaluate and improve the security posture of a cloud environment over time.
