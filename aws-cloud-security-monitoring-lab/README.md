@@ -1,202 +1,160 @@
-\# AWS Cloud Security Monitoring Lab
+# AWS Cloud Security Monitoring Lab
 
+A hands-on AWS security lab focused on logging, detection, alerting, and validation using native AWS services.
 
+---
 
-\## Project Overview
+## Overview
 
+This project demonstrates how to build a basic cloud security monitoring pipeline in AWS using:
 
+- AWS Identity and Access Management (IAM)
+- AWS CloudTrail
+- Amazon CloudWatch Logs
+- CloudWatch Metric Filters
+- CloudWatch Alarms
+- Amazon SNS
 
-This project demonstrates implementation of core cloud security controls in AWS including identity management, audit logging, security monitoring, and detection engineering.
+The lab was designed to simulate practical cloud security analyst work by capturing account activity, detecting risky events, and sending real-time alerts.
 
+---
 
+## Objectives
 
-The lab simulates real-world cloud security analyst responsibilities such as detecting risky behavior, reviewing logs, and improving security posture.
+- Enable centralized audit logging
+- Forward CloudTrail logs to CloudWatch Logs
+- Create detections for high-risk IAM activity
+- Configure CloudWatch alarms
+- Deliver email alerts through SNS
+- Validate the monitoring pipeline with a test event
 
+---
 
+## Lab Architecture
 
-\---
+```text
+IAM Activity
+   ↓
+CloudTrail
+   ↓
+CloudWatch Logs
+   ↓
+Metric Filters
+   ↓
+CloudWatch Alarms
+   ↓
+SNS Email Alerts
+```
 
+---
 
+## Security Controls Implemented
 
-\## Objectives
+### Identity Security
+- Root account protected with MFA
+- Existing administrative lab user used for configuration
+- Existing security auditor lab user and policy available
+- Least-privilege concepts reviewed and applied
 
+### Logging
+- Existing multi-region CloudTrail trail used
+- CloudTrail log file validation enabled
+- CloudTrail integrated with CloudWatch Logs
 
+### Detection Rules
+The following detections were created:
 
-\- Implement least privilege IAM access
+- `NoMFAConsoleLogin`
+- `RootLogin`
+- `AccessKeyCreated`
+- `IAMPolicyChange`
 
-\- Enable centralized audit logging using CloudTrail
+### Alerting
+The following alarms were created:
 
-\- Build detection rules for suspicious account activity
+- `NoMFAConsoleLogin-Alarm`
+- `RootLogin-Alarm`
+- `AccessKeyCreated-Alarm`
+- `IAMPolicyChange-Alarm`
 
-\- Configure automated security alerting
+SNS email notifications were configured using the `security-alerts-lab` topic.
 
-\- Identify and remediate IAM misconfigurations
+---
 
+## Validation Performed
 
+To validate the monitoring pipeline, a temporary access key was created for the lab admin user.
 
-\---
+This test confirmed that:
 
+- CloudTrail captured the `CreateAccessKey` event
+- The event appeared in the `SecurityLab` metric namespace
+- The `AccessKeyCreated-Alarm` changed state to **In alarm**
+- An SNS email notification was delivered successfully
+- The temporary access key was deleted after testing
 
+---
 
-\## Architecture
+## Key Findings
 
+- Native AWS services can be combined to create a working cloud monitoring pipeline
+- CloudTrail and CloudWatch provide effective visibility into IAM activity
+- Metric filters allow simple custom detections without additional tooling
+- SNS provides fast validation of end-to-end alert delivery
 
+---
 
-\- AWS IAM users and policies
+## Skills Demonstrated
 
-\- CloudTrail multi-region logging
+- AWS IAM administration
+- Cloud security monitoring
+- Audit logging with CloudTrail
+- CloudWatch Logs integration
+- Detection engineering with metric filters
+- Alerting and notification workflows
+- Security event validation
 
-\- CloudTrail to CloudWatch Logs integration
+---
 
-\- CloudWatch metric filters for detections
+## Repository Structure
 
-\- CloudWatch alarms for alerting
+```text
+aws-cloud-security-monitoring-lab/
+├── README.md
+├── screenshots/
+│   ├── alarms-overview.png
+│   ├── accesskeycreated-alarm-history.png
+│   ├── sns-email-alert.png
+│   └── securitylab-metric.png
+├── notes/
+│   └── lab-notes.md
+└── reports/
+    └── cloud-security-monitoring-report.md
+```
 
-\- SNS email notifications
+---
 
+## Screenshots
 
+The `screenshots` folder contains evidence for the completed lab, including:
 
-\---
+- Alarm overview
+- Alarm history
+- SNS email alert
+- Metric data point
 
+---
 
+## Future Improvements
 
-\## Security Controls Implemented
+- Add more CloudTrail detections for IAM and console activity
+- Build a CloudWatch dashboard for visibility
+- Add AWS Config compliance monitoring
+- Add Lambda-based automated remediation
+- Integrate GuardDuty in a future version of the lab
 
+---
 
+## Conclusion
 
-\### Identity Security
-
-\- Root account protected with MFA
-
-\- Administrative IAM user used for lab management
-
-\- Low-privilege security auditor user and policy prepared
-
-\- Least-privilege access concepts applied
-
-
-
-\### Logging and Monitoring
-
-\- Multi-region CloudTrail trail enabled
-
-\- CloudTrail logs forwarded to CloudWatch Logs
-
-\- CloudTrail log validation enabled
-
-
-
-\### Detection Engineering
-
-Custom detection rules created for:
-
-\- Console login without MFA
-
-\- Root account login
-
-\- Access key creation
-
-\- IAM policy changes
-
-
-
-\### Alerting
-
-\- CloudWatch alarms configured
-
-\- SNS email alert notifications configured and validated
-
-
-
-\---
-
-
-
-\## Key Findings
-
-
-
-\- CloudTrail successfully captured IAM-related security events
-
-\- CloudWatch metric filters detected selected high-risk activities
-
-\- CloudWatch alarms transitioned into alarm state when matching events occurred
-
-\- SNS email notifications confirmed end-to-end alert delivery
-
-
-
-\---
-
-
-
-\## Remediation Actions
-
-
-
-\- Enforced MFA usage on the root account
-
-\- Centralized audit logging through CloudTrail and CloudWatch Logs
-
-\- Built custom detections for risky account activity
-
-\- Configured automated alerting for faster security visibility
-
-
-
-\---
-
-
-
-\## Skills Demonstrated
-
-
-
-\- Cloud security fundamentals
-
-\- AWS IAM administration
-
-\- Security logging architecture
-
-\- Detection engineering basics
-
-\- Cloud monitoring and alerting
-
-\- Security operations workflow validation
-
-
-
-\---
-
-
-
-\## Screenshots
-
-
-
-See the `/screenshots` folder for evidence of:
-
-\- Configured CloudWatch alarms
-
-\- Metric activity in the `SecurityLab` namespace
-
-\- Alarm history showing state changes
-
-\- SNS email alert delivery
-
-
-
-\## Future Improvements
-
-
-
-\- Expand CloudTrail detections to include additional IAM and console activity
-
-\- Add AWS Config rules for compliance monitoring
-
-\- Add automated remediation with AWS Lambda
-
-\- Integrate GuardDuty in a future version of the lab
-
-\- Build dashboards for security event visibility
-
+This lab demonstrates a complete beginner-friendly AWS cloud security monitoring workflow using native services. It provides practical evidence of logging, detection, alerting, and validation in a real AWS environment.
