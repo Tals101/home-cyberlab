@@ -1,8 +1,16 @@
 # AWS Cloud Security Monitoring Lab Notes
 
-## Summary
+> Built a basic AWS security monitoring pipeline using CloudTrail, CloudWatch Logs, metric filters, CloudWatch alarms, and Amazon SNS.
 
-This lab was built to create a basic AWS cloud security monitoring workflow using native AWS services. The environment was configured to capture account activity, detect selected security events, trigger alerts, and confirm email notification delivery.
+## Quick Facts
+
+| Item | Details |
+|---|---|
+| CloudTrail Trail | Existing trail reused |
+| CloudWatch Log Group | `cloudtrail-security-lab` |
+| SNS Topic | `security-alerts-lab` |
+| Test Event | Temporary IAM access key creation |
+| Validation Result | Alarm triggered and email received |
 
 ## Services Used
 
@@ -13,52 +21,46 @@ This lab was built to create a basic AWS cloud security monitoring workflow usin
 - CloudWatch Alarms
 - Amazon SNS
 
-## Environment Details
+## Environment Setup
 
-- Root MFA was already enabled before the lab began
-- An existing lab admin user was used for setup
-- An existing security auditor user and policy were already available
-- An existing CloudTrail trail was reused
-- CloudWatch Logs integration was added to the trail
+- Root MFA was already enabled
+- Existing lab admin user used for setup
+- Existing security auditor user and policy already available
+- Existing CloudTrail trail reused
+- CloudWatch Logs integration added to the trail
 
-## Detection Rules Created
+## Detection Rules
 
-- `NoMFAConsoleLogin`
-- `RootLogin`
-- `AccessKeyCreated`
-- `IAMPolicyChange`
+| Detection | Purpose |
+|---|---|
+| `NoMFAConsoleLogin` | Detect console logins without MFA |
+| `RootLogin` | Detect root account console logins |
+| `AccessKeyCreated` | Detect new IAM access key creation |
+| `IAMPolicyChange` | Detect selected IAM policy changes |
 
-## Alarms Created
+## Alarms
 
 - `NoMFAConsoleLogin-Alarm`
 - `RootLogin-Alarm`
 - `AccessKeyCreated-Alarm`
 - `IAMPolicyChange-Alarm`
 
-## SNS Topic
+## Validation Steps
 
-- `security-alerts-lab`
-
-## Validation Performed
-
-A temporary access key was created to generate a `CreateAccessKey` event and test the monitoring pipeline.
-
-The test confirmed that:
-
-- CloudTrail captured the event
-- The metric appeared in the `SecurityLab` namespace
-- The alarm changed from `Insufficient data` to `In alarm`
-- An SNS email notification was received successfully
-
-After validation, the temporary access key was deleted.
+1. Created a temporary access key for testing
+2. Confirmed the event appeared in CloudTrail / CloudWatch
+3. Verified the metric appeared in the `SecurityLab` namespace
+4. Confirmed the alarm changed to **In alarm**
+5. Confirmed an SNS email alert was received
+6. Deleted the temporary access key after testing
 
 ## Evidence Collected
 
-- CloudWatch alarms overview screenshot
+- Alarm overview screenshot
 - Alarm history screenshot
-- SNS email alert screenshot
-- CloudWatch metric screenshot
+- SNS email notification screenshot
+- Metric activity screenshot
 
-## Key Takeaway
+## Takeaway
 
-This lab showed how AWS native services can be used together to build a simple but effective cloud security monitoring workflow without third-party tools.
+This lab showed how native AWS services can be combined to build a simple but effective cloud security monitoring workflow with real event detection and alert validation.
