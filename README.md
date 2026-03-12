@@ -1,37 +1,39 @@
 # Home Cybersecurity Lab
 
-A collection of hands-on cybersecurity labs built to practice blue-team operations, cloud security, monitoring, detection, vulnerability assessment, and defensive security workflows in a home lab environment.
+A collection of hands-on cybersecurity lab projects covering cloud security, monitoring, detection, vulnerability assessment, malware analysis, and defensive security operations.
 
 ## Overview
 
-This repository contains multiple cybersecurity lab projects completed as part of an ongoing hands-on learning program. Each project focuses on practical implementation, validation, and documentation using real tools and realistic workflows.
+This repository documents practical cybersecurity work completed in a home lab environment. Each project focuses on building technical skills through real implementation, testing, validation, and written documentation.
 
 The purpose of this repository is to demonstrate experience with:
 
-- Security monitoring
-- Threat detection
-- Log analysis
-- Vulnerability assessment
-- Network security tooling
 - Cloud security monitoring
-- Alerting and validation
-- Technical documentation
+- SIEM and alerting
+- Network intrusion detection
+- Vulnerability assessment
+- Malware analysis
+- Security event validation
+- Technical documentation and reporting
 
-## Labs Included
+## Lab Projects
 
-| Lab | Focus Area | Status |
+| Folder | Focus Area | Status |
 |---|---|---|
-| `aws-cloud-security-monitoring-lab` | AWS logging, detection, alerting, and monitoring | Complete |
-| `wazuh-lab` | SIEM, endpoint monitoring, and alerting | Complete |
+| `aws-cloud-security-lab` | AWS cloud security lab work | In Progress / Supporting Project |
+| `aws-cloud-security-monitoring-lab` | AWS logging, monitoring, detection, and alerting | Complete |
+| `malware-analysis-lab` | Malware analysis workflow and evidence handling | Complete |
 | `snort-lab` | Network intrusion detection and traffic inspection | Complete |
-| `vulnerability-assessment-lab` | Scanning, findings review, and remediation analysis | Complete |
-| `malware-analysis-lab` | Basic malware analysis workflow and evidence handling | Complete |
+| `vulnerability-assessment-lab` | Vulnerability scanning, findings review, and remediation analysis | Complete |
+| `wazuh-lab` | SIEM, endpoint monitoring, and alert validation | Complete |
 
 ## Featured Project
 
 ### AWS Cloud Security Monitoring Lab
 
-This project demonstrates a basic AWS cloud security monitoring pipeline using native AWS services:
+The `aws-cloud-security-monitoring-lab` project demonstrates a beginner-friendly AWS security monitoring pipeline using native AWS services.
+
+Technologies used:
 
 - AWS IAM
 - AWS CloudTrail
@@ -42,61 +44,58 @@ This project demonstrates a basic AWS cloud security monitoring pipeline using n
 
 Key capabilities implemented:
 
-- Audit logging with CloudTrail
-- CloudWatch log ingestion
+- Centralized audit logging with CloudTrail
+- CloudWatch Logs integration
 - Detection rules for selected IAM activity
-- Alarm creation for security events
-- SNS email notifications
+- Alarm generation for security events
+- SNS email alert notifications
 - End-to-end validation through test activity
-
-Project folder:
-
-```text
-aws-cloud-security-monitoring-lab/
-```
 
 ## Skills Demonstrated
 
-- Security operations fundamentals
-- SIEM and log analysis
-- Intrusion detection concepts
-- Vulnerability scanning and assessment
-- Cloud security monitoring
-- IAM security review
+- Security monitoring
+- Cloud security fundamentals
+- AWS IAM administration
+- Audit logging and alerting
 - Detection engineering basics
-- Alert tuning and validation
-- Linux command-line administration
-- Security documentation and reporting
+- Vulnerability assessment
+- Intrusion detection
+- Malware analysis fundamentals
+- Incident validation workflows
+- Technical reporting and documentation
 
 ## Repository Structure
 
 ```text
-home-cybersecurity-lab/
+home-cyberlab/
 ├── README.md
+├── aws-cloud-security-lab/
 ├── aws-cloud-security-monitoring-lab/
 │   ├── README.md
-│   ├── screenshots/
 │   ├── notes/
-│   └── reports/
-├── wazuh-lab/
+│   │   └── lab-notes.md
+│   ├── reports/
+│   │   └── cloud-security-monitoring-report.md
+│   └── screenshots/
+├── malware-analysis-lab/
 ├── snort-lab/
 ├── vulnerability-assessment-lab/
-└── malware-analysis-lab/
+└── wazuh-lab/
 ```
 
 ## Documentation Style
 
 Each lab folder may include:
 
-- `README.md` for the project overview
-- `screenshots/` for visual evidence
-- `notes/` for quick working notes
-- `reports/` for more formal write-ups
+- A `README.md` for the project overview
+- A `screenshots` folder for evidence
+- A `notes` folder for working notes
+- A `reports` folder for formal write-ups
 
-## Purpose of This Repository
+## Purpose
 
-This repository is meant to document practical cybersecurity work in a structured, portfolio-friendly format. It is designed to show not just tool usage, but also lab planning, testing, validation, and written reporting.
+This repository is designed to serve as a structured, portfolio-friendly record of hands-on cybersecurity work. It highlights not only tool usage, but also planning, validation, troubleshooting, and written communication.
 
 ## Ongoing Development
 
-This repository will continue to grow as more lab projects are completed, improved, and documented.
+This repository will continue to grow as additional lab projects are completed and existing projects are improved.
