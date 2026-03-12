@@ -1,137 +1,64 @@
-# Cloud Security Monitoring Report
+# AWS Cloud Security Monitoring Lab Notes
 
-## Executive Summary
+## Summary
 
-This lab project focused on building a practical cloud security monitoring workflow in AWS using native security and monitoring services. The lab environment used CloudTrail for audit logging, CloudWatch Logs for centralized log ingestion, metric filters for event detection, CloudWatch alarms for alerting, and Amazon SNS for email notifications.
+This lab was built to create a basic AWS cloud security monitoring workflow using native AWS services. The environment was configured to capture account activity, detect selected security events, trigger alerts, and confirm email notification delivery.
 
-The purpose of the exercise was to simulate entry-level cloud security monitoring tasks and validate the full path from security event generation to alert delivery.
+## Services Used
 
----
+- AWS IAM
+- AWS CloudTrail
+- Amazon CloudWatch Logs
+- CloudWatch Metric Filters
+- CloudWatch Alarms
+- Amazon SNS
 
-## Scope
+## Environment Details
 
-The lab included the following areas:
+- Root MFA was already enabled before the lab began
+- An existing lab admin user was used for setup
+- An existing security auditor user and policy were already available
+- An existing CloudTrail trail was reused
+- CloudWatch Logs integration was added to the trail
 
-- IAM security review
-- CloudTrail audit logging
-- CloudWatch Logs integration
-- Detection engineering using metric filters
-- Alarm configuration
-- SNS email notification setup
-- Validation through controlled test activity
+## Detection Rules Created
 
----
+- `NoMFAConsoleLogin`
+- `RootLogin`
+- `AccessKeyCreated`
+- `IAMPolicyChange`
 
-## Environment Summary
+## Alarms Created
 
-### Identity and Access Management
-- Root account MFA was already enabled
-- Existing lab admin user was used for setup
-- Existing security auditor user and policy were already available
+- `NoMFAConsoleLogin-Alarm`
+- `RootLogin-Alarm`
+- `AccessKeyCreated-Alarm`
+- `IAMPolicyChange-Alarm`
 
-### Logging Configuration
-- An existing CloudTrail trail was reused for the lab
-- CloudTrail was configured to send logs to the `cloudtrail-security-lab` log group
-- CloudTrail log validation was enabled
+## SNS Topic
 
-### Monitoring and Detection
-CloudWatch metric filters were created for the following events:
+- `security-alerts-lab`
 
-- Console login without MFA
-- Root account login
-- Access key creation
-- IAM policy changes
+## Validation Performed
 
-### Alerting
-CloudWatch alarms were configured for each detection rule and connected to the `security-alerts-lab` SNS topic for email notifications.
+A temporary access key was created to generate a `CreateAccessKey` event and test the monitoring pipeline.
 
----
+The test confirmed that:
 
-## Detection Rules Implemented
-
-| Detection Name | Purpose |
-|---|---|
-| `NoMFAConsoleLogin` | Detect console sign-ins where MFA was not used |
-| `RootLogin` | Detect root account console logins |
-| `AccessKeyCreated` | Detect creation of new IAM access keys |
-| `IAMPolicyChange` | Detect selected IAM policy modification activity |
-
----
-
-## Alarm Configuration
-
-| Alarm Name | Trigger Condition |
-|---|---|
-| `NoMFAConsoleLogin-Alarm` | Metric value greater than or equal to 1 |
-| `RootLogin-Alarm` | Metric value greater than or equal to 1 |
-| `AccessKeyCreated-Alarm` | Metric value greater than or equal to 1 |
-| `IAMPolicyChange-Alarm` | Metric value greater than or equal to 1 |
-
-All alarms were configured to publish notifications to Amazon SNS.
-
----
-
-## Validation Activities
-
-To validate the monitoring workflow, a temporary access key was created for the lab admin user. This action generated a `CreateAccessKey` event in CloudTrail and was used as the primary test case.
-
-Validation confirmed the following:
-
-- CloudTrail successfully recorded the event
+- CloudTrail captured the event
 - The metric appeared in the `SecurityLab` namespace
-- The `AccessKeyCreated-Alarm` changed from `Insufficient data` to `In alarm`
+- The alarm changed from `Insufficient data` to `In alarm`
 - An SNS email notification was received successfully
-- The temporary access key was deleted after testing
 
----
+After validation, the temporary access key was deleted.
 
-## Findings
+## Evidence Collected
 
-The lab demonstrated that AWS native services can be combined to build a functional cloud security monitoring pipeline. Logging, detection, alarm generation, and notification delivery all worked as expected during testing.
+- CloudWatch alarms overview screenshot
+- Alarm history screenshot
+- SNS email alert screenshot
+- CloudWatch metric screenshot
 
-Key findings:
+## Key Takeaway
 
-- CloudTrail provided reliable visibility into IAM activity
-- CloudWatch metric filters successfully detected selected risky actions
-- CloudWatch alarms responded correctly to matching events
-- SNS email notifications confirmed end-to-end alert delivery
-
----
-
-## Skills Demonstrated
-
-- AWS IAM administration
-- CloudTrail configuration
-- CloudWatch Logs integration
-- Detection engineering
-- Alarm tuning and testing
-- Security monitoring workflow validation
-
----
-
-## Evidence
-
-Supporting screenshots are stored in the `screenshots` folder and include:
-
-- Alarm overview
-- Alarm history
-- SNS email alert
-- Metric activity in CloudWatch
-
----
-
-## Recommendations
-
-Recommended next steps for expanding this lab:
-
-- Add more CloudTrail-based detections
-- Create CloudWatch dashboards for security visibility
-- Add AWS Config compliance rules
-- Implement automated remediation with AWS Lambda
-- Add GuardDuty in a future version of the lab
-
----
-
-## Conclusion
-
-This lab successfully demonstrated a beginner-friendly AWS cloud security monitoring implementation using native AWS services. The completed project provides practical evidence of cloud logging, detection, alerting, and validation skills in a real AWS environment.
+This lab showed how AWS native services can be used together to build a simple but effective cloud security monitoring workflow without third-party tools.
