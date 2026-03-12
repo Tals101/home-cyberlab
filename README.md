@@ -1,124 +1,102 @@
 # Home Cybersecurity Lab
 
-A hands-on cybersecurity lab repository documenting practical projects across **security monitoring**, **network intrusion detection**, and **beginner malware analysis** in a virtualized home lab environment.
-
-This repository is designed to show technical growth through real lab work, evidence collection, documentation, and repeatable workflows.
+A collection of hands-on cybersecurity labs built to practice blue-team operations, cloud security, monitoring, detection, vulnerability assessment, and defensive security workflows in a home lab environment.
 
 ## Overview
 
-This repo contains multiple cybersecurity lab projects built to develop practical skills in blue-team operations, network monitoring, endpoint visibility, packet analysis, and security tooling. Each lab is organized in its own folder with supporting screenshots, notes, reports, and other evidence.
+This repository contains multiple cybersecurity lab projects completed as part of an ongoing hands-on learning program. Each project focuses on practical implementation, validation, and documentation using real tools and realistic workflows.
 
-The goal of this repository is to demonstrate the ability to:
+The purpose of this repository is to demonstrate experience with:
 
-- Build and manage a home cybersecurity lab
-- Work with security monitoring and detection tools
-- Capture and analyze host and network activity
-- Document technical workflows and findings
-- Present projects in a structured, professional format
+- Security monitoring
+- Threat detection
+- Log analysis
+- Vulnerability assessment
+- Network security tooling
+- Cloud security monitoring
+- Alerting and validation
+- Technical documentation
 
-## Lab Areas Covered
+## Labs Included
 
-This repository currently focuses on:
+| Lab | Focus Area | Status |
+|---|---|---|
+| `aws-cloud-security-monitoring-lab` | AWS logging, detection, alerting, and monitoring | Complete |
+| `wazuh-lab` | SIEM, endpoint monitoring, and alerting | Complete |
+| `snort-lab` | Network intrusion detection and traffic inspection | Complete |
+| `vulnerability-assessment-lab` | Scanning, findings review, and remediation analysis | Complete |
+| `malware-analysis-lab` | Basic malware analysis workflow and evidence handling | Complete |
 
-- **Security monitoring and detection**
-- **Network traffic inspection**
-- **Intrusion detection system (IDS) setup**
-- **Malware analysis fundamentals**
-- **Evidence collection and reporting**
-- **Virtual machine lab administration**
+## Featured Project
 
-## Current Projects
+### AWS Cloud Security Monitoring Lab
 
-### Wazuh Lab
-A lab focused on security monitoring, alerting, and defensive visibility using Wazuh. This project demonstrates endpoint monitoring, alert generation, and basic SOC-style workflows.
+This project demonstrates a basic AWS cloud security monitoring pipeline using native AWS services:
 
-### Snort Lab
-A lab focused on installing, configuring, and validating Snort in a home lab environment. This project demonstrates IDS deployment, rule structure awareness, and packet inspection fundamentals.
+- AWS IAM
+- AWS CloudTrail
+- Amazon CloudWatch Logs
+- CloudWatch Metric Filters
+- CloudWatch Alarms
+- Amazon SNS
 
-### Malware Analysis Lab
-A beginner malware analysis project built in an isolated environment using REMnux, a Windows VM, Procmon, Wireshark, and the official EICAR anti-malware test file. This project demonstrates safe sample handling, monitoring setup, network capture, and evidence collection.
+Key capabilities implemented:
+
+- Audit logging with CloudTrail
+- CloudWatch log ingestion
+- Detection rules for selected IAM activity
+- Alarm creation for security events
+- SNS email notifications
+- End-to-end validation through test activity
+
+Project folder:
+
+```text
+aws-cloud-security-monitoring-lab/
+```
+
+## Skills Demonstrated
+
+- Security operations fundamentals
+- SIEM and log analysis
+- Intrusion detection concepts
+- Vulnerability scanning and assessment
+- Cloud security monitoring
+- IAM security review
+- Detection engineering basics
+- Alert tuning and validation
+- Linux command-line administration
+- Security documentation and reporting
 
 ## Repository Structure
 
 ```text
-home-cyberlab
+home-cybersecurity-lab/
 ├── README.md
-├── malware-analysis-lab
+├── aws-cloud-security-monitoring-lab/
 │   ├── README.md
-│   ├── notes
-│   ├── pcaps
-│   ├── report
-│   └── screenshots
-├── snort-lab
-│   ├── README.md
-│   ├── config
-│   ├── notes
-│   ├── report
-│   └── screenshots
-└── wazuh-lab
-    ├── README.md
-    ├── notes
-    ├── report
-    └── screenshots
+│   ├── screenshots/
+│   ├── notes/
+│   └── reports/
+├── wazuh-lab/
+├── snort-lab/
+├── vulnerability-assessment-lab/
+└── malware-analysis-lab/
 ```
 
-## What This Repository Demonstrates
+## Documentation Style
 
-- Building and maintaining a virtual cybersecurity lab
-- Working with defensive security tools in realistic practice environments
-- Capturing packet data and reviewing traffic
-- Monitoring endpoint or host-level activity
-- Validating security alerts and defensive responses
-- Organizing findings into notes, screenshots, reports, and GitHub documentation
-- Using Git and GitHub to present technical projects professionally
+Each lab folder may include:
 
-## Tools and Technologies Used
+- `README.md` for the project overview
+- `screenshots/` for visual evidence
+- `notes/` for quick working notes
+- `reports/` for more formal write-ups
 
-- **VirtualBox**
-- **Windows virtual machines**
-- **REMnux**
-- **Wazuh**
-- **Snort**
-- **Wireshark**
-- **Process Monitor (Procmon)**
-- **Windows Defender**
-- **Linux command line**
-- **Git / GitHub**
+## Purpose of This Repository
 
-## Skills Demonstrated
+This repository is meant to document practical cybersecurity work in a structured, portfolio-friendly format. It is designed to show not just tool usage, but also lab planning, testing, validation, and written reporting.
 
-- Home lab setup and administration
-- VM deployment and isolation
-- Network monitoring
-- Packet capture and traffic review
-- Intrusion detection fundamentals
-- Endpoint monitoring
-- Security alert validation
-- Malware analysis workflow fundamentals
-- Evidence collection and reporting
-- Technical documentation
+## Ongoing Development
 
-## Why This Repository Matters
-
-This repository reflects hands-on learning rather than only theoretical study. Each project is intended to show practical setup, testing, troubleshooting, and documentation. The work here is structured to demonstrate both technical ability and the discipline to present findings clearly.
-
-## Project Documentation Style
-
-Each lab folder is intended to include:
-
-- A project-specific `README.md`
-- Notes from the lab
-- Screenshots or other visual evidence
-- Report files or write-ups
-- Any supporting captures, configs, or artifacts relevant to the project
-
-## Future Additions
-
-This repository is intended to grow over time with additional lab projects such as:
-
-- Expanded malware-analysis exercises
-- Additional IDS and SIEM work
-- Detection engineering practice
-- Network defense and traffic analysis projects
-- Incident-response style simulations
-
+This repository will continue to grow as more lab projects are completed, improved, and documented.
