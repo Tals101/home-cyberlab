@@ -1,101 +1,190 @@
 # Home Cybersecurity Lab
 
-A collection of hands-on cybersecurity lab projects covering cloud security, monitoring, detection, vulnerability assessment, malware analysis, and defensive security operations.
+A hands-on cybersecurity lab repository built to document practical work across blue-team operations, cloud security, offensive security fundamentals, malware analysis, intrusion detection, and vulnerability assessment.
 
-## Overview
+This repository is organized as a multi-project portfolio. Each folder contains a separate lab with its own notes, evidence, screenshots, and write-up.
 
-This repository documents practical cybersecurity work completed in a home lab environment. Each project focuses on building technical skills through real implementation, testing, validation, and written documentation.
+## Repository Purpose
 
-The purpose of this repository is to demonstrate experience with:
+The goal of this repository is to build and document practical cybersecurity skills in a structured, portfolio-ready format. Each project is completed in a controlled environment and focuses on applying technical concepts through real lab work, validation, troubleshooting, and reporting.
 
-- Cloud security monitoring
-- SIEM and alerting
-- Network intrusion detection
-- Vulnerability assessment
-- Malware analysis
-- Security event validation
-- Technical documentation and reporting
+## Core Skills Practiced
 
-## Lab Projects
+Across the projects in this repository, the following skills are developed and documented:
 
-| Folder | Focus Area | Status |
-|---|---|---|
-| `aws-cloud-security-lab` | AWS cloud security lab work | In Progress / Supporting Project |
-| `aws-cloud-security-monitoring-lab` | AWS logging, monitoring, detection, and alerting | Complete |
-| `malware-analysis-lab` | Malware analysis workflow and evidence handling | Complete |
-| `snort-lab` | Network intrusion detection and traffic inspection | Complete |
-| `vulnerability-assessment-lab` | Vulnerability scanning, findings review, and remediation analysis | Complete |
-| `wazuh-lab` | SIEM, endpoint monitoring, and alert validation | Complete |
+- virtual lab setup and management
+- Linux and Windows administration
+- network isolation and safe testing practices
+- service enumeration and analysis
+- vulnerability assessment
+- exploitation in controlled training environments
+- intrusion detection and monitoring
+- malware investigation
+- traffic capture and analysis
+- cloud security configuration
+- alerting and logging
+- evidence collection
+- technical documentation and reporting
 
-## Featured Project
+## Tools and Technologies
+
+Projects in this repository include work involving:
+
+- VirtualBox
+- Kali Linux
+- Metasploitable 2
+- Ubuntu Server
+- Windows
+- Nmap
+- Metasploit Framework
+- Wireshark
+- Snort
+- Wazuh
+- AWS
+- Linux command line
+- Git and GitHub
+
+## Project Portfolio
+
+### AWS Cloud Security Lab
+Focuses on foundational AWS security configuration and hardening in a lab environment.
+
+**Key areas:**
+- IAM and account security
+- secure configuration
+- cloud security fundamentals
+- documentation and remediation notes
+
+**Folder:** `aws-cloud-security-lab/`
+
+---
 
 ### AWS Cloud Security Monitoring Lab
+Focuses on cloud visibility, monitoring, and alerting concepts in AWS.
 
-The `aws-cloud-security-monitoring-lab` project demonstrates a beginner-friendly AWS security monitoring pipeline using native AWS services.
+**Key areas:**
+- logging and monitoring
+- cloud visibility
+- security alerting
+- cloud operations documentation
 
-Technologies used:
+**Folder:** `aws-cloud-security-monitoring-lab/`
 
-- AWS IAM
-- AWS CloudTrail
-- Amazon CloudWatch Logs
-- CloudWatch Metric Filters
-- CloudWatch Alarms
-- Amazon SNS
+---
 
-Key capabilities implemented:
+### Beginner Pentest Lab
+A beginner-friendly offensive security lab using Kali Linux and Metasploitable 2 in an isolated VirtualBox network.
 
-- Centralized audit logging with CloudTrail
-- CloudWatch Logs integration
-- Detection rules for selected IAM activity
-- Alarm generation for security events
-- SNS email alert notifications
-- End-to-end validation through test activity
+**Key areas:**
+- service enumeration
+- vulnerability identification
+- Metasploit usage
+- exploitation basics
+- post-exploitation validation
+- pentest reporting
 
-## Skills Demonstrated
+**Folder:** `beginner-pentest-lab/`
 
-- Security monitoring
-- Cloud security fundamentals
-- AWS IAM administration
-- Audit logging and alerting
-- Detection engineering basics
-- Vulnerability assessment
-- Intrusion detection
-- Malware analysis fundamentals
-- Incident validation workflows
-- Technical reporting and documentation
+---
+
+### Malware Analysis Lab
+Documents hands-on malware analysis workflow and investigation in a controlled lab environment.
+
+**Key areas:**
+- safe malware handling
+- environment setup
+- behavioral observation
+- evidence collection
+- lab documentation
+
+**Folder:** `malware-analysis-lab/`
+
+---
+
+### Snort Lab
+Focuses on installing, configuring, and using Snort for intrusion detection and traffic inspection.
+
+**Key areas:**
+- IDS setup
+- Snort configuration
+- rule validation
+- packet inspection
+- defensive monitoring
+
+**Folder:** `snort-lab/`
+
+---
+
+### Vulnerability Assessment Lab
+Documents vulnerability scanning, evidence collection, and interpretation of findings in a lab environment.
+
+**Key areas:**
+- vulnerability scanning
+- finding analysis
+- supporting evidence
+- remediation-oriented reporting
+
+**Folder:** `vulnerability-assessment-lab/`
+
+---
+
+### Wazuh Lab
+Focuses on host monitoring, detection, alert visibility, and security operations concepts using Wazuh.
+
+**Key areas:**
+- SIEM and XDR concepts
+- agent-based monitoring
+- alert review
+- detection validation
+- blue-team workflows
+
+**Folder:** `wazuh-lab/`
 
 ## Repository Structure
 
-```text
-home-cyberlab/
-├── README.md
-├── aws-cloud-security-lab/
-├── aws-cloud-security-monitoring-lab/
-│   ├── README.md
-│   ├── notes/
-│   │   └── lab-notes.md
-│   ├── reports/
-│   │   └── cloud-security-monitoring-report.md
-│   └── screenshots/
-├── malware-analysis-lab/
-├── snort-lab/
-├── vulnerability-assessment-lab/
-└── wazuh-lab/
-```
+    home-cyberlab/
+    ├── aws-cloud-security-lab/
+    ├── aws-cloud-security-monitoring-lab/
+    ├── beginner-pentest-lab/
+    ├── malware-analysis-lab/
+    ├── snort-lab/
+    ├── vulnerability-assessment-lab/
+    ├── wazuh-lab/
+    └── README.md
 
-## Documentation Style
+## Documentation Standard
 
-Each lab folder may include:
+Each lab in this repository is intended to include some combination of:
 
-- A `README.md` for the project overview
-- A `screenshots` folder for evidence
-- A `notes` folder for working notes
-- A `reports` folder for formal write-ups
+- a project-specific `README.md`
+- notes or observations
+- screenshots
+- scan results, logs, or raw evidence
+- a final write-up or report
+- remediation notes where applicable
 
-## Purpose
+This structure helps keep projects organized and makes the repository easier to review as a technical portfolio.
 
-This repository is designed to serve as a structured, portfolio-friendly record of hands-on cybersecurity work. It highlights not only tool usage, but also planning, validation, troubleshooting, and written communication.
+## Lab Principles
 
-## Ongoing Development
+All work documented in this repository follows these principles:
 
-This repository will continue to grow as additional lab projects are completed and existing projects are improved.
+- use isolated lab environments
+- avoid unauthorized or production targets
+- document work clearly
+- save supporting evidence whenever possible
+- focus on learning, validation, and communication
+
+## Why This Repository Matters
+
+This repository is meant to show practical development over time, not just tool usage. It reflects the ability to:
+
+- build and manage cybersecurity lab environments
+- apply technical concepts in practice
+- troubleshoot issues during setup and execution
+- organize findings clearly
+- create professional, reviewable documentation
+
+## Disclaimer
+
+All activities documented in this repository were performed in controlled lab environments, training systems, or otherwise authorized settings for educational purposes only.
