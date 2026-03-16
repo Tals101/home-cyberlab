@@ -104,17 +104,4 @@ The agent reads authentication logs, looks for suspicious activity, and produces
 
 ---
 
-## Notes
 
-This is a local lab project created for learning and portfolio development. It is intentionally simple and designed as a foundation for more advanced projects such as:
-
-- AI-driven vulnerability scanning
-- SIEM alert summarization
-- Threat hunting automation
-- Multi-agent red vs blue simulations
-
----
-
-## Author
-
-Built as part of a home cybersecurity lab focused on AI security, SOC workflows, and hands-on defensive automation.
