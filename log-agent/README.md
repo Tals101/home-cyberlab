@@ -1,139 +1,120 @@
 # AI Log Analysis Agent
 
-## Overview
+A beginner-friendly AI security project that uses a local LLM through Ollama to analyze Linux authentication logs and generate a SOC-style incident summary.
 
-This project is a beginner-friendly AI security agent built in a home cybersecurity lab. It uses a local large language model through Ollama to analyze Linux authentication logs and generate a SOC-style security assessment.
+---
 
-## Project Goal
+## Project Summary
 
-The goal of this project was to combine cybersecurity automation with local AI inference in a private virtual lab environment. This project demonstrates how an AI agent can assist with log review, suspicious activity identification, and incident-style reporting.
+This project was built in a home cybersecurity lab to combine:
 
-## What the Agent Does
+- Linux log analysis
+- Python automation
+- Local LLM inference
+- SOC-style incident reporting
 
-- Reads Linux authentication log data
+The agent reads authentication logs, looks for suspicious activity, and produces a structured security assessment with severity, attack hypothesis, and mitigation guidance.
 
-- Identifies suspicious behavior
+---
 
-- Assigns a severity level
+## Objectives
 
-- Suggests an attack hypothesis
+- Build a simple AI-assisted SOC workflow
+- Analyze Linux authentication logs locally
+- Use Ollama for private LLM inference
+- Create a portfolio-ready cybersecurity automation project
 
-- Recommends mitigation steps
+---
 
-## Lab Environment
-
-This project was built in a virtual home lab using:
+## Tools Used
 
 - Kali Linux
-
 - Ubuntu Server
-
 - Metasploitable2
-
 - VirtualBox
-
 - Python 3
-
 - Ollama
-
 - Llama 3.2 3B
-
 - LangChain
+
+---
+
+## Features
+
+- Reads Linux authentication log data
+- Detects suspicious login behavior
+- Produces SOC-style analysis
+- Works fully in a local lab
+- Saves report output for documentation and review
+
+---
 
 ## Project Structure
 
-log-agent/
+    log-agent/
+    ├── README.md
+    ├── reports/
+    │   ├── soc_report.txt
+    │   └── sample_soc_report.txt
+    ├── samples/
+    │   └── auth_sample.log
+    ├── screenshots/
+    │   ├── 01-project-structure.png
+    │   ├── 02-sample-log.png
+    │   ├── 03-script.png
+    │   ├── 04-agent-run.png
+    │   ├── 05-report-output.png
+    │   └── 06-ollama-working.png
+    └── scripts/
+        └── log_agent.py
 
-├── README.md
-
-├── reports/
-
-│ ├── soc_report.txt
-
-│ └── sample_soc_report.txt
-
-├── samples/
-
-│ └── auth_sample.log
-
-├── screenshots/
-
-│ ├── 01-project-structure.png
-
-│ ├── 02-sample-log.png
-
-│ ├── 03-script.png
-
-│ ├── 04-agent-run.png
-
-│ ├── 05-report-output.png
-
-│ └── 06-ollama-working.png
-
-└── scripts/
-
-└── log_agent.py
+---
 
 ## How It Works
 
-The Python script reads authentication log data and sends it to a locally hosted language model running through Ollama. The model then returns a SOC-style analysis that includes the likely severity, suspicious activity summary, attack hypothesis, and recommended mitigations.
+1. A sample authentication log is provided to the Python script.
+2. The script sends the log content to a local Ollama model.
+3. The model analyzes the log data.
+4. The agent returns:
+   - Severity level
+   - Suspicious activity summary
+   - Attack hypothesis
+   - Recommended mitigation steps
 
-## Example Use Cases
+---
 
-This project can serve as a starting point for:
+## Example Workflow
 
-- SOC alert triage
+- Review authentication logs
+- Identify repeated failed login attempts
+- Flag suspicious access patterns
+- Generate a short incident-style response
 
-- Linux log analysis
-
-- Security automation practice
-
-- AI-assisted incident reporting
-
-- Local/private AI security workflows
+---
 
 ## Skills Demonstrated
 
 - Virtual lab setup
-
 - Linux command-line usage
-
 - Python scripting
-
 - Local LLM deployment
-
 - AI-assisted log analysis
-
 - Security reporting
-
 - Basic SOC workflow automation
 
-## Screenshots
-
-### Project Structure
-
-![Project Structure](screenshots/01-project-structure.png)
-
-### Sample Log File
-
-![Sample Log File](screenshots/02-sample-log.png)
-
-### Python Script
-
-![Python Script](screenshots/03-script.png)
-
-### Agent Execution
-
-![Agent Execution](screenshots/04-agent-run.png)
-
-### Report Output
-
-![Report Output](screenshots/05-report-output.png)
-
-### Ollama Working
-
-![Ollama Working](screenshots/06-ollama-working.png)
+---
 
 ## Notes
 
-This is a local lab project created for learning and portfolio development. The current version is intentionally simple and focused on building a foundation for more advanced AI-driven security automation projects such as autonomous vulnerability scanning, SIEM integration, and multi-agent red vs blue simulations.
+This is a local lab project created for learning and portfolio development. It is intentionally simple and designed as a foundation for more advanced projects such as:
+
+- AI-driven vulnerability scanning
+- SIEM alert summarization
+- Threat hunting automation
+- Multi-agent red vs blue simulations
+
+---
+
+## Author
+
+Built as part of a home cybersecurity lab focused on AI security, SOC workflows, and hands-on defensive automation.
