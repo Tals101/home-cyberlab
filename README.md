@@ -170,6 +170,21 @@ A beginner-friendly AI security project that uses a local LLM through Ollama to 
 
 ---
 
+### AI Vulnerability Scanner Agent
+A beginner-friendly AI-assisted vulnerability analysis project that uses Nmap scan results from a controlled lab target and a local LLM through Ollama to generate a security-focused assessment.
+
+**Key areas:**
+- Network scanning
+- Service/version analysis
+- Python scripting
+- Local LLM deployment
+- AI-assisted vulnerability review
+- Security reporting
+
+**Folder:** `vuln-scan-agent/`
+
+---
+
 ## Repository Structure
 
 ```text
