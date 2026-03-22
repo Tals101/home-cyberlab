@@ -56,5 +56,4 @@ This project can serve as a starting point for:
 - Security reporting
 - Basic pentest workflow support
 
-## Notes
-This is a local lab project created for learning and portfolio development. The current version is intentionally simple and focused on building a foundation for more advanced AI-assisted offensive and defensive security projects.
+
