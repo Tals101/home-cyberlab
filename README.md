@@ -31,6 +31,7 @@ Across the projects in this repository, the following skills are developed and d
 - Technical documentation and reporting
 - Python scripting and automation
 - Local AI/LLM security workflow experimentation
+- Offensive and defensive security analysis
 
 ---
 
@@ -185,16 +186,72 @@ A beginner-friendly AI-assisted vulnerability analysis project that uses Nmap sc
 
 ---
 
+### Red vs Blue AI Agent Lab
+A beginner-friendly multi-agent cybersecurity project that simulates a simple red team versus blue team workflow using local AI.
+
+**Key areas:**
+- Multi-agent security reasoning
+- Offensive security analysis
+- Defensive security analysis
+- Python scripting
+- Local LLM deployment
+- Security reporting
+
+**Folder:** `red-blue-agent-lab/`
+
+---
+
 ## Repository Structure
 
-```text
-home-cyberlab/
-├── aws-cloud-security-lab/
-├── aws-cloud-security-monitoring-lab/
-├── beginner-pentest-lab/
-├── log-agent/
-├── malware-analysis-lab/
-├── snort-lab/
-├── vulnerability-assessment-lab/
-├── wazuh-lab/
-└── README.md
+    home-soc-lab-wazuh/
+    ├── aws-cloud-security-lab/
+    ├── aws-cloud-security-monitoring-lab/
+    ├── beginner-pentest-lab/
+    ├── log-agent/
+    ├── malware-analysis-lab/
+    ├── red-blue-agent-lab/
+    ├── snort-lab/
+    ├── vulnerability-assessment-lab/
+    ├── vuln-scan-agent/
+    ├── wazuh-lab/
+    └── README.md
+
+---
+
+## Documentation Standard
+
+Each lab in this repository is intended to include some combination of:
+
+- A project-specific `README.md`
+- Notes or observations
+- Screenshots
+- Scan results, logs, or raw evidence
+- A final write-up or report
+- Remediation notes where applicable
+
+This structure helps keep projects organized and makes the repository easier to review as a technical portfolio.
+
+---
+
+## Lab Principles
+
+All work documented in this repository follows these principles:
+
+- Use isolated lab environments
+- Avoid unauthorized or production targets
+- Document work clearly
+- Save supporting evidence whenever possible
+- Focus on learning, validation, and communication
+
+---
+
+## Why This Repository Matters
+
+This repository is meant to show practical development over time, not just tool usage. It reflects the ability to:
+
+- Build and manage cybersecurity lab environments
+- Apply technical concepts in practice
+- Troubleshoot issues during setup and execution
+- Organize findings clearly
+- Create professional, reviewable documentation
+- Explore emerging security workflows involving local AI tools
