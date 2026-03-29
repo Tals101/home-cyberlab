@@ -1,0 +1,20 @@
+Target: Metasploitable2
+IP: 192.168.56.115
+
+Observed services from prior enumeration:
+- 21/tcp ftp
+- 22/tcp ssh
+- 23/tcp telnet
+- 25/tcp smtp
+- 53/tcp domain
+- 80/tcp http
+- 111/tcp rpcbind
+- 139/tcp netbios-ssn
+- 445/tcp microsoft-ds
+- 3306/tcp mysql
+- 5432/tcp postgresql
+- 5900/tcp vnc
+- 8180/tcp http
+
+Scenario:
+This is a controlled training target in an isolated lab. the purpose is to let one AI agent think like an attacker and suggest likely attack paths, while another AI agent thinks like a defender and suggest detections, logging opportunities, and defensive mitigations.
