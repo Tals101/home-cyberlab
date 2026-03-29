@@ -1,122 +1,103 @@
-\# Red vs Blue AI Agent Lab
+# Red vs Blue AI Agent Lab
 
-
-
-\## Overview
+## Overview
 
 This project is a beginner-friendly multi-agent cybersecurity lab that simulates a simple red team versus blue team workflow using local AI. It uses sample target information and a local LLM through Ollama to generate both attacker-style and defender-style analysis.
 
-
-
-\## Project Goal
+## Project Goal
 
 The goal of this project is to explore how AI agents can support both offensive and defensive security thinking in a controlled lab environment. This project demonstrates how one agent can suggest likely attack paths while another agent focuses on detection opportunities and defensive response.
 
+## What the Agents Do
 
+- Review target and service information
 
-\## What the Agents Do
+- Generate red team attack ideas
 
-\- Review target and service information
+- Generate blue team detection and mitigation ideas
 
-\- Generate red team attack ideas
+- Compare offensive and defensive perspectives
 
-\- Generate blue team detection and mitigation ideas
+- Produce simple security-focused output for both sides
 
-\- Compare offensive and defensive perspectives
-
-\- Produce simple security-focused output for both sides
-
-
-
-\## Lab Environment
+## Lab Environment
 
 This project was built in a home lab using:
 
-\- Kali Linux
+- Kali Linux
 
-\- Ubuntu Server
+- Ubuntu Server
 
-\- Metasploitable2
+- Metasploitable2
 
-\- VirtualBox
+- VirtualBox
 
-\- Python 3
+- Python 3
 
-\- Ollama
+- Ollama
 
-\- Llama 3.2 3B
+- Llama 3.2 3B
 
-\- LangChain
+- LangChain
 
+## Project Structure
 
+red-blue-agent-lab/
 
-\## Project Structure
+├── README.md
 
+├── reports/
 
+│ └── red_blue_analysis_report.txt
 
-&#x20;   red-blue-agent-lab/
+├── samples/
 
-&#x20;   ├── README.md
+│ └── target_profile.txt
 
-&#x20;   ├── reports/
+├── screenshots/
 
-&#x20;   │   └── red\_blue\_analysis\_report.txt
+│ ├── 01-target-profile.png
 
-&#x20;   ├── samples/
+│ ├── 02-script.png
 
-&#x20;   │   └── target\_profile.txt
+│ ├── 03-agent-run.png
 
-&#x20;   ├── screenshots/
+│ └── 04-report-output.png
 
-&#x20;   │   ├── 01-target-profile.png
+└── scripts/
 
-&#x20;   │   ├── 02-script.png
+└── red_blue_agent.py
 
-&#x20;   │   ├── 03-agent-run.png
-
-&#x20;   │   └── 04-report-output.png
-
-&#x20;   └── scripts/
-
-&#x20;       └── red\_blue\_agent.py
-
-
-
-\## How It Works
+## How It Works
 
 The project uses a sample target profile based on a controlled lab system. A Python script sends that target information to a local model through Ollama twice: once with a red team prompt and once with a blue team prompt. The result is a side-by-side style security exercise showing both offensive and defensive thinking.
 
-
-
-\## Example Use Cases
+## Example Use Cases
 
 This project can serve as a starting point for:
 
-\- Red vs blue security simulations
+- Red vs blue security simulations
 
-\- AI-assisted attack path brainstorming
+- AI-assisted attack path brainstorming
 
-\- AI-assisted defensive analysis
+- AI-assisted defensive analysis
 
-\- Detection engineering practice
+- Detection engineering practice
 
-\- Local/private AI security workflows
+- Local/private AI security workflows
 
+## Skills Demonstrated
 
+- Virtual lab setup
 
-\## Skills Demonstrated
+- Python scripting
 
-\- Virtual lab setup
+- Local LLM deployment
 
-\- Python scripting
+- Offensive security reasoning
 
-\- Local LLM deployment
+- Defensive security reasoning
 
-\- Offensive security reasoning
+- Security reporting
 
-\- Defensive security reasoning
-
-\- Security reporting
-
-\- Basic multi-agent security workflow design
-
+- Basic multi-agent security workflow design
