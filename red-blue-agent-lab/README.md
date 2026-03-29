@@ -72,20 +72,6 @@ red-blue-agent-lab/
 
 The project uses a sample target profile based on a controlled lab system. A Python script sends that target information to a local model through Ollama twice: once with a red team prompt and once with a blue team prompt. The result is a side-by-side style security exercise showing both offensive and defensive thinking.
 
-## Example Use Cases
-
-This project can serve as a starting point for:
-
-- Red vs blue security simulations
-
-- AI-assisted attack path brainstorming
-
-- AI-assisted defensive analysis
-
-- Detection engineering practice
-
-- Local/private AI security workflows
-
 ## Skills Demonstrated
 
 - Virtual lab setup
