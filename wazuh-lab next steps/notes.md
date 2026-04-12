@@ -207,4 +207,3 @@ This project required:
 \- Writing and fixing SIEM detection rules  
 
 \- Interpreting error logs and system feedback  
-
