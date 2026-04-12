@@ -1,207 +1,203 @@
-# Home Cybersecurity Lab
+# 🛡️ Home Cybersecurity Lab
 
-A hands-on cybersecurity lab repository built to document practical work across blue-team operations, cloud security, offensive security fundamentals, malware analysis, intrusion detection, vulnerability assessment, and AI-assisted security automation.
+A hands-on cybersecurity lab repository documenting practical work across blue-team operations, cloud security, offensive security fundamentals, malware analysis, intrusion detection, vulnerability assessment, and AI-assisted security automation.
 
-This repository is organized as a multi-project portfolio. Each folder contains a separate lab with its own notes, evidence, screenshots, and write-up.
-
----
-
-## Repository Purpose
-
-The goal of this repository is to build and document practical cybersecurity skills in a structured, portfolio-ready format. Each project is completed in a controlled environment and focuses on applying technical concepts through real lab work, validation, troubleshooting, automation, and reporting.
+This repository is organized as a **multi-project portfolio**, where each folder represents a standalone lab with its own documentation, evidence, and results.
 
 ---
 
-## Core Skills Practiced
+## 🎯 Repository Purpose
 
-Across the projects in this repository, the following skills are developed and documented:
+The goal of this repository is to build and demonstrate **practical cybersecurity skills** in a structured, portfolio-ready format.
 
-- Virtual lab setup and management
-- Linux and Windows administration
-- Network isolation and safe testing practices
-- Service enumeration and analysis
-- Vulnerability assessment
-- Exploitation in controlled training environments
-- Intrusion detection and monitoring
-- Malware investigation
-- Traffic capture and analysis
-- Cloud security configuration
-- Alerting and logging
-- Evidence collection
-- Technical documentation and reporting
-- Python scripting and automation
-- Local AI/LLM security workflow experimentation
-- Offensive and defensive security analysis
+Each project focuses on:
+
+- Real lab execution  
+- Validation and troubleshooting  
+- Evidence collection  
+- Clear technical documentation  
 
 ---
 
-## Tools and Technologies
+## 🧠 Core Skills Practiced
 
-Projects in this repository include work involving:
-
-- VirtualBox
-- Kali Linux
-- Metasploitable 2
-- Ubuntu Server
-- Windows
-- Nmap
-- Metasploit Framework
-- Wireshark
-- Snort
-- Wazuh
-- AWS
-- Python 3
-- Ollama
-- LangChain
-- Linux command line
-- Git and GitHub
+- Virtual lab setup and management  
+- Linux and Windows administration  
+- Network isolation and safe testing  
+- Service enumeration and analysis  
+- Vulnerability assessment  
+- Controlled exploitation techniques  
+- Intrusion detection and monitoring  
+- Malware analysis  
+- Packet capture and traffic analysis  
+- Cloud security configuration  
+- Alerting and logging  
+- Evidence collection and reporting  
+- Python scripting and automation  
+- AI-assisted security workflows  
+- Offensive and defensive security analysis  
 
 ---
 
-## Project Portfolio
+## 🛠️ Tools and Technologies
 
-### AWS Cloud Security Lab
-Focuses on foundational AWS security configuration and hardening in a lab environment.
-
-**Key areas:**
-- IAM and account security
-- Secure configuration
-- Cloud security fundamentals
-- Documentation and remediation notes
-
-**Folder:** `aws-cloud-security-lab/`
-
----
-
-### AWS Cloud Security Monitoring Lab
-Focuses on cloud visibility, monitoring, and alerting concepts in AWS.
-
-**Key areas:**
-- Logging and monitoring
-- Cloud visibility
-- Security alerting
-- Cloud operations documentation
-
-**Folder:** `aws-cloud-security-monitoring-lab/`
+- VirtualBox  
+- Kali Linux  
+- Metasploitable 2  
+- Ubuntu Server  
+- Windows  
+- Nmap  
+- Metasploit Framework  
+- Wireshark  
+- Snort  
+- Wazuh  
+- AWS  
+- Python 3  
+- Ollama  
+- LangChain  
+- Linux command line  
+- Git and GitHub  
 
 ---
 
-### Beginner Pentest Lab
-A beginner-friendly offensive security lab using Kali Linux and Metasploitable 2 in an isolated VirtualBox network.
+## 📁 Project Portfolio
 
-**Key areas:**
-- Service enumeration
-- Vulnerability identification
-- Metasploit usage
-- Exploitation basics
-- Post-exploitation validation
-- Pentest reporting
+### ☁️ AWS Cloud Security Lab
+Focus: foundational AWS security configuration and hardening.
 
-**Folder:** `beginner-pentest-lab/`
+#### Key Areas
+- IAM and account security  
+- Secure configuration  
+- Cloud security fundamentals  
 
----
-
-### Malware Analysis Lab
-Documents hands-on malware analysis workflow and investigation in a controlled lab environment.
-
-**Key areas:**
-- Safe malware handling
-- Environment setup
-- Behavioral observation
-- Evidence collection
-- Lab documentation
-
-**Folder:** `malware-analysis-lab/`
+📂 `aws-cloud-security-lab/`
 
 ---
 
-### Snort Lab
-Focuses on installing, configuring, and using Snort for intrusion detection and traffic inspection.
+### ☁️ AWS Cloud Security Monitoring Lab
+Focus: cloud visibility, monitoring, and alerting.
 
-**Key areas:**
-- IDS setup
-- Snort configuration
-- Rule validation
-- Packet inspection
-- Defensive monitoring
+#### Key Areas
+- Logging and monitoring  
+- Cloud visibility  
+- Security alerting  
 
-**Folder:** `snort-lab/`
+📂 `aws-cloud-security-monitoring-lab/`
 
 ---
 
-### Vulnerability Assessment Lab
-Documents vulnerability scanning, evidence collection, and interpretation of findings in a lab environment.
+### 💻 Beginner Pentest Lab
+Focus: offensive security fundamentals using Kali Linux and Metasploitable.
 
-**Key areas:**
-- Vulnerability scanning
-- Finding analysis
-- Supporting evidence
-- Remediation-oriented reporting
+#### Key Areas
+- Service enumeration  
+- Vulnerability identification  
+- Exploitation basics  
+- Post-exploitation validation  
 
-**Folder:** `vulnerability-assessment-lab/`
-
----
-
-### Wazuh Lab
-Focuses on host monitoring, detection, alert visibility, and security operations concepts using Wazuh.
-
-**Key areas:**
-- SIEM and XDR concepts
-- Agent-based monitoring
-- Alert review
-- Detection validation
-- Blue-team workflows
-
-**Folder:** `wazuh-lab/`
+📂 `beginner-pentest-lab/`
 
 ---
 
-### AI Log Analysis Agent
-A beginner-friendly AI security project that uses a local LLM through Ollama to analyze Linux authentication logs and generate a SOC-style incident summary.
+### 🦠 Malware Analysis Lab
+Focus: malware investigation in a controlled environment.
 
-**Key areas:**
-- Python scripting
-- Linux log analysis
-- Local LLM deployment
-- AI-assisted security analysis
-- SOC workflow automation
-- Security reporting
+#### Key Areas
+- Safe malware handling  
+- Behavioral analysis  
+- Evidence collection  
 
-**Folder:** `log-agent/`
+📂 `malware-analysis-lab/`
 
 ---
 
-### AI Vulnerability Scanner Agent
-A beginner-friendly AI-assisted vulnerability analysis project that uses Nmap scan results from a controlled lab target and a local LLM through Ollama to generate a security-focused assessment.
+### 🚨 Snort Lab
+Focus: intrusion detection and traffic inspection.
 
-**Key areas:**
-- Network scanning
-- Service/version analysis
-- Python scripting
-- Local LLM deployment
-- AI-assisted vulnerability review
-- Security reporting
+#### Key Areas
+- IDS setup  
+- Rule validation  
+- Packet analysis  
 
-**Folder:** `vuln-scan-agent/`
+📂 `snort-lab/`
 
 ---
 
-### Red vs Blue AI Agent Lab
-A beginner-friendly multi-agent cybersecurity project that simulates a simple red team versus blue team workflow using local AI.
+### 🔍 Vulnerability Assessment Lab
+Focus: vulnerability scanning and reporting.
 
-**Key areas:**
-- Multi-agent security reasoning
-- Offensive security analysis
-- Defensive security analysis
-- Python scripting
-- Local LLM deployment
-- Security reporting
+#### Key Areas
+- Vulnerability scanning  
+- Findings analysis  
+- Remediation-focused reporting  
 
-**Folder:** `red-blue-agent-lab/`
+📂 `vulnerability-assessment-lab/`
 
 ---
 
-## Repository Structure
+### 🛡️ Wazuh Lab
+Focus: SIEM monitoring and alert visibility.
+
+#### Key Areas
+- Endpoint monitoring  
+- Alert analysis  
+- Detection workflows  
+
+📂 `wazuh-lab/`
+
+---
+
+### 🛡️ Wazuh Detection Engineering (Next Steps)
+Focus: building custom detection rules and advancing SIEM capabilities.
+
+#### Key Areas
+- Brute-force detection (Event ID 4625)  
+- Custom rule creation  
+- Log correlation  
+- Alert validation and tuning  
+- Troubleshooting SIEM issues  
+
+📂 `wazuh-lab next steps/`
+
+---
+
+### 🤖 AI Log Analysis Agent
+Focus: AI-driven log analysis using a local LLM.
+
+#### Key Areas
+- Log parsing  
+- AI-assisted analysis  
+- SOC-style reporting  
+
+📂 `log-agent/`
+
+---
+
+### 🤖 AI Vulnerability Scanner Agent
+Focus: AI-assisted vulnerability analysis.
+
+#### Key Areas
+- Network scanning  
+- Service analysis  
+- AI-driven reporting  
+
+📂 `vuln-scan-agent/`
+
+---
+
+### ⚔️ Red vs Blue AI Agent Lab
+Focus: simulated adversarial workflows using AI.
+
+#### Key Areas
+- Offensive vs defensive reasoning  
+- Multi-agent workflows  
+- Security automation  
+
+📂 `red-blue-agent-lab/`
+
+---
+
+## 🗂️ Repository Structure
 
     home-soc-lab-wazuh/
     ├── aws-cloud-security-lab/
@@ -214,44 +210,47 @@ A beginner-friendly multi-agent cybersecurity project that simulates a simple re
     ├── vulnerability-assessment-lab/
     ├── vuln-scan-agent/
     ├── wazuh-lab/
+    ├── wazuh-lab next steps/
     └── README.md
 
 ---
 
-## Documentation Standard
+## 📝 Documentation Standard
 
-Each lab in this repository is intended to include some combination of:
+Each lab includes:
 
-- A project-specific `README.md`
-- Notes or observations
-- Screenshots
-- Scan results, logs, or raw evidence
-- A final write-up or report
-- Remediation notes where applicable
-
-This structure helps keep projects organized and makes the repository easier to review as a technical portfolio.
+- README  
+- Notes  
+- Screenshots  
+- Logs or scan outputs  
+- Final write-up  
+- Remediation notes  
 
 ---
 
-## Lab Principles
+## 🔒 Lab Principles
 
-All work documented in this repository follows these principles:
-
-- Use isolated lab environments
-- Avoid unauthorized or production targets
-- Document work clearly
-- Save supporting evidence whenever possible
-- Focus on learning, validation, and communication
+- Use isolated environments  
+- Avoid production targets  
+- Document clearly  
+- Preserve evidence  
+- Focus on learning and validation  
 
 ---
 
-## Why This Repository Matters
+## 🚀 Why This Repository Matters
 
-This repository is meant to show practical development over time, not just tool usage. It reflects the ability to:
+This repository demonstrates the ability to:
 
-- Build and manage cybersecurity lab environments
-- Apply technical concepts in practice
-- Troubleshoot issues during setup and execution
-- Organize findings clearly
-- Create professional, reviewable documentation
-- Explore emerging security workflows involving local AI tools
+- Build cybersecurity lab environments  
+- Apply concepts in real scenarios  
+- Troubleshoot technical issues  
+- Analyze and interpret results  
+- Communicate findings clearly  
+- Explore AI-assisted security workflows  
+
+---
+
+## 📈 Ongoing Development
+
+This repository continues to expand with new labs, improved documentation, and more advanced detection and automation projects.
