@@ -1,0 +1,6 @@
+<group name="windows,authentication,bruteforce">
+  <rule id="100002" level="12" frequency="5" timeframe="60">
+    <if_matched_sid>60122</if_matched_sid>
+    <description>Possible brute-force attack: multiple failed logins in 60 seconds</description>
+  </rule>
+</group>
