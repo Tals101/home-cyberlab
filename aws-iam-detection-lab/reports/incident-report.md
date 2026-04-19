@@ -48,14 +48,3 @@ No successful privilege escalation occurred. The activity indicates attempted un
 
 - Alerting via SNS enables real-time awareness
 
-## Recommendations
-
-- Expand detection rules to include:
-
-- CreateAccessKey events
-
-- Root account usage
-
-- Implement automated response using AWS Lambda
-
-- Integrate logs into a centralized SIEM (e.g., Wazuh)
