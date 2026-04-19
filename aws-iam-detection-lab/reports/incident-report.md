@@ -1,80 +1,61 @@
-\# Incident Report: Unauthorized IAM Activity Detection
+# Incident Report: Unauthorized IAM Activity Detection
 
-
-
-\## Summary
+## Summary
 
 An unauthorized IAM action was detected involving a low-privileged user attempting to escalate permissions within the AWS environment.
 
+## Timeline
 
+- User configured AWS CLI using compromised credentials
 
-\## Timeline
+- Attacker enumerated IAM users and permissions
 
-\- User configured AWS CLI using compromised credentials
+- Attacker attempted to attach AdministratorAccess policy
 
-\- Attacker enumerated IAM users and permissions
+- Action failed with AccessDenied
 
-\- Attacker attempted to attach AdministratorAccess policy
+- Detection triggered via CloudWatch metric filter
 
-\- Action failed with AccessDenied
+- Alert generated via CloudWatch alarm
 
-\- Detection triggered via CloudWatch metric filter
+- Notification received via SNS email
 
-\- Alert generated via CloudWatch alarm
-
-\- Notification received via SNS email
-
-
-
-\## Detection Method
+## Detection Method
 
 Detection was implemented using a CloudWatch Logs metric filter:
 
-
-
-`{ $.errorCode = "\*AccessDenied\*" }`
-
-
+{ $.errorCode = "\*AccessDenied\*" }
 
 This filter captures failed or unauthorized API calls.
 
-
-
-\## Impact
+## Impact
 
 No successful privilege escalation occurred. The activity indicates attempted unauthorized access and privilege escalation.
 
+## Response
 
+- Activity was monitored and validated
 
-\## Response
+- Detection pipeline confirmed functional
 
-\- Activity was monitored and validated
+- No remediation required (lab environment)
 
-\- Detection pipeline confirmed functional
+## Lessons Learned
 
-\- No remediation required (lab environment)
+- AccessDenied events are strong indicators of suspicious behavior
 
+- CloudTrail + CloudWatch can provide effective detection without additional tools
 
+- Alerting via SNS enables real-time awareness
 
-\## Lessons Learned
+## Recommendations
 
-\- AccessDenied events are strong indicators of suspicious behavior
+- Expand detection rules to include:
 
-\- CloudTrail + CloudWatch can provide effective detection without additional tools
+- CreateAccessKey events
 
-\- Alerting via SNS enables real-time awareness
+- Root account usage
 
+- Implement automated response using AWS Lambda
 
-
-\## Recommendations
-
-\- Expand detection rules to include:
-
-&#x20; - CreateAccessKey events
-
-&#x20; - Root account usage
-
-\- Implement automated response using AWS Lambda
-
-\- Integrate logs into a centralized SIEM (e.g., Wazuh)
-
+- Integrate logs into a centralized SIEM (e.g., Wazuh)
