@@ -1,150 +1,115 @@
-\# AWS IAM Attack Simulation \& Detection Lab
+# AWS IAM Attack Simulation & Detection Lab
 
-
-
-\## Project Summary
+## Project Summary
 
 This project demonstrates a cloud-native detection and alerting pipeline in AWS by simulating real-world IAM attack scenarios and building monitoring to detect them.
 
-
-
 The lab integrates CloudTrail, CloudWatch Logs, metric filters, alarms, and SNS to create a full detection workflow from attacker activity to real-time alerting.
 
-
-
-\## Why This Project Matters
+## Why This Project Matters
 
 This project goes beyond basic cloud setup by simulating attacker behavior and validating detection capabilities. It demonstrates practical cloud security monitoring, detection engineering, and incident response concepts.
 
+## Skills Demonstrated
 
+- AWS Cloud Security
 
-\## Skills Demonstrated
+- Detection Engineering
 
-\- AWS Cloud Security
+- IAM Security Monitoring
 
-\- Detection Engineering
+- CloudWatch and CloudTrail Integration
 
-\- IAM Security Monitoring
+- Incident Response Workflow
 
-\- CloudWatch and CloudTrail Integration
+- CLI-based Attack Simulation
 
-\- Incident Response Workflow
+## Lab Environment
 
-\- CLI-based Attack Simulation
+### Technologies Used
 
+- AWS CloudTrail
 
+- AWS CloudWatch Logs
 
-\## Lab Environment
+- AWS CloudWatch Alarms
 
+- AWS SNS
 
+- AWS IAM
 
-\### Technologies Used
+- AWS CLI
 
-\- AWS CloudTrail
+### Components
 
-\- AWS CloudWatch Logs
+- CloudTrail logging across the account
 
-\- AWS CloudWatch Alarms
+- CloudWatch log ingestion
 
-\- AWS SNS
+- Metric filters for detection
 
-\- AWS IAM
+- Alarm-based alerting
 
-\- AWS CLI
+- SNS email notifications
 
+- IAM user used for attack simulation
 
-
-\### Components
-
-\- CloudTrail logging across the account
-
-\- CloudWatch log ingestion
-
-\- Metric filters for detection
-
-\- Alarm-based alerting
-
-\- SNS email notifications
-
-\- IAM user used for attack simulation
-
-
-
-\## Attack Simulation
+## Attack Simulation
 
 The following attacker behaviors were simulated using AWS CLI:
 
+- Enumerating IAM users
 
+- Checking attached policies
 
-\- Enumerating IAM users
+- Attempting privilege escalation with AttachUserPolicy
 
-\- Checking attached policies
+- Attempting persistence with CreateAccessKey
 
-\- Attempting privilege escalation with `AttachUserPolicy`
-
-\- Attempting persistence with `CreateAccessKey`
-
-
-
-\## Detection Engineering
+## Detection Engineering
 
 A metric filter was created to detect unauthorized actions.
 
+**Filter Pattern**
 
-
-\*\*Filter Pattern\*\*
-
-`{ $.errorCode = "\*AccessDenied\*" }`
-
-
+{ $.errorCode = "\*AccessDenied\*" }
 
 This captures failed or unauthorized API actions, which are common indicators of attacker activity.
 
+## Alerting
 
+- CloudWatch Alarm triggers when AccessDenied events are greater than or equal to 1
 
-\## Alerting
+- SNS sends real-time email alerts
 
-\- CloudWatch Alarm triggers when AccessDenied events are greater than or equal to 1
+- Alerts confirm the detection pipeline is working
 
-\- SNS sends real-time email alerts
-
-\- Alerts confirm the detection pipeline is working
-
-
-
-\## Outcome
+## Outcome
 
 Successfully built and validated a cloud detection pipeline:
 
+Attacker Action → CloudTrail Log → CloudWatch Detection → Alarm → SNS Alert
 
-
-`Attacker Action → CloudTrail Log → CloudWatch Detection → Alarm → SNS Alert`
-
-
-
-\## Project Evidence
+## Project Evidence
 
 Screenshots to add:
 
-\- CloudTrail configuration
+- CloudTrail configuration
 
-\- Log group activity
+- Log group activity
 
-\- Metric filter setup
+- Metric filter setup
 
-\- Alarm configuration
+- Alarm configuration
 
-\- SNS alert email
+- SNS alert email
 
-\- CLI attack commands
+- CLI attack commands
 
+## Future Improvements
 
+- Add automated response using AWS Lambda
 
-\## Future Improvements
+- Expand detection rules for root login and key creation
 
-\- Add automated response using AWS Lambda
-
-\- Expand detection rules for root login and key creation
-
-\- Forward logs to an external SIEM such as Wazuh
-
+- Forward logs to an external SIEM such as Wazuh
