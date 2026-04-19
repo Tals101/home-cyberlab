@@ -106,10 +106,4 @@ Screenshots to add:
 
 - CLI attack commands
 
-## Future Improvements
 
-- Add automated response using AWS Lambda
-
-- Expand detection rules for root login and key creation
-
-- Forward logs to an external SIEM such as Wazuh
