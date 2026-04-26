@@ -1,0 +1,10 @@
+Disabled Telnet (xinetd)
+/etc/init.d/xinetd stop
+
+Removed FTP (vsftpd backdoor)
+/etc/init.d/vsftpd stop
+update-rc.d vsftpd disable
+
+Disabled SMB (Samba)
+killall smbd nmbd
+/etc/init.d/samba stop
