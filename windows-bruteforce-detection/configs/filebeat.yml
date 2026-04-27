@@ -1,0 +1,13 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/ossec/logs/alerts/alerts.json
+
+output.elasticsearch:
+  hosts: ["https://127.0.0.1:9200"]
+  username: "admin"
+  password: "REDACTED"
+
+setup.template.enabled: true
+setup.ilm.enabled: false

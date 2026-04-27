@@ -1,0 +1,74 @@
+[
+  {
+    "@timestamp": "2026-04-27T17:36:40.709Z",
+    "agent": {
+      "name": "WIN-LAB-FRESH",
+      "id": "002"
+    },
+    "rule": {
+      "id": "60122",
+      "level": 5,
+      "description": "Logon Failure - Unknown user or bad password"
+    },
+    "data": {
+      "win": {
+        "system": {
+          "eventID": "4625"
+        },
+        "eventdata": {
+          "TargetUserName": "test",
+          "IpAddress": "192.168.56.111"
+        }
+      }
+    },
+    "full_log": "An account failed to log on."
+  },
+  {
+    "@timestamp": "2026-04-27T17:36:40.675Z",
+    "agent": {
+      "name": "WIN-LAB-FRESH",
+      "id": "002"
+    },
+    "rule": {
+      "id": "60122",
+      "level": 5,
+      "description": "Logon Failure - Unknown user or bad password"
+    },
+    "data": {
+      "win": {
+        "system": {
+          "eventID": "4625"
+        },
+        "eventdata": {
+          "TargetUserName": "admin",
+          "IpAddress": "192.168.56.111"
+        }
+      }
+    },
+    "full_log": "An account failed to log on."
+  },
+  {
+    "@timestamp": "2026-04-27T17:36:40.665Z",
+    "agent": {
+      "name": "WIN-LAB-FRESH",
+      "id": "002"
+    },
+    "rule": {
+      "id": "60122",
+      "level": 5,
+      "description": "Logon Failure - Unknown user or bad password"
+    },
+    "data": {
+      "win": {
+        "system": {
+          "eventID": "4625"
+        },
+        "eventdata": {
+          "TargetUserName": "guest",
+          "IpAddress": "192.168.56.111"
+        }
+      }
+    },
+    "full_log": "An account failed to log on."
+  }
+]
