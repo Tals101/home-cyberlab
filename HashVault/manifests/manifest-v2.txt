@@ -1,0 +1,6 @@
+HashVault Manifest
+Created: Sun May  3 11:30:52 EDT 2026
+Target: test_files
+--------------------------------
+5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03 *test_files/a.txt
+d5412ba2881932dc58ee856fca78a38d863b758736a2357eb466c1c6cc8cd6ba *test_files/b.txt
