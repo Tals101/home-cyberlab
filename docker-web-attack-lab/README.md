@@ -1,228 +1,163 @@
-\# Vulnerable Web App Attack Lab (DVWA + OWASP Juice Shop)
+# Vulnerable Web App Attack Lab (DVWA + OWASP Juice Shop)
 
-
-
-\## Project Summary
+## Project Summary
 
 This project demonstrates a full attack workflow against intentionally vulnerable web applications using a containerized lab environment. The lab includes DVWA for classic vulnerabilities and OWASP Juice Shop for modern web application attacks.
 
-
-
 The objective was not only to identify vulnerabilities, but to exploit them, validate access, and demonstrate real-world impact.
 
+---
 
-
-\---
-
-
-
-\## Why This Project Matters
+## Why This Project Matters
 
 Many cybersecurity labs stop at detection. This project goes further by simulating how an attacker:
 
+- Discovers targets
 
+- Exploits vulnerabilities
 
-\- Discovers targets
+- Extracts sensitive data
 
-\- Exploits vulnerabilities
+- Escalates privileges
 
-\- Extracts sensitive data
-
-\- Escalates privileges
-
-\- Validates unauthorized access
-
-
+- Validates unauthorized access
 
 This mirrors real-world attack behavior and aligns with OWASP Top 10 risks.
 
+---
 
+## Lab Environment
 
-\---
+### Technologies Used
 
+- Docker / Docker Compose
 
+- Kali Linux (Attacker)
 
-\## Lab Environment
+- DVWA (Damn Vulnerable Web Application)
 
+- OWASP Juice Shop
 
+- Tools: Nmap, SQLMap, Gobuster, John the Ripper
 
-\### Technologies Used
-
-\- Docker / Docker Compose
-
-\- Kali Linux (Attacker)
-
-\- DVWA (Damn Vulnerable Web Application)
-
-\- OWASP Juice Shop
-
-\- Tools: Nmap, SQLMap, Gobuster, John the Ripper
-
-
-
-\### Architecture
+### Architecture
 
 Kali Linux container attacking vulnerable web applications over an internal Docker network.
 
+---
 
+## Attack Workflow
 
-\---
+### 1. Reconnaissance
 
+- Used Nmap to scan internal Docker network
 
+- Identified DVWA service on port 80
 
-\## Attack Workflow
+### 2. SQL Injection Exploitation (DVWA)
 
+- Identified injectable parameter using SQLMap
 
+- Bypassed authentication using session cookies
 
-\### 1. Reconnaissance
+- Confirmed SQL injection vulnerability
 
-\- Used Nmap to scan internal Docker network
+### 3. Database Enumeration
 
-\- Identified DVWA service on port 80
+- Enumerated available databases
 
+- Identified dvwa database
 
+- Extracted table structure
 
-\### 2. SQL Injection Exploitation (DVWA)
+### 4. Credential Extraction
 
-\- Identified injectable parameter using SQLMap
+- Dumped users table
 
-\- Bypassed authentication using session cookies
+- Retrieved usernames and password hashes
 
-\- Confirmed SQL injection vulnerability
+### 5. Hash Analysis
 
+- Identified MD5 password hashes
 
+- Validated password via hashing comparison
 
-\### 3. Database Enumeration
+### 6. Transition to Modern App (Juice Shop)
 
-\- Enumerated available databases
+- Performed directory enumeration using Gobuster
 
-\- Identified `dvwa` database
+- Identified API-based architecture
 
-\- Extracted table structure
+### 7. Authentication Attacks
 
+- Tested login bypass techniques
 
+- Identified weak admin credentials
 
-\### 4. Credential Extraction
+### 8. Privilege Escalation
 
-\- Dumped `users` table
+- Logged in as admin user
 
-\- Retrieved usernames and password hashes
+- Extracted JWT token
 
+- Decoded token to confirm admin role
 
+### 9. Broken Access Control Exploitation
 
-\### 5. Hash Analysis
+- Accessed hidden admin endpoint: /#/administration
 
-\- Identified MD5 password hashes
+- Viewed full user list (unauthorized data exposure)
 
-\- Validated password via hashing comparison
+---
 
+## Key Findings
 
+- SQL Injection vulnerability (DVWA)
 
-\### 6. Transition to Modern App (Juice Shop)
+- Weak authentication controls
 
-\- Performed directory enumeration using Gobuster
+- Insecure credential storage (MD5)
 
-\- Identified API-based architecture
+- Exposed API endpoints
 
+- Weak admin credentials
 
+- Broken Access Control in Juice Shop
 
-\### 7. Authentication Attacks
+- Sensitive data exposure (user list)
 
-\- Tested login bypass techniques
+---
 
-\- Identified weak admin credentials
+## Skills Demonstrated
 
+- Network reconnaissance (Nmap)
 
+- Web exploitation (SQL Injection)
 
-\### 8. Privilege Escalation
+- Automated exploitation tools (SQLMap)
 
-\- Logged in as admin user
+- Directory brute forcing (Gobuster)
 
-\- Extracted JWT token
+- Credential extraction and analysis
 
-\- Decoded token to confirm admin role
+- Hash identification and validation
 
+- API analysis and manipulation
 
+- JWT decoding and inspection
 
-\### 9. Broken Access Control Exploitation
+- Privilege escalation techniques
 
-\- Accessed hidden admin endpoint: `/#/administration`
+- Understanding of OWASP Top 10 vulnerabilities
 
-\- Viewed full user list (unauthorized data exposure)
+---
 
+## Key Takeaways
 
+- Vulnerability identification is only the first step — exploitation and validation are critical
 
-\---
+- Modern applications rely heavily on APIs and tokens (JWT)
 
+- Broken Access Control is one of the most impactful vulnerabilities
 
-
-\## Key Findings
-
-
-
-\- SQL Injection vulnerability (DVWA)
-
-\- Weak authentication controls
-
-\- Insecure credential storage (MD5)
-
-\- Exposed API endpoints
-
-\- Weak admin credentials
-
-\- Broken Access Control in Juice Shop
-
-\- Sensitive data exposure (user list)
-
-
-
-\---
-
-
-
-\## Skills Demonstrated
-
-
-
-\- Network reconnaissance (Nmap)
-
-\- Web exploitation (SQL Injection)
-
-\- Automated exploitation tools (SQLMap)
-
-\- Directory brute forcing (Gobuster)
-
-\- Credential extraction and analysis
-
-\- Hash identification and validation
-
-\- API analysis and manipulation
-
-\- JWT decoding and inspection
-
-\- Privilege escalation techniques
-
-\- Understanding of OWASP Top 10 vulnerabilities
-
-
-
-\---
-
-
-
-\## Key Takeaways
-
-
-
-\- Vulnerability identification is only the first step — exploitation and validation are critical
-
-\- Modern applications rely heavily on APIs and tokens (JWT)
-
-\- Broken Access Control is one of the most impactful vulnerabilities
-
-\- Attackers chain multiple weaknesses together to escalate access
-
-
-
-\---
-
+- Attackers chain multiple weaknesses together to escalate access
