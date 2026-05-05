@@ -1,296 +1,184 @@
-\# Phase 2 — Advanced Web App \& Infrastructure Attack Lab
+# Phase 2 — Advanced Web App & Infrastructure Attack Lab
 
-
-
-\## Project Summary
-
-
+## Project Summary
 
 This phase builds a custom vulnerable environment to simulate real-world attacks beyond basic web vulnerabilities. It focuses on infrastructure misconfigurations, weak authentication, and internal network access.
 
-
-
 The lab includes:
 
-\- Custom Flask web application
+- Custom Flask web application
 
-\- Nginx reverse proxy (intentionally misconfigured)
+- Nginx reverse proxy (intentionally misconfigured)
 
-\- Internal Docker service for lateral movement
+- Internal Docker service for lateral movement
 
-\- Kali Linux attacker container
-
-
+- Kali Linux attacker container
 
 The goal was to demonstrate how attackers move from initial access to deeper system compromise.
 
+---
 
+## Objectives
 
-\---
+- Exploit reverse proxy misconfiguration
 
+- Access exposed internal endpoints
 
+- Bypass weak authentication mechanisms
 
-\## Objectives
+- Perform lateral movement inside the network
 
+- Observe attack activity through logs
 
+---
 
-\- Exploit reverse proxy misconfiguration  
-
-\- Access exposed internal endpoints  
-
-\- Bypass weak authentication mechanisms  
-
-\- Perform lateral movement inside the network  
-
-\- Observe attack activity through logs  
-
-
-
-\---
-
-
-
-\## Lab Architecture
-
-
+## Lab Architecture
 
 Kali Linux (attacker) interacts with:
 
+- Nginx Reverse Proxy (entry point)
 
+- Vulnerable Flask App (backend service)
 
-\- Nginx Reverse Proxy (entry point)
-
-\- Vulnerable Flask App (backend service)
-
-\- Internal container (`internal\_app`) not exposed externally
-
-
+- Internal container (internal\_app) not exposed externally
 
 All components run inside a Docker network.
 
+---
 
+## Key Attack Scenarios
 
-\---
+### 1. Debug Endpoint Exposure
 
+**Action:**
 
-
-\## Key Attack Scenarios
-
-
-
-\### 1. Debug Endpoint Exposure
-
-
-
-\*\*Action:\*\*
-
-```
 
 curl http://nginx/debug
 
-```
+**Result:**
 
+- Environment variables exposed
 
+- Internal system details revealed
 
-\*\*Result:\*\*
+---
 
-\- Environment variables exposed  
+### 2. Header-Based Authentication Bypass
 
-\- Internal system details revealed  
+**Action:**
 
-
-
-\---
-
-
-
-\### 2. Header-Based Authentication Bypass
-
-
-
-\*\*Action:\*\*
-
-```
 
 curl -H "X-Admin-Token: letmein" http://nginx/admin
 
-```
+**Result:**
 
+- Unauthorized admin access
 
+- Sensitive data exposed
 
-\*\*Result:\*\*
+---
 
-\- Unauthorized admin access  
+### 3. Broken Authentication (Token Bypass)
 
-\- Sensitive data exposed  
+**Action:**
 
-
-
-\---
-
-
-
-\### 3. Broken Authentication (Token Bypass)
-
-
-
-\*\*Action:\*\*
-
-```
 
 curl -H "Authorization: notadminbutcontainsadmin" http://nginx/admin
 
-```
+**Result:**
 
+- Authentication bypass successful
 
+- Admin privileges granted
 
-\*\*Result:\*\*
+---
 
-\- Authentication bypass successful  
+### 4. Lateral Movement
 
-\- Admin privileges granted  
+**Action:**
 
-
-
-\---
-
-
-
-\### 4. Lateral Movement
-
-
-
-\*\*Action:\*\*
-
-```
 
 nmap internal\_app
 
 curl http://internal\_app
 
-```
+**Result:**
 
+- Internal service discovered
 
+- Successful access from attacker container
 
-\*\*Result:\*\*
+---
 
-\- Internal service discovered  
+### 5. Detection via Logs
 
-\- Successful access from attacker container  
+**Observation:**
 
+- Nginx logs show:
 
-
-\---
-
-
-
-\### 5. Detection via Logs
-
-
-
-\*\*Observation:\*\*
-
-\- Nginx logs show:
-
-```
 
 GET /admin HTTP/1.1
 
-```
+**Takeaway:**
 
+- Attack activity is visible through logging
 
+---
 
-\*\*Takeaway:\*\*
+## Key Findings
 
-\- Attack activity is visible through logging  
+- Reverse proxy misconfiguration exposes internal endpoints
 
+- Weak header-based authentication is easily bypassed
 
+- Improper token validation leads to full privilege escalation
 
-\---
+- Internal services are accessible once inside the network
 
+- Logs provide basic but valuable detection capability
 
+---
 
-\## Key Findings
+## Skills Demonstrated
 
+- Reverse proxy exploitation
 
+- Authentication bypass techniques
 
-\- Reverse proxy misconfiguration exposes internal endpoints  
+- API interaction and manipulation
 
-\- Weak header-based authentication is easily bypassed  
+- Lateral movement concepts
 
-\- Improper token validation leads to full privilege escalation  
+- Internal network enumeration
 
-\- Internal services are accessible once inside the network  
+- Log-based detection analysis
 
-\- Logs provide basic but valuable detection capability  
+---
 
+## Tools Used
 
+- Docker / Docker Compose
 
-\---
+- Kali Linux
 
+- Nmap
 
+- Curl
 
-\## Skills Demonstrated
+- Flask
 
+- Nginx
 
+---
 
-\- Reverse proxy exploitation  
+## Key Takeaways
 
-\- Authentication bypass techniques  
+- Misconfigured infrastructure can expose critical functionality
 
-\- API interaction and manipulation  
+- Authentication must be properly validated (not string-based checks)
 
-\- Lateral movement concepts  
+- Internal networks are not inherently secure
 
-\- Internal network enumeration  
+- Attackers chain multiple weaknesses to escalate access
 
-\- Log-based detection analysis  
-
-
-
-\---
-
-
-
-\## Tools Used
-
-
-
-\- Docker / Docker Compose  
-
-\- Kali Linux  
-
-\- Nmap  
-
-\- Curl  
-
-\- Flask  
-
-\- Nginx  
-
-
-
-\---
-
-
-
-\## Key Takeaways
-
-
-
-\- Misconfigured infrastructure can expose critical functionality  
-
-\- Authentication must be properly validated (not string-based checks)  
-
-\- Internal networks are not inherently secure  
-
-\- Attackers chain multiple weaknesses to escalate access  
-
-\- Logging is essential for visibility and detection  
-
-
-
-\---
-
-
-
+- Logging is essential for visibility and detection
