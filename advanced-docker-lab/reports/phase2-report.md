@@ -1,298 +1,163 @@
-\# Phase 2 — Advanced Web Application \& Infrastructure Exploitation Report  
+# Phase 2 — Advanced Web Application & Infrastructure Exploitation Report
 
-\*\*Project:\*\* Advanced Docker Security Lab  
+**Project:** Advanced Docker Security Lab
 
-\*\*Date:\*\* May 2026  
+**Date:** May 2026
 
+---
 
-
-\---
-
-
-
-\## 1. Executive Summary
-
-
+## 1. Executive Summary
 
 This phase extends the lab into infrastructure and authentication weaknesses. The objective was to simulate how an attacker moves beyond initial access into deeper system compromise.
 
-
-
 The lab demonstrated:
 
-\- Information disclosure via reverse proxy misconfiguration  
+- Information disclosure via reverse proxy misconfiguration
 
-\- Authentication bypass  
+- Authentication bypass
 
-\- Internal network access (lateral movement)  
+- Internal network access (lateral movement)
 
-\- Detection through logs  
+- Detection through logs
 
+---
 
+## 2. Scope
 
-\---
+**Targets:**
 
+- Vulnerable Flask application
 
+- Nginx reverse proxy
 
-\## 2. Scope
+- Internal container service
 
+**Environment:**
 
+- Docker network
 
-\*\*Targets:\*\*
+- Kali Linux attacker container
 
-\- Vulnerable Flask application  
+---
 
-\- Nginx reverse proxy  
+## 3. Methodology
 
-\- Internal container service  
+1. Reconnaissance
 
+2. Service Enumeration
 
+3. Misconfiguration Discovery
 
-\*\*Environment:\*\*
+4. Exploitation
 
-\- Docker network  
+5. Post-Exploitation
 
-\- Kali Linux attacker container  
+6. Lateral Movement
 
+7. Detection
 
+---
 
-\---
+## 4. Findings
 
+### 4.1 Reverse Proxy Misconfiguration — Debug Endpoint
 
+**Description:**
 
-\## 3. Methodology
+The reverse proxy exposes a /debug endpoint.
 
-
-
-1\. Reconnaissance  
-
-2\. Service Enumeration  
-
-3\. Misconfiguration Discovery  
-
-4\. Exploitation  
-
-5\. Post-Exploitation  
-
-6\. Lateral Movement  
-
-7\. Detection  
-
-
-
-\---
-
-
-
-\## 4. Findings
-
-
-
-\### 4.1 Reverse Proxy Misconfiguration — Debug Endpoint
-
-
-
-\*\*Description:\*\*  
-
-The reverse proxy exposes a `/debug` endpoint.
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Leads to disclosure of environment variables and system data.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```bash
+**Evidence:**
 
 curl http://nginx/debug
+**Result:**
 
-```
+- Environment variables exposed
 
+- System information disclosed
 
+---
 
-\*\*Result:\*\*
+### 4.2 Header-Based Authentication Weakness
 
-\- Environment variables exposed  
+**Description:**
 
-\- System information disclosed  
+The /admin endpoint originally relied on a static header.
 
-
-
-\---
-
-
-
-\### 4.2 Header-Based Authentication Weakness
-
-
-
-\*\*Description:\*\*  
-
-The `/admin` endpoint originally relied on a static header.
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Authentication can be bypassed easily.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```bash
+**Evidence:**
 
 curl -H "X-Admin-Token: letmein" http://nginx/admin
-
-```
-
-
-
-\*\*Result:\*\*
-
-
-
-```json
+**Result:**
 
 "status": "success"
+---
 
-```
+### 4.3 Broken Authentication — Token Bypass
 
+**Description:**
 
+Authentication logic checks if the string "admin" exists in the header.
 
-\---
-
-
-
-\### 4.3 Broken Authentication — Token Bypass
-
-
-
-\*\*Description:\*\*  
-
-Authentication logic checks if the string `"admin"` exists in the header.
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Attackers can craft arbitrary tokens to gain admin access.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```bash
+**Evidence:**
 
 curl -H "Authorization: notadminbutcontainsadmin" http://nginx/admin
-
-```
-
-
-
-\*\*Result:\*\*
-
-
-
-```json
+**Result:**
 
 "status": "success"
+---
 
-```
+### 4.4 Lateral Movement — Internal Service Access
 
-
-
-\---
-
-
-
-\### 4.4 Lateral Movement — Internal Service Access
-
-
-
-\*\*Description:\*\*  
+**Description:**
 
 An internal container is accessible from within the network.
 
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Attackers can pivot to internal services.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```bash
+**Evidence:**
 
 nmap internal\_app
 
 curl http://internal\_app
+**Result:**
 
-```
+- Internal service discovered
 
+- Successful access achieved
 
+---
 
-\*\*Result:\*\*
+### 4.5 Detection — Nginx Logs
 
-\- Internal service discovered  
-
-\- Successful access achieved  
-
-
-
-\---
-
-
-
-\### 4.5 Detection — Nginx Logs
-
-
-
-\*\*Description:\*\*  
+**Description:**
 
 Attack activity is visible in Nginx logs.
 
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Provides detection capability.
 
+**Evidence:**
 
-
-\*\*Evidence:\*\*
-
-
-
-```text
 
 GET /admin HTTP/1.1
 
-```
+---
 
-
-
-\---
-
-
-
-\## 5. Risk Summary
-
-
+## 5. Risk Summary
 
 | Finding | Severity |
 
@@ -308,39 +173,22 @@ GET /admin HTTP/1.1
 
 | Detection via Logs | Informational |
 
+---
 
+## 6. Key Takeaways
 
-\---
+- Reverse proxy misconfigurations can expose internal endpoints
 
+- Weak authentication logic is easily bypassed
 
+- Internal network access enables lateral movement
 
-\## 6. Key Takeaways
+- Logging is critical for detection
 
+---
 
-
-\- Reverse proxy misconfigurations can expose internal endpoints  
-
-\- Weak authentication logic is easily bypassed  
-
-\- Internal network access enables lateral movement  
-
-\- Logging is critical for detection  
-
-
-
-
-
-\---
-
-
-
-\## 7. Conclusion
-
-
+## 7. Conclusion
 
 This phase demonstrates how attackers exploit both application and infrastructure weaknesses to gain deeper access.
 
-
-
 The lab provides a realistic example of modern attack paths and highlights the importance of secure configuration and monitoring.
-
