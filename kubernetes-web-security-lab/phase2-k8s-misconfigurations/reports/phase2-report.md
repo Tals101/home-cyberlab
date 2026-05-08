@@ -1,240 +1,127 @@
-\# Phase 2 — Kubernetes Misconfiguration Exploitation Report
+# Phase 2 — Kubernetes Misconfiguration Exploitation Report
 
-
-
-\## Project Summary
-
-
+## Project Summary
 
 This phase introduced intentional Kubernetes security misconfigurations into the lab environment and demonstrated how an attacker could abuse them from inside the cluster.
 
-
-
 The objective was to understand common Kubernetes risks including root containers, exposed services, and weak RBAC permissions.
 
+---
 
+## Objectives
 
-\---
+- Deploy a container running as root
 
+- Expose an internal application using NodePort
 
+- Create overly permissive RBAC permissions
 
-\## Objectives
+- Abuse service account permissions from inside a pod
 
+- Document security impact with screenshots and commands
 
+---
 
-\- Deploy a container running as root
+## Environment
 
-\- Expose an internal application using NodePort
+- Minikube
 
-\- Create overly permissive RBAC permissions
+- Kubernetes namespace: web-security-lab
 
-\- Abuse service account permissions from inside a pod
+- DVWA
 
-\- Document security impact with screenshots and commands
+- Juice Shop
 
+- Kali attacker pod
 
+- Root test pod
 
-\---
+- RBAC attacker pod
 
+---
 
+## Finding 1 — Container Running as Root
 
-\## Environment
+**Description:**
 
+A pod was deployed with runAsUser: 0, causing the container to run as root.
 
-
-\- Minikube
-
-\- Kubernetes namespace: `web-security-lab`
-
-\- DVWA
-
-\- Juice Shop
-
-\- Kali attacker pod
-
-\- Root test pod
-
-\- RBAC attacker pod
-
-
-
-\---
-
-
-
-\## Finding 1 — Container Running as Root
-
-
-
-\*\*Description:\*\*  
-
-A pod was deployed with `runAsUser: 0`, causing the container to run as root.
-
-
-
-\*\*Evidence:\*\*
-
-
-
-```sh
+**Evidence:**
 
 id
+**Result:**
 
-```
-
-
-
-\*\*Result:\*\*
-
-
-
-```text
 
 uid=0(root)
 
-```
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Running containers as root increases the risk of privilege escalation, abuse of mounted volumes, and more dangerous post-compromise activity.
 
+---
 
+## Finding 2 — Publicly Exposed NodePort Service
 
-\---
-
-
-
-\## Finding 2 — Publicly Exposed NodePort Service
-
-
-
-\*\*Description:\*\*  
+**Description:**
 
 DVWA was exposed using a NodePort service.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```powershell
+**Evidence:**
 
 kubectl get svc -n web-security-lab
+**Result:**
 
-```
-
-
-
-\*\*Result:\*\*
-
-
-
-```text
 
 exposed-dvwa   NodePort   ...   80:32080/TCP
 
-```
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 NodePort services can expose internal applications outside the cluster if not carefully controlled.
 
+---
 
+## Finding 3 — Weak RBAC Permissions
 
-\---
-
-
-
-\## Finding 3 — Weak RBAC Permissions
-
-
-
-\*\*Description:\*\*  
+**Description:**
 
 A service account was granted permission to list pods, services, and secrets.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```powershell
+**Evidence:**
 
 kubectl auth can-i list secrets --as=system:serviceaccount:web-security-lab:vulnerable-sa -n web-security-lab
 
 kubectl auth can-i list pods --as=system:serviceaccount:web-security-lab:vulnerable-sa -n web-security-lab
+**Result:**
 
-```
-
-
-
-\*\*Result:\*\*
-
-
-
-```text
 
 yes
 
 yes
 
-```
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 Overly permissive RBAC allows attackers to enumerate resources and potentially discover sensitive information.
 
+---
 
+## Finding 4 — RBAC Abuse from Inside a Pod
 
-\---
-
-
-
-\## Finding 4 — RBAC Abuse from Inside a Pod
-
-
-
-\*\*Description:\*\*  
+**Description:**
 
 An attacker pod using the weak service account successfully listed pods and services from inside the cluster.
 
-
-
-\*\*Evidence:\*\*
-
-
-
-```sh
+**Evidence:**
 
 kubectl get pods
 
 kubectl get services
-
-```
-
-
-
-\*\*Impact:\*\*  
+**Impact:**
 
 This simulates post-compromise cluster reconnaissance using an overly permissive service account.
 
+---
 
-
-\---
-
-
-
-\## Risk Summary
-
-
+## Risk Summary
 
 | Finding | Severity |
 
@@ -248,59 +135,40 @@ This simulates post-compromise cluster reconnaissance using an overly permissive
 
 | RBAC abuse from pod | High |
 
+---
 
+## Key Takeaways
 
-\---
+- Containers should not run as root unless absolutely required.
 
+- NodePort services can unintentionally expose internal applications.
 
+- RBAC should follow least privilege.
 
-\## Key Takeaways
+- Service accounts can become powerful attack paths if misconfigured.
 
+- A compromised pod can become a foothold for internal Kubernetes reconnaissance.
 
+---
 
-\- Containers should not run as root unless absolutely required.
+## Recommendations
 
-\- NodePort services can unintentionally expose internal applications.
+- Set runAsNonRoot: true
 
-\- RBAC should follow least privilege.
+- Define non-root users in pod security contexts
 
-\- Service accounts can become powerful attack paths if misconfigured.
+- Avoid unnecessary NodePort exposure
 
-\- A compromised pod can become a foothold for internal Kubernetes reconnaissance.
+- Use least-privilege RBAC
 
+- Avoid granting secret access unless required
 
+- Regularly audit service account permissions
 
-\---
+- Use Kubernetes security tools such as kube-bench, kube-hunter, and Falco
 
+---
 
-
-\## Recommendations
-
-
-
-\- Set `runAsNonRoot: true`
-
-\- Define non-root users in pod security contexts
-
-\- Avoid unnecessary NodePort exposure
-
-\- Use least-privilege RBAC
-
-\- Avoid granting secret access unless required
-
-\- Regularly audit service account permissions
-
-\- Use Kubernetes security tools such as kube-bench, kube-hunter, and Falco
-
-
-
-\---
-
-
-
-\## Conclusion
-
-
+## Conclusion
 
 Phase 2 demonstrated how common Kubernetes misconfigurations can create meaningful attack paths inside a cluster. The lab showed how insecure container privileges, exposed services, and weak RBAC permissions can be abused during post-compromise activity.
-
