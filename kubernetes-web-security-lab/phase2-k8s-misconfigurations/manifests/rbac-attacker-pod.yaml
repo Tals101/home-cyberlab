@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rbac-attacker
+  namespace: web-security-lab
+spec:
+  serviceAccountName: vulnerable-sa
+  containers:
+  - name: attacker
+    image: bitnami/kubectl:latest
+    command: ["/bin/sh", "-c", "sleep infinity"]
