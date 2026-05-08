@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: root-pod
+  namespace: web-security-lab
+  labels:
+    app: root-pod
+spec:
+  containers:
+  - name: root-container
+    image: alpine
+    command: ["/bin/sh", "-c", "sleep infinity"]
+    securityContext:
+      runAsUser: 0
+      allowPrivilegeEscalation: true

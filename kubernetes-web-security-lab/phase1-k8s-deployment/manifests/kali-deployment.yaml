@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kali
+  namespace: web-security-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kali
+  template:
+    metadata:
+      labels:
+        app: kali
+    spec:
+      containers:
+      - name: kali
+        image: kalilinux/kali-rolling
+        command: ["/bin/bash", "-c", "sleep infinity"]
+        tty: true
+        stdin: true
