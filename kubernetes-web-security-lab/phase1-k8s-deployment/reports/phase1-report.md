@@ -1,262 +1,153 @@
-\# Phase 1 — Kubernetes Web Application Deployment Lab
+# Phase 1 — Kubernetes Web Application Deployment Lab
 
-
-
-\## Project Summary
-
-
+## Project Summary
 
 This phase focused on recreating a vulnerable web application lab inside a Kubernetes environment using Minikube.
 
-
-
 The objective was to understand Kubernetes networking, deployments, services, and internal pod communication while preparing the environment for later security testing and exploitation phases.
-
-
 
 Applications deployed:
 
-\- DVWA (Damn Vulnerable Web Application)
+- DVWA (Damn Vulnerable Web Application)
 
-\- OWASP Juice Shop
+- OWASP Juice Shop
 
-\- Kali Linux attacker pod
+- Kali Linux attacker pod
 
+---
 
+## Objectives
 
-\---
+- Deploy vulnerable applications into Kubernetes
 
+- Create Kubernetes Services for application access
 
+- Build an attacker pod inside the cluster
 
-\## Objectives
+- Test internal Kubernetes networking
 
+- Perform internal reconnaissance from the attacker pod
 
+---
 
-\- Deploy vulnerable applications into Kubernetes
+## Environment
 
-\- Create Kubernetes Services for application access
+### Platform
 
-\- Build an attacker pod inside the cluster
+- Windows 11
 
-\- Test internal Kubernetes networking
+- Minikube
 
-\- Perform internal reconnaissance from the attacker pod
+- Docker driver
 
+### Applications
 
+- DVWA
 
-\---
+- OWASP Juice Shop
 
+- Kali Linux
 
+### Kubernetes Components
 
-\## Environment
+- Namespace
 
+- Deployments
 
+- Services
 
-\### Platform
+- Pods
 
-\- Windows 11
+---
 
-\- Minikube
+## Kubernetes Deployments
 
-\- Docker driver
-
-
-
-\### Applications
-
-\- DVWA
-
-\- OWASP Juice Shop
-
-\- Kali Linux
-
-
-
-\### Kubernetes Components
-
-\- Namespace
-
-\- Deployments
-
-\- Services
-
-\- Pods
-
-
-
-\---
-
-
-
-\## Kubernetes Deployments
-
-
-
-\### DVWA
+### DVWA
 
 DVWA was deployed as a Kubernetes Deployment with a NodePort Service exposing the application externally.
 
-
-
-\### Juice Shop
+### Juice Shop
 
 OWASP Juice Shop was deployed similarly using a Deployment and NodePort Service.
 
-
-
-\### Kali Attacker Pod
+### Kali Attacker Pod
 
 A Kali Linux pod was deployed to simulate an internal attacker performing reconnaissance and application interaction from inside the cluster.
 
+---
 
+## Internal Reconnaissance
 
-\---
-
-
-
-\## Internal Reconnaissance
-
-
-
-\### DVWA Recon
-
-
-
-```bash
+### DVWA Recon
 
 nmap dvwa-service.web-security-lab.svc.cluster.local
-
-```
-
-
-
 Result:
 
-\- Port 80 identified as open
+- Port 80 identified as open
 
+---
 
-
-\---
-
-
-
-\### Juice Shop Recon
-
-
-
-```bash
+### Juice Shop Recon
 
 nmap juice-service.web-security-lab.svc.cluster.local
-
-```
-
-
-
 Result:
 
-\- Port 3000 identified as open
+- Port 3000 identified as open
 
+---
 
+## Internal HTTP Access
 
-\---
-
-
-
-\## Internal HTTP Access
-
-
-
-\### DVWA HTTP Access
-
-
-
-```bash
+### DVWA HTTP Access
 
 curl -I http://dvwa-service.web-security-lab.svc.cluster.local
-
-```
-
-
-
 Result:
 
-\- HTTP/1.1 302 Found
+- HTTP/1.1 302 Found
 
-\- Redirected to login page
+- Redirected to login page
 
+---
 
-
-\---
-
-
-
-\### Juice Shop HTTP Access
-
-
-
-```bash
+### Juice Shop HTTP Access
 
 curl -I http://juice-service.web-security-lab.svc.cluster.local:3000
-
-```
-
-
-
 Result:
 
-\- HTTP/1.1 200 OK
+- HTTP/1.1 200 OK
 
+---
 
+## Key Takeaways
 
-\---
+- Kubernetes Services enable internal pod-to-pod communication
 
+- Kubernetes DNS allows service discovery using cluster-local names
 
+- Internal reconnaissance inside Kubernetes clusters is straightforward once a pod is compromised
 
-\## Key Takeaways
+- Attackers inside a cluster can enumerate and communicate with internal applications
 
+---
 
+## Skills Demonstrated
 
-\- Kubernetes Services enable internal pod-to-pod communication
+- Kubernetes cluster setup
 
-\- Kubernetes DNS allows service discovery using cluster-local names
+- Kubernetes Deployments
 
-\- Internal reconnaissance inside Kubernetes clusters is straightforward once a pod is compromised
+- Kubernetes Services
 
-\- Attackers inside a cluster can enumerate and communicate with internal applications
+- Namespace management
 
+- Internal service discovery
 
+- Pod-to-pod communication
 
-\---
+- Internal reconnaissance techniques
 
+---
 
-
-\## Skills Demonstrated
-
-
-
-\- Kubernetes cluster setup
-
-\- Kubernetes Deployments
-
-\- Kubernetes Services
-
-\- Namespace management
-
-\- Internal service discovery
-
-\- Pod-to-pod communication
-
-\- Internal reconnaissance techniques
-
-
-
-\---
-
-
-
-\## Conclusion
-
-
+## Conclusion
 
 This phase successfully recreated the vulnerable Docker-based lab environment inside Kubernetes and established the foundation for future Kubernetes security testing and misconfiguration exploitation.
-
