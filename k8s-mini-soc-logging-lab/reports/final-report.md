@@ -1,366 +1,189 @@
-\# Kubernetes Mini SOC Logging \& Detection Lab
+# Kubernetes Mini SOC Logging & Detection Lab
 
-
-
-\## Project Summary
-
-
+## Project Summary
 
 This project focused on building a lightweight Kubernetes SOC-style logging and detection environment using Loki, Promtail, and Grafana inside a Minikube Kubernetes cluster.
 
-
-
 The objective was to centralize Kubernetes logs, generate attacker telemetry, and build detection-oriented dashboards capable of identifying suspicious activity inside containerized workloads.
 
+---
 
+# Technologies Used
 
-\---
+- Kubernetes
 
+- Minikube
 
+- Docker Desktop
 
-\# Technologies Used
+- Helm
 
+- Loki
 
+- Promtail
 
-\- Kubernetes
+- Grafana
 
-\- Minikube
+- Kali Linux
 
-\- Docker Desktop
+---
 
-\- Helm
+# Phase 1 — Centralized Logging Deployment
 
-\- Loki
+## Objectives
 
-\- Promtail
+- Deploy centralized logging infrastructure
 
-\- Grafana
+- Configure Grafana dashboards
 
-\- Kali Linux
+- Integrate Loki log aggregation
 
+- Verify Kubernetes log ingestion
 
+## Components
 
-\---
-
-
-
-\# Phase 1 — Centralized Logging Deployment
-
-
-
-\## Objectives
-
-
-
-\- Deploy centralized logging infrastructure
-
-\- Configure Grafana dashboards
-
-\- Integrate Loki log aggregation
-
-\- Verify Kubernetes log ingestion
-
-
-
-\## Components
-
-
-
-\### Loki
+### Loki
 
 Used as the centralized log aggregation platform.
 
-
-
-\### Promtail
+### Promtail
 
 Collected logs from Kubernetes workloads and forwarded them into Loki.
 
-
-
-\### Grafana
+### Grafana
 
 Provided visualization and SOC-style dashboard capabilities.
 
+---
 
+# Phase 2 — Attack Telemetry Generation
 
-\---
+## Objectives
 
+- Simulate attacker behavior inside Kubernetes
 
+- Generate suspicious container activity
 
-\# Phase 2 — Attack Telemetry Generation
+- Produce telemetry for log analysis
 
+## Activities Performed
 
-
-\## Objectives
-
-
-
-\- Simulate attacker behavior inside Kubernetes
-
-\- Generate suspicious container activity
-
-\- Produce telemetry for log analysis
-
-
-
-\## Activities Performed
-
-
-
-\### Shell Access
-
-
-
-```bash
+### Shell Access
 
 bash
-
-```
-
-
-
-\### Reconnaissance
-
-
-
-```bash
+### Reconnaissance
 
 whoami
 
 id
-
-```
-
-
-
-\### Sensitive File Access
-
-
-
-```bash
+### Sensitive File Access
 
 cat /etc/passwd
-
-```
-
-
-
-\### Failed Command Execution
-
-
-
-```bash
+### Failed Command Execution
 
 fakecommand
-
-```
-
-
-
-\### Network Activity
-
-
-
-```bash
+### Network Activity
 
 curl http://loki:3100/ready
+---
 
-```
+# Phase 3 — SOC Dashboard Development
 
+## Objectives
 
+- Create centralized visibility dashboards
 
-\---
+- Build Kubernetes operational monitoring views
 
+- Develop SOC-oriented workflows
 
+## Dashboard Panels
 
-\# Phase 3 — SOC Dashboard Development
-
-
-
-\## Objectives
-
-
-
-\- Create centralized visibility dashboards
-
-\- Build Kubernetes operational monitoring views
-
-\- Develop SOC-oriented workflows
-
-
-
-\## Dashboard Panels
-
-
-
-\### Mini SOC Kubernetes Logs
+### Mini SOC Kubernetes Logs
 
 General Kubernetes logging visibility.
 
-
-
-\### Kubernetes System Logs
+### Kubernetes System Logs
 
 Cluster infrastructure monitoring.
 
-
-
-\### Error Detection View
+### Error Detection View
 
 Basic error-focused hunting panel.
 
+---
 
+# Phase 4 — Detection Engineering
 
-\---
+## Objectives
 
+- Build attacker behavior detections
 
+- Create hunting queries
 
-\# Phase 4 — Detection Engineering
+- Validate suspicious activity monitoring
 
+## Detection Panels
 
+### Shell Activity Detection
 
-\## Objectives
-
-
-
-\- Build attacker behavior detections
-
-\- Create hunting queries
-
-\- Validate suspicious activity monitoring
-
-
-
-\## Detection Panels
-
-
-
-\### Shell Activity Detection
-
-
-
-```logql
 
 {namespace="mini-soc"} |= "bash"
 
-```
+### Reconnaissance Activity Detection
 
-
-
-\### Reconnaissance Activity Detection
-
-
-
-```logql
 
 {namespace="mini-soc"} |= "whoami"
 
-```
+### Failed Command Detection
 
-
-
-\### Failed Command Detection
-
-
-
-```logql
 
 {namespace="mini-soc"} |= "not found"
 
-```
+### Sensitive File Access Detection
 
-
-
-\### Sensitive File Access Detection
-
-
-
-```logql
 
 {namespace="mini-soc"} |= "passwd"
 
-```
+---
+
+# Key Takeaways
+
+- Kubernetes environments generate significant operational telemetry.
+
+- Centralized logging improves visibility across container workloads.
+
+- Detection engineering concepts can be applied inside Kubernetes environments.
+
+- Loki and Grafana provide lightweight but powerful observability capabilities.
+
+- Attack simulation helps validate monitoring and detection workflows.
+
+---
+
+# Skills Demonstrated
+
+- Kubernetes administration
+
+- Helm package management
+
+- Grafana dashboard development
+
+- Loki log aggregation
+
+- Detection engineering
+
+- Threat hunting
+
+- SOC workflows
+
+- Kubernetes observability
+
+- Attack telemetry generation
 
 
+---
 
-\---
-
-
-
-\# Key Takeaways
-
-
-
-\- Kubernetes environments generate significant operational telemetry.
-
-\- Centralized logging improves visibility across container workloads.
-
-\- Detection engineering concepts can be applied inside Kubernetes environments.
-
-\- Loki and Grafana provide lightweight but powerful observability capabilities.
-
-\- Attack simulation helps validate monitoring and detection workflows.
-
-
-
-\---
-
-
-
-\# Skills Demonstrated
-
-
-
-\- Kubernetes administration
-
-\- Helm package management
-
-\- Grafana dashboard development
-
-\- Loki log aggregation
-
-\- Detection engineering
-
-\- Threat hunting
-
-\- SOC workflows
-
-\- Kubernetes observability
-
-\- Attack telemetry generation
-
-
-
-\---
-
-
-
-\# Future Improvements
-
-
-
-\- Integrate Falco runtime detections
-
-\- Add alerting rules
-
-\- Create Grafana alert notifications
-
-\- Integrate Wazuh or ELK Stack
-
-\- Add Kubernetes NetworkPolicies
-
-\- Build advanced LogQL hunting queries
-
-
-
-\---
-
-
-
-\# Conclusion
-
-
+# Conclusion
 
 This project successfully demonstrated centralized Kubernetes logging, attack telemetry generation, detection engineering workflows, and SOC-style monitoring using Grafana, Loki, and Promtail within a self-hosted Kubernetes environment.
-
