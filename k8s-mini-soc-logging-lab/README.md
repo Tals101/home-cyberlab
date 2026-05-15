@@ -1,222 +1,161 @@
-\# Kubernetes Mini SOC Logging \& Detection Lab
-
-
+# Kubernetes Mini SOC Logging & Detection Lab
 
 A Kubernetes-focused SOC and detection engineering lab built using Minikube, Loki, Promtail, and Grafana to centralize logs, generate attack telemetry, and create detection-oriented monitoring dashboards.
 
+---
 
-
-\---
-
-
-
-\# Project Summary
-
-
+# Project Summary
 
 This project demonstrates how centralized logging and detection engineering concepts can be implemented inside a Kubernetes environment.
 
-
-
 The lab focused on:
 
-\- centralized log aggregation
+- centralized log aggregation
 
-\- Kubernetes observability
+- Kubernetes observability
 
-\- attack telemetry generation
+- attack telemetry generation
 
-\- SOC dashboard development
+- SOC dashboard development
 
-\- detection engineering workflows
-
-
+- detection engineering workflows
 
 The environment was built entirely inside a self-hosted Kubernetes lab using Minikube.
 
+---
 
+# Technologies Used
 
-\---
+- Kubernetes
 
+- Minikube
 
+- Docker Desktop
 
-\# Technologies Used
+- Helm
 
+- Loki
 
+- Promtail
 
-\- Kubernetes
+- Grafana
 
-\- Minikube
+- Kali Linux
 
-\- Docker Desktop
+---
 
-\- Helm
+# Project Phases
 
-\- Loki
+## Phase 1 — Centralized Logging Deployment
 
-\- Promtail
+### Objectives
 
-\- Grafana
+- Deploy Loki logging infrastructure
 
-\- Kali Linux
+- Configure Promtail log collection
 
+- Install Grafana dashboards
 
+- Verify Kubernetes log ingestion
 
-\---
+### Skills Demonstrated
 
+- Kubernetes administration
 
+- Helm deployments
 
-\# Project Phases
+- Log aggregation
 
+- Kubernetes observability
 
+---
 
-\## Phase 1 — Centralized Logging Deployment
+## Phase 2 — Attack Telemetry Generation
 
+### Objectives
 
+- Simulate attacker activity
 
-\### Objectives
+- Generate suspicious container telemetry
 
-\- Deploy Loki logging infrastructure
+- Validate logging visibility
 
-\- Configure Promtail log collection
+### Activities
 
-\- Install Grafana dashboards
+- shell access
 
-\- Verify Kubernetes log ingestion
+- reconnaissance commands
 
+- sensitive file access
 
+- failed command execution
 
-\### Skills Demonstrated
+- internal network activity
 
-\- Kubernetes administration
+### Skills Demonstrated
 
-\- Helm deployments
+- Kubernetes attack simulation
 
-\- Log aggregation
+- telemetry generation
 
-\- Kubernetes observability
+- log validation
 
+- SOC workflow testing
 
+---
 
-\---
+## Phase 3 — SOC Dashboard Development
 
+### Objectives
 
+- Build centralized monitoring dashboards
 
-\## Phase 2 — Attack Telemetry Generation
+- Create Kubernetes visibility panels
 
+- Develop operational monitoring workflows
 
+### Dashboard Panels
 
-\### Objectives
+- Mini SOC Kubernetes Logs
 
-\- Simulate attacker activity
+- Kubernetes System Logs
 
-\- Generate suspicious container telemetry
+- Error Detection View
 
-\- Validate logging visibility
+### Skills Demonstrated
 
+- Grafana dashboard creation
 
+- Kubernetes monitoring
 
-\### Activities
+- centralized observability
 
-\- shell access
+- operational visibility
 
-\- reconnaissance commands
+---
 
-\- sensitive file access
+## Phase 4 — Detection Engineering
 
-\- failed command execution
+### Objectives
 
-\- internal network activity
+- Build attacker-behavior detections
 
+- Create hunting queries
 
+- Validate suspicious activity detections
 
-\### Skills Demonstrated
+### Detection Panels
 
-\- Kubernetes attack simulation
+- Shell Activity Detection
 
-\- telemetry generation
+- Reconnaissance Activity Detection
 
-\- log validation
+- Failed Command Detection
 
-\- SOC workflow testing
+- Sensitive File Access Detection
 
+### Example Queries
 
-
-\---
-
-
-
-\## Phase 3 — SOC Dashboard Development
-
-
-
-\### Objectives
-
-\- Build centralized monitoring dashboards
-
-\- Create Kubernetes visibility panels
-
-\- Develop operational monitoring workflows
-
-
-
-\### Dashboard Panels
-
-\- Mini SOC Kubernetes Logs
-
-\- Kubernetes System Logs
-
-\- Error Detection View
-
-
-
-\### Skills Demonstrated
-
-\- Grafana dashboard creation
-
-\- Kubernetes monitoring
-
-\- centralized observability
-
-\- operational visibility
-
-
-
-\---
-
-
-
-\## Phase 4 — Detection Engineering
-
-
-
-\### Objectives
-
-\- Build attacker-behavior detections
-
-\- Create hunting queries
-
-\- Validate suspicious activity detections
-
-
-
-\### Detection Panels
-
-\- Shell Activity Detection
-
-\- Reconnaissance Activity Detection
-
-\- Failed Command Detection
-
-\- Sensitive File Access Detection
-
-
-
-\### Example Queries
-
-
-
-```logql
 
 {namespace="mini-soc"} |= "bash"
 
@@ -232,33 +171,22 @@ The environment was built entirely inside a self-hosted Kubernetes lab using Min
 
 {namespace="mini-soc"} |= "passwd"
 
-```
+### Skills Demonstrated
 
+- detection engineering
 
+- threat hunting
 
-\### Skills Demonstrated
+- SOC workflows
 
-\- detection engineering
+- Kubernetes security monitoring
 
-\- threat hunting
+- log analysis
 
-\- SOC workflows
+---
 
-\- Kubernetes security monitoring
+# Folder Structure
 
-\- log analysis
-
-
-
-\---
-
-
-
-\# Folder Structure
-
-
-
-```text
 
 k8s-mini-soc-logging-lab/
 
@@ -272,39 +200,22 @@ k8s-mini-soc-logging-lab/
 
 └── screenshots/
 
-```
+---
 
+# Key Takeaways
 
+- Kubernetes environments generate valuable operational telemetry.
 
-\---
+- Centralized logging improves visibility into container activity.
 
+- Detection engineering concepts can be applied directly inside Kubernetes.
 
+- Attack simulation helps validate monitoring and detection workflows.
 
-\# Key Takeaways
+- Grafana and Loki provide lightweight but powerful SOC-style capabilities.
 
+---
 
-
-\- Kubernetes environments generate valuable operational telemetry.
-
-\- Centralized logging improves visibility into container activity.
-
-\- Detection engineering concepts can be applied directly inside Kubernetes.
-
-\- Attack simulation helps validate monitoring and detection workflows.
-
-\- Grafana and Loki provide lightweight but powerful SOC-style capabilities.
-
-
-
-
-
-\---
-
-
-
-\# Conclusion
-
-
+# Conclusion
 
 This project successfully demonstrated centralized Kubernetes logging, SOC-style visibility, attack telemetry generation, and detection engineering workflows using Grafana, Loki, and Promtail inside a self-hosted Kubernetes lab environment.
-
