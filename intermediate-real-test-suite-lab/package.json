@@ -1,0 +1,28 @@
+{
+  "name": "intermediate-real-test-suite-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "test": "playwright test",
+  "test:chromium": "playwright test --project=chromium",
+  "test:headed": "playwright test --headed",
+  "test:ui": "playwright test --ui",
+  "test:accessibility": "playwright test -g \"Accessibility Tests\" --project=chromium",
+  "test:visual": "playwright test -g \"dashboard page matches visual snapshot\" --project=chromium",
+  "test:visual:update": "playwright test -g \"dashboard page matches visual snapshot\" --project=chromium --update-snapshots",
+  "report": "playwright show-report"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
