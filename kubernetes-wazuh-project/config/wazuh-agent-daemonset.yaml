@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: wazuh-agent
+  namespace: wazuh-agent
+spec:
+  selector:
+    matchLabels:
+      app: wazuh-agent
+
+  template:
+    metadata:
+      labels:
+        app: wazuh-agent
+
+    spec:
+      hostname: minikube-k8s-agent-01
+
+      containers:
+        - name: wazuh-agent
+          image: wazuh/wazuh-agent:4.14.1
+          imagePullPolicy: IfNotPresent
+
+          env:
+            - name: WAZUH_MANAGER
+              value: "192.168.56.109"
+
+            - name: WAZUH_MANAGER_PORT
+              value: "1514"
+
+            - name: WAZUH_PROTOCOL
+              value: "tcp"
+
+            - name: WAZUH_REGISTRATION_SERVER
+              value: "192.168.56.109"
+
+            - name: WAZUH_REGISTRATION_PORT
+              value: "1515"
+
+            - name: WAZUH_AGENT_NAME
+              value: "minikube-k8s-agent-01"
+
+          securityContext:
+            privileged: true
+
+          volumeMounts:
+            - name: wazuh-agent-config
+              mountPath: /var/ossec/etc/ossec.conf
+              subPath: ossec.conf
+
+            - name: container-logs
+              mountPath: /var/log/containers
+              readOnly: true
+
+            - name: pod-logs
+              mountPath: /var/log/pods
+              readOnly: true
+
+            - name: docker-container-logs
+              mountPath: /var/lib/docker/containers
+              readOnly: true
+
+      volumes:
+        - name: wazuh-agent-config
+          configMap:
+            name: wazuh-agent-config
+
+        - name: container-logs
+          hostPath:
+            path: /var/log/containers
+
+        - name: pod-logs
+          hostPath:
+            path: /var/log/pods
+
+        - name: docker-container-logs
+          hostPath:
+            path: /var/lib/docker/containers
