@@ -4,9 +4,14 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 jobs:
   secure-build:
-    name: Test, Scan, and Build Docker Image
+    name: Test, Scan, Build, Sign Docker Image
     runs-on: ubuntu-latest
 
     defaults:
@@ -46,8 +51,11 @@ jobs:
       - name: Run pip-audit dependency scan
         run: pip-audit -r requirements.txt
 
+      - name: Set image name
+        run: echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/secure-cicd-flask-app:${GITHUB_SHA}" >> $GITHUB_ENV
+
       - name: Build Docker image
-        run: docker build -t secure-cicd-flask-app:${{ github.sha }} .
+        run: docker build -t $IMAGE_NAME .
 
       - name: Run Trivy image scan
         run: |
@@ -57,4 +65,28 @@ jobs:
             --scanners vuln \
             --severity CRITICAL \
             --exit-code 1 \
-            secure-cicd-flask-app:${{ github.sha }}
+            $IMAGE_NAME
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name == 'push'
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Push Docker image to GHCR
+        if: github.event_name == 'push'
+        run: docker push $IMAGE_NAME
+
+      - name: Install Cosign
+        if: github.event_name == 'push'
+        uses: sigstore/cosign-installer@v3
+
+      - name: Sign Docker image with Cosign
+        if: github.event_name == 'push'
+        run: cosign sign --yes $IMAGE_NAME
+
+      - name: Verify Docker image signature
+        if: github.event_name == 'push'
+        run: |
+          cosign verify \
+            --certificate-identity-regexp "https://github.com/${{ github.repository }}/.github/workflows/secure-cicd.yml@.*" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            $IMAGE_NAME
