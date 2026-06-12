@@ -1,0 +1,7 @@
+title = "Custom Gitleaks Config"
+
+[[rules]]
+id = "fake-aws-secret-access-key"
+description = "Detect fake AWS secret access keys used for pipeline testing"
+regex = '''AWS_SECRET_ACCESS_KEY\s*=\s*[A-Za-z0-9/+=]{20,}'''
+tags = ["aws", "secret", "test"]
