@@ -24,6 +24,9 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Create security evidence folder
+        run: mkdir -p security-evidence
+
       - name: Run Gitleaks secret scan
         run: |
           docker run --rm \
@@ -33,7 +36,7 @@ jobs:
             --redact \
             --verbose \
             --exit-code 1 \
-            /repo
+            /repo | tee security-evidence/gitleaks-scan.txt
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -46,16 +49,16 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run basic tests
-        run: pytest
+        run: pytest | tee security-evidence/pytest-results.txt
 
       - name: Run pip-audit dependency scan
-        run: pip-audit -r requirements.txt
+        run: pip-audit -r requirements.txt | tee security-evidence/pip-audit-results.txt
 
       - name: Set image name
         run: echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/secure-cicd-flask-app:${GITHUB_SHA}" >> $GITHUB_ENV
 
       - name: Build Docker image
-        run: docker build -t $IMAGE_NAME .
+        run: docker build -t $IMAGE_NAME . | tee security-evidence/docker-build.txt
 
       - name: Run Trivy image scan
         run: |
@@ -65,7 +68,7 @@ jobs:
             --scanners vuln \
             --severity CRITICAL \
             --exit-code 1 \
-            $IMAGE_NAME
+            $IMAGE_NAME | tee security-evidence/trivy-image-scan.txt
 
       - name: Log in to GitHub Container Registry
         if: github.event_name == 'push'
@@ -73,7 +76,7 @@ jobs:
 
       - name: Push Docker image to GHCR
         if: github.event_name == 'push'
-        run: docker push $IMAGE_NAME
+        run: docker push $IMAGE_NAME | tee security-evidence/ghcr-push.txt
 
       - name: Install Cosign
         if: github.event_name == 'push'
@@ -81,7 +84,7 @@ jobs:
 
       - name: Sign Docker image with Cosign
         if: github.event_name == 'push'
-        run: cosign sign --yes $IMAGE_NAME
+        run: cosign sign --yes $IMAGE_NAME | tee security-evidence/cosign-sign.txt
 
       - name: Verify Docker image signature
         if: github.event_name == 'push'
@@ -89,4 +92,10 @@ jobs:
           cosign verify \
             --certificate-identity-regexp "https://github.com/${{ github.repository }}/.github/workflows/secure-cicd.yml@.*" \
             --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
-            $IMAGE_NAME
+            $IMAGE_NAME | tee security-evidence/cosign-verify.txt
+
+      - name: Upload security evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: secure-cicd-security-evidence
+          path: secure-cicd-docker-pipeline/security-evidence/
