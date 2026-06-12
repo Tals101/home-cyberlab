@@ -43,5 +43,8 @@ jobs:
       - name: Run basic tests
         run: pytest
 
+      - name: Run pip-audit dependency scan
+        run: pip-audit -r requirements.txt
+
       - name: Build Docker image
         run: docker build -t secure-cicd-flask-app:${{ github.sha }} .
