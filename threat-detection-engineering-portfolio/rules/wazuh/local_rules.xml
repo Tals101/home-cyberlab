@@ -1,0 +1,10 @@
+<group name="local,syslog,sshd,authentication_failed,">
+  <rule id="100510" level="10">
+    <if_sid>5710</if_sid>
+    <description>Custom detection: SSH invalid user password guessing activity from $(srcip) targeting user $(srcuser)</description>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+    <group>authentication_failed,credential_access,password_guessing,custom_detection,</group>
+  </rule>
+</group>
