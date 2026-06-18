@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: purple-grafana
+  namespace: pt-blue
+  labels:
+    app: purple-grafana
+    lab: purple-team
+    role: defender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: purple-grafana
+  template:
+    metadata:
+      labels:
+        app: purple-grafana
+        lab: purple-team
+        role: defender
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: GF_SECURITY_ADMIN_USER
+          value: admin
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: admin
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: purple-grafana
+  namespace: pt-blue
+  labels:
+    app: purple-grafana
+    lab: purple-team
+spec:
+  type: NodePort
+  selector:
+    app: purple-grafana
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000
