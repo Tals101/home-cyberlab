@@ -1,0 +1,12 @@
+﻿Step 14 Evidence: MFA Required Action Enabled
+
+Realm: identity-lab
+
+User:
+- alice
+
+Required User Action Added:
+- Configure OTP
+
+Security Purpose:
+This requires Alice to enroll in multi-factor authentication during her next login. This strengthens account security and prepares the lab for account takeover testing.

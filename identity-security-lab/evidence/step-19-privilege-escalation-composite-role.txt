@@ -1,0 +1,20 @@
+﻿Step 19 Evidence: Privilege Escalation Through Composite Role
+
+User:
+- alice
+
+Intended Role:
+- app-user
+
+Misconfiguration:
+- app-user was configured to include app-admin.
+
+Observed Result:
+- User Area: Allowed
+- Admin Area: Allowed
+
+Security Finding:
+Alice gained admin access through role inheritance even though she was only intended to be a standard user.
+
+Security Lesson:
+Composite roles and inherited permissions must be reviewed carefully because low-privilege roles can accidentally inherit high-privilege access.

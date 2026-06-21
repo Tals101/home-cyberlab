@@ -1,0 +1,19 @@
+﻿Step 5 Evidence: RBAC Roles Created
+
+Realm: identity-lab
+
+Roles Created:
+1. app-user
+   - Standard user role
+   - Intended for normal application access
+
+2. app-manager
+   - Elevated business role
+   - Intended for manager-only access testing
+
+3. app-admin
+   - High-privilege application role
+   - Intended for admin-only access testing
+
+Security Purpose:
+These roles will be used to test role-based access control, excessive permissions, and privilege escalation scenarios.

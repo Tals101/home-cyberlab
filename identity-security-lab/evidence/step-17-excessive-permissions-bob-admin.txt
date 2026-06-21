@@ -1,0 +1,20 @@
+﻿Step 17 Evidence: Excessive Permissions Simulation
+
+User:
+- bob
+
+Intended Role:
+- app-manager
+
+Excessive Role Added:
+- app-admin
+
+Observed Result:
+- Manager Area: Allowed
+- Admin Area: Allowed
+
+Security Finding:
+Bob was able to access admin-level functionality because he had an excessive role assignment.
+
+Security Lesson:
+Identity systems require periodic access reviews to detect and remove unnecessary privileges.

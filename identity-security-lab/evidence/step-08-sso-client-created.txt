@@ -1,0 +1,18 @@
+﻿Step 8 Evidence: SSO Client Created
+
+Realm: identity-lab
+
+Client Created:
+- Client ID: identity-test-app
+- Client Type: OpenID Connect
+- Client Authentication: Off
+- Standard Flow: Enabled
+- Direct Access Grants: Enabled
+
+Redirect Settings:
+- Valid Redirect URIs: http://localhost:3000/*
+- Valid Post Logout Redirect URIs: http://localhost:3000/*
+- Web Origins: http://localhost:3000
+
+Security Purpose:
+This client will be used to test SSO login behavior, role-based access decisions, and account security controls through a test application.

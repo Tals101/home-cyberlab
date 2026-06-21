@@ -1,0 +1,15 @@
+﻿Step 13 Evidence: Carol Admin RBAC Test
+
+Test User:
+- carol
+
+Assigned Role:
+- app-admin
+
+Expected Result:
+- User Area: Denied
+- Manager Area: Denied
+- Admin Area: Allowed
+
+Security Purpose:
+This validates that administrative application access is separated from user and manager access. The test confirms that the app-admin role is required for admin-only functionality and that lower roles are not automatically granted.

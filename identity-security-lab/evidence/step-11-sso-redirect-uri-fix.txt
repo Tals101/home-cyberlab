@@ -1,0 +1,21 @@
+﻿Step 11 Evidence: SSO Login Working After Redirect URI Fix
+
+Issue Found:
+- The test app originally failed because Keycloak rejected the redirect_uri.
+
+Root Cause:
+- Keycloak was configured for http://localhost:3000/*
+- The Vite app was accessed through http://127.0.0.1:3000/*
+- Keycloak treats localhost and 127.0.0.1 as different redirect origins.
+
+Fix Applied:
+- Added http://127.0.0.1:3000/* to Valid Redirect URIs.
+- Added http://127.0.0.1:3000/* to Valid Post Logout Redirect URIs.
+- Added http://127.0.0.1:3000 to Web Origins.
+
+Validation:
+- Alice successfully logged in through Keycloak SSO.
+- The app returned to the test application after authentication.
+
+Security Lesson:
+Strict redirect URI validation protects identity systems from redirect abuse and token leakage.

@@ -1,0 +1,22 @@
+﻿Step 7 Evidence: User Role Assignments Completed
+
+Realm: identity-lab
+
+Role Assignments:
+1. alice -> app-user
+2. bob -> app-manager
+3. carol -> app-admin
+
+RBAC Purpose:
+This establishes a baseline least-privilege model where each user has a different access level.
+
+Expected Access Model:
+- alice should only have standard user access.
+- bob should have manager-level access.
+- carol should have administrator-level application access.
+
+Security Testing Purpose:
+These mappings will be used later to test:
+- Proper RBAC enforcement
+- Excessive permission misconfiguration
+- Privilege escalation attempts
