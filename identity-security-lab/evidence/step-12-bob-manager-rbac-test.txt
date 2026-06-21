@@ -1,0 +1,15 @@
+﻿Step 12 Evidence: Bob Manager RBAC Test
+
+Test User:
+- bob
+
+Assigned Role:
+- app-manager
+
+Expected Result:
+- User Area: Denied
+- Manager Area: Allowed
+- Admin Area: Denied
+
+Security Purpose:
+This validates that manager-level access is separated from standard user and admin access. The test confirms that RBAC decisions are being made based on explicit role assignments rather than broad access assumptions.

@@ -1,0 +1,23 @@
+﻿Step 15 Evidence: Alice MFA Enrollment Tested
+
+Realm:
+- identity-lab
+
+User:
+- alice
+
+MFA Control:
+- OTP authenticator enrollment
+
+Validation:
+- Alice was required to configure OTP during login.
+- Alice successfully completed MFA enrollment.
+- Alice returned to the SSO test application after authentication.
+
+RBAC Result After MFA:
+- User Area: Allowed
+- Manager Area: Denied
+- Admin Area: Denied
+
+Security Purpose:
+This validates that MFA can be enforced for a user before application access is granted.

@@ -1,0 +1,18 @@
+﻿Step 20 Evidence: Privilege Escalation Remediated
+
+User:
+- alice
+
+Issue:
+- app-user incorrectly inherited app-admin through a bad associated role configuration.
+
+Remediation:
+- Removed app-admin from the app-user associated roles.
+
+Validation Result:
+- User Area: Allowed
+- Manager Area: Denied
+- Admin Area: Denied
+
+Security Lesson:
+Role inheritance should be reviewed carefully. Low-privilege roles should not include high-privilege roles unless there is a documented business reason.

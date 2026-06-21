@@ -1,0 +1,15 @@
+﻿Step 16 Evidence: Account Takeover Simulation Blocked by MFA
+
+Attack Scenario:
+- Simulated attacker knows Alice's password.
+
+Test:
+- Attempted login as alice using password-only access.
+- Keycloak required OTP/MFA after password entry.
+- Login could not complete without the MFA code.
+
+Result:
+- Account takeover attempt blocked.
+
+Security Control Validated:
+- MFA prevented unauthorized access even when the password was known.

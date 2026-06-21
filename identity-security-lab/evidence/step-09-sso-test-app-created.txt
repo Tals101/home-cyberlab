@@ -1,0 +1,19 @@
+﻿Step 9 Evidence: SSO Test Application Created
+
+File Created:
+- test-app/index.html
+
+Application Purpose:
+The test app connects to the identity-lab realm through the identity-test-app OIDC client.
+
+Features:
+- Login with Keycloak
+- Logout
+- Display authenticated username
+- Display token roles
+- Test app-user access
+- Test app-manager access
+- Test app-admin access
+
+Security Purpose:
+This app will be used to validate SSO, RBAC, excessive permissions, and privilege escalation behavior.

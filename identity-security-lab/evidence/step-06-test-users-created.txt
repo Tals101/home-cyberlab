@@ -1,0 +1,19 @@
+﻿Step 6 Evidence: Test Users Created
+
+Realm: identity-lab
+
+Users Created:
+1. alice
+   - Standard user account
+   - Will be assigned app-user
+
+2. bob
+   - Manager test account
+   - Will be assigned app-manager
+
+3. carol
+   - Admin test account
+   - Will be assigned app-admin
+
+Security Purpose:
+These users will be used to validate RBAC behavior, excessive permission risks, privilege escalation, and MFA/account takeover controls.

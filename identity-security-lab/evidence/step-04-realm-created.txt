@@ -1,0 +1,5 @@
+﻿Step 4 Evidence: Keycloak Realm Created
+
+Realm Name: identity-lab
+Purpose: Separate identity environment for SSO, MFA, RBAC, and identity attack simulations.
+Status: Created successfully in Keycloak admin console.

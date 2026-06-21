@@ -1,0 +1,18 @@
+﻿Step 18 Evidence: Excessive Permissions Remediated
+
+User:
+- bob
+
+Issue:
+- Bob had excessive admin permissions through the app-admin role.
+
+Remediation:
+- Removed app-admin from Bob.
+- Left only the intended app-manager role.
+
+Validation Result:
+- Manager Area: Allowed
+- Admin Area: Denied
+
+Security Lesson:
+Excessive permissions should be remediated by removing unnecessary roles and validating access after the change.
