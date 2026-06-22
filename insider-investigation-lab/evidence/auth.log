@@ -1,0 +1,188 @@
+2026-06-22T16:19:33.608172+00:00 insider-lab passwd[1292]: password for 'analyst' changed by 'root'
+2026-06-22T16:19:33.608378+00:00 insider-lab systemd-logind[1330]: New seat seat0.
+2026-06-22T16:19:33.608379+00:00 insider-lab systemd-logind[1330]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-06-22T16:19:33.608384+00:00 insider-lab systemd-logind[1330]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-06-22T16:19:33.608386+00:00 insider-lab systemd-logind[1330]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-06-22T16:19:34.392878+00:00 insider-lab sshd[1565]: Server listening on 0.0.0.0 port 22.
+2026-06-22T16:19:34.393125+00:00 insider-lab sshd[1565]: Server listening on :: port 22.
+2026-06-22T16:23:03.625394+00:00 insider-lab login: pam_unix(login:session): session opened for user analyst(uid=1000) by analyst(uid=0)
+2026-06-22T16:23:03.643881+00:00 insider-lab systemd-logind[1330]: New session '1' of user 'analyst' with class 'user' and type 'tty'.
+2026-06-22T16:23:03.686743+00:00 insider-lab (systemd): pam_unix(systemd-user:session): session opened for user analyst(uid=1000) by analyst(uid=0)
+2026-06-22T16:23:03.686810+00:00 insider-lab systemd-logind[1330]: New session '2' of user 'analyst' with class 'manager' and type 'unspecified'.
+2026-06-22T16:24:29.860730+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:24:29.861025+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/apt update
+2026-06-22T16:24:31.182146+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:24:31.188742+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:24:31.188993+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/apt install -y rsyslog auditd usbutils tree
+2026-06-22T16:24:36.278569+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:25:08.519708+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:25:08.519891+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl enable --now rsyslog
+2026-06-22T16:25:08.687612+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:25:25.016146+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:25:25.016251+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl enable --now auditd
+2026-06-22T16:25:25.515445+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:28:26.527181+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:28:26.533235+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/useradd -m -s /bin/bash jsmith
+2026-06-22T16:28:26.550118+00:00 insider-lab useradd[2541]: new group: name=jsmith, GID=1001
+2026-06-22T16:28:26.550318+00:00 insider-lab useradd[2541]: new user: name=jsmith, UID=1001, GID=1001, home=/home/jsmith, shell=/bin/bash, from=/dev/pts/0
+2026-06-22T16:28:26.573471+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:29:06.323177+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:29:06.323350+00:00 insider-lab sudo: analyst :  PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/chpasswd 
+2026-06-22T16:29:06.354916+00:00 insider-lab chpasswd[2559]: pam_unix(chpasswd:chauthtok): password changed for jsmith
+2026-06-22T16:29:06.355487+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:29:26.499648+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:29:26.499815+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/useradd -m -s /bin/bash mroberts
+2026-06-22T16:29:26.513713+00:00 insider-lab useradd[2576]: new group: name=mroberts, GID=1002
+2026-06-22T16:29:26.513943+00:00 insider-lab useradd[2576]: new user: name=mroberts, UID=1002, GID=1002, home=/home/mroberts, shell=/bin/bash, from=/dev/pts/0
+2026-06-22T16:29:26.536662+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:29:56.557977+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:29:56.558215+00:00 insider-lab sudo: analyst :  PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/chpasswd 
+2026-06-22T16:29:56.580613+00:00 insider-lab chpasswd[2596]: pam_unix(chpasswd:chauthtok): password changed for mroberts
+2026-06-22T16:29:56.582046+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:30:13.266031+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:30:13.266215+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/useradd -m -s /bin/bash tchen
+2026-06-22T16:30:13.284883+00:00 insider-lab useradd[2614]: new group: name=tchen, GID=1003
+2026-06-22T16:30:13.284955+00:00 insider-lab useradd[2614]: new user: name=tchen, UID=1003, GID=1003, home=/home/tchen, shell=/bin/bash, from=/dev/pts/0
+2026-06-22T16:30:13.311138+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:30:36.924016+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:30:36.924146+00:00 insider-lab sudo: analyst :  PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/chpasswd 
+2026-06-22T16:30:36.948705+00:00 insider-lab chpasswd[2635]: pam_unix(chpasswd:chauthtok): password changed for tchen
+2026-06-22T16:30:36.949359+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:31:53.832901+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:31:53.833127+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/groupadd sensitive
+2026-06-22T16:31:53.844645+00:00 insider-lab groupadd[2663]: group added to /etc/group: name=sensitive, GID=1004
+2026-06-22T16:31:53.848138+00:00 insider-lab groupadd[2663]: group added to /etc/gshadow: name=sensitive
+2026-06-22T16:31:53.848959+00:00 insider-lab groupadd[2663]: new group: name=sensitive, GID=1004
+2026-06-22T16:31:53.849699+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:34:06.367055+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:34:06.373318+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/usermod -aG sensitive jsmith
+2026-06-22T16:34:06.379746+00:00 insider-lab usermod[2682]: add 'jsmith' to group 'sensitive'
+2026-06-22T16:34:06.383332+00:00 insider-lab usermod[2682]: add 'jsmith' to shadow group 'sensitive'
+2026-06-22T16:34:06.388208+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:34:28.826466+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:34:28.826596+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/usermod -aG sensitive mroberts
+2026-06-22T16:34:28.839674+00:00 insider-lab usermod[2699]: add 'mroberts' to group 'sensitive'
+2026-06-22T16:34:28.839781+00:00 insider-lab usermod[2699]: add 'mroberts' to shadow group 'sensitive'
+2026-06-22T16:34:28.848672+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:34:53.235478+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:34:53.235577+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/mkdir -p /srv/sensitive
+2026-06-22T16:34:53.241699+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:35:19.022678+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:35:19.022821+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/chown root:sensitive /srv/sensitive
+2026-06-22T16:35:19.029479+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:35:39.874115+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:35:39.874668+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/chmod 770 /srv/sensitive
+2026-06-22T16:35:39.878621+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:42:39.599534+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:42:39.605767+00:00 insider-lab sudo: analyst :  PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/tee /srv/sensitive/customer_contracts.txt
+2026-06-22T16:42:39.605869+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:43:40.572171+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:43:40.572652+00:00 insider-lab sudo: analyst :  PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/tee /srv/sensitive/salary_planning.txt
+2026-06-22T16:43:40.578147+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:44:52.594416+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:44:52.594618+00:00 insider-lab sudo: analyst :  PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/tee /srv/sensitive/merger_notes.txt
+2026-06-22T16:44:52.598825+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:46:06.177035+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:46:06.180079+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/dd if=/dev/urandom of=/srv/sensitive/customer_export_large.bin bs=1M count=100 status=progress
+2026-06-22T16:46:06.400741+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:46:59.082803+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:46:59.083210+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/ls -lh /srv/sensitive
+2026-06-22T16:46:59.088608+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:47:32.387160+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:47:32.387361+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/chown root:sensitive /srv/sensitive/*
+2026-06-22T16:47:32.392523+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:48:47.470428+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:48:47.470592+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/sh -c chown root:sensitive /srv/sensitive/*
+2026-06-22T16:48:47.475458+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:49:26.257226+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:49:26.257399+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/sh -c chmod 660 /srv/sensitive/*
+2026-06-22T16:49:26.262278+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:49:43.752418+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:49:43.752862+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/ls -lh /srv/sensitive
+2026-06-22T16:49:43.760243+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:52:23.909810+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:52:23.914869+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -w /srv/sensitive -p rwxa -k sensitive_data_access
+2026-06-22T16:52:23.917787+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:53:33.639435+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:53:33.639653+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -W /srv/sensitive -p rwxa -k sensitive_data_access
+2026-06-22T16:53:33.644433+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:55:19.511943+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:55:19.512124+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -a always,exit -F dir=/srv/sensitive -F perm=rwxa -F auid -F auid!=4294967295 -k sensitive_data_access
+2026-06-22T16:55:19.516683+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:56:50.035280+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:56:50.035513+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -a always,exit -F dir=/srv/sensitive -F perm=rwxa -F auid>=1000 -F auid!=4294967295 -k sensitive_data_access
+2026-06-22T16:56:50.037853+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:57:07.452594+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:57:07.452777+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -l
+2026-06-22T16:57:07.456758+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:57:37.610041+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:57:37.613050+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/mkdir -p /media/usb
+2026-06-22T16:57:37.614540+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:58:35.818289+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:58:35.818562+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -a always,exit -F dir=/media/usb -F perm=rwxa -F auid>=1000 -F auid!=4294967295 -k usb_activity
+2026-06-22T16:58:35.821145+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:58:49.357549+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T16:58:49.357872+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/auditctl -l
+2026-06-22T16:58:49.361450+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T16:59:27.257747+00:00 insider-lab su[3037]: (to mroberts) analyst on tty1
+2026-06-22T16:59:27.258006+00:00 insider-lab su[3037]: pam_unix(su-l:session): session opened for user mroberts(uid=1002) by analyst(uid=1000)
+2026-06-22T16:59:54.487037+00:00 insider-lab su[3037]: pam_unix(su-l:session): session closed for user mroberts
+2026-06-22T17:00:12.953477+00:00 insider-lab su[3093]: (to tchen) analyst on tty1
+2026-06-22T17:00:12.954081+00:00 insider-lab su[3093]: pam_unix(su-l:session): session opened for user tchen(uid=1003) by analyst(uid=1000)
+2026-06-22T17:01:06.662176+00:00 insider-lab su[3093]: pam_unix(su-l:session): session closed for user tchen
+2026-06-22T17:01:34.365330+00:00 insider-lab su[3165]: (to jsmith) analyst on tty1
+2026-06-22T17:01:34.366217+00:00 insider-lab su[3165]: pam_unix(su-l:session): session opened for user jsmith(uid=1001) by analyst(uid=1000)
+2026-06-22T17:02:16.497333+00:00 insider-lab su[3165]: pam_unix(su-l:session): session closed for user jsmith
+2026-06-22T17:02:49.685247+00:00 insider-lab unix_chkpwd[3261]: password check failed for user (jsmith)
+2026-06-22T17:02:49.690400+00:00 insider-lab su: pam_unix(su-l:auth): authentication failure; logname=analyst uid=1000 euid=0 tty=/dev/tty1 ruser=analyst rhost=  user=jsmith
+2026-06-22T17:02:51.823689+00:00 insider-lab su[3256]: FAILED SU (to jsmith) analyst on tty1
+2026-06-22T17:08:52.254816+00:00 insider-lab unix_chkpwd[3275]: password check failed for user (tchen)
+2026-06-22T17:08:52.259365+00:00 insider-lab su: pam_unix(su-l:auth): authentication failure; logname=analyst uid=1000 euid=0 tty=/dev/tty1 ruser=analyst rhost=  user=tchen
+2026-06-22T17:08:53.965175+00:00 insider-lab su[3273]: FAILED SU (to tchen) analyst on tty1
+2026-06-22T17:09:12.259501+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:09:12.259662+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/whoami 
+2026-06-22T17:09:12.264060+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:09:31.876262+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:09:31.876530+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl status ssh --no-pager
+2026-06-22T17:09:31.889610+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:10:05.028243+00:00 insider-lab su[3311]: (to jsmith) analyst on tty1
+2026-06-22T17:10:05.028366+00:00 insider-lab su[3311]: pam_unix(su-l:session): session opened for user jsmith(uid=1001) by analyst(uid=1000)
+2026-06-22T17:11:32.120698+00:00 insider-lab su[3311]: pam_unix(su-l:session): session closed for user jsmith
+2026-06-22T17:12:18.220678+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:12:18.221140+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/mount -t tmpfs -o size=500M tmpfs /media/usb
+2026-06-22T17:12:18.226021+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:12:54.280708+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:12:54.281176+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/chmod 777 /media/usb
+2026-06-22T17:12:54.284881+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:13:38.121917+00:00 insider-lab su[3437]: (to jsmith) analyst on tty1
+2026-06-22T17:13:38.122806+00:00 insider-lab su[3437]: pam_unix(su-l:session): session opened for user jsmith(uid=1001) by analyst(uid=1000)
+2026-06-22T17:16:26.747979+00:00 insider-lab su[3437]: pam_unix(su-l:session): session closed for user jsmith
+2026-06-22T17:17:01.727770+00:00 insider-lab CRON[3544]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-22T17:17:01.731540+00:00 insider-lab CRON[3544]: pam_unix(cron:session): session closed for user root
+2026-06-22T17:17:32.949667+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:17:32.949881+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/umount /media/usb
+2026-06-22T17:17:32.959162+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:29:38.914352+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:29:38.919731+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl status ssh --no-pager
+2026-06-22T17:29:38.926345+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:31:52.521464+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:31:52.522203+00:00 insider-lab sudo: analyst : TTY=/dev/tty1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/sbin/reboot 
+2026-06-22T17:31:52.528579+00:00 insider-lab systemd-logind[1330]: The system will reboot now!
+2026-06-22T17:31:52.531805+00:00 insider-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-22T17:31:52.554524+00:00 insider-lab systemd-logind[1330]: System is rebooting.
+2026-06-22T17:31:52.585408+00:00 insider-lab login: pam_unix(login:session): session closed for user analyst
+2026-06-22T17:32:05.324465+00:00 insider-lab systemd-logind[1311]: New seat seat0.
+2026-06-22T17:32:05.342904+00:00 insider-lab systemd-logind[1311]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-06-22T17:32:05.342906+00:00 insider-lab systemd-logind[1311]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-06-22T17:32:05.342907+00:00 insider-lab systemd-logind[1311]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-06-22T17:33:07.684805+00:00 insider-lab login: pam_unix(login:session): session opened for user analyst(uid=1000) by analyst(uid=0)
+2026-06-22T17:33:07.694963+00:00 insider-lab systemd-logind[1311]: New session '1' of user 'analyst' with class 'user' and type 'tty'.
+2026-06-22T17:33:07.726508+00:00 insider-lab (systemd): pam_unix(systemd-user:session): session opened for user analyst(uid=1000) by analyst(uid=0)
+2026-06-22T17:33:07.727224+00:00 insider-lab systemd-logind[1311]: New session '2' of user 'analyst' with class 'manager' and type 'unspecified'.
+2026-06-22T17:34:36.552231+00:00 insider-lab sshd[1683]: Server listening on 0.0.0.0 port 22.
+2026-06-22T17:34:36.552552+00:00 insider-lab sshd[1683]: Server listening on :: port 22.
+2026-06-22T17:34:49.053094+00:00 insider-lab sshd-session[1686]: Accepted password for analyst from 10.0.2.2 port 6981 ssh2
+2026-06-22T17:34:49.053911+00:00 insider-lab sshd-session[1686]: pam_unix(sshd:session): session opened for user analyst(uid=1000) by analyst(uid=0)
+2026-06-22T17:34:49.057825+00:00 insider-lab systemd-logind[1311]: New session '3' of user 'analyst' with class 'user' and type 'tty'.
+2026-06-22T17:35:26.003720+00:00 insider-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-22T17:35:26.004006+00:00 insider-lab sudo: analyst : TTY=/dev/pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/cp /var/log/auth.log /home/analyst/insider-evidence/auth.log
