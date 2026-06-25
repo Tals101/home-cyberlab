@@ -1,0 +1,157 @@
+=== Account creation audit events ===
+----
+time->Tue Jun 23 16:51:47 2026
+type=PROCTITLE msg=audit(1782233507.601:447): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782233507.601:447): item=0 name="/usr/sbin/" inode=262172 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233507.601:447): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782233507.601:447): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782233507.601:447): arch=c000003e syscall=44 success=yes exit=1092 a0=3 a1=7ffe37087700 a2=444 a3=0 items=1 ppid=17558 pid=17577 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782233507.601:447): auid=1000 ses=8 subj=unconfined op=add_rule key="account_creation" list=4 res=1
+----
+time->Tue Jun 23 16:51:47 2026
+type=PROCTITLE msg=audit(1782233507.601:448): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782233507.601:448): item=0 name="/usr/sbin/" inode=262172 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233507.601:448): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782233507.601:448): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782233507.601:448): arch=c000003e syscall=44 success=yes exit=1092 a0=3 a1=7ffe37087700 a2=444 a3=0 items=1 ppid=17558 pid=17577 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782233507.601:448): auid=1000 ses=8 subj=unconfined op=add_rule key="account_creation" list=4 res=1
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.620:458): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.620:458): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=287774 dev=fc:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.620:458): item=0 name="/usr/sbin/useradd" inode=288672 dev=fc:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.620:458): cwd="/home/lab"
+type=EXECVE msg=audit(1782233547.620:458): argc=3 a0="useradd" a1="-m" a2="huntuser"
+type=SYSCALL msg=audit(1782233547.620:458): arch=c000003e syscall=59 success=yes exit=0 a0=614f94144470 a1=614f94144570 a2=614f94138f80 a3=8 items=2 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="account_creation"
+
+=== Privilege change audit events ===
+----
+time->Tue Jun 23 16:51:47 2026
+type=PROCTITLE msg=audit(1782233507.601:449): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782233507.601:449): item=0 name="/usr/sbin/" inode=262172 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233507.601:449): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782233507.601:449): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782233507.601:449): arch=c000003e syscall=44 success=yes exit=1092 a0=3 a1=7ffe37087700 a2=444 a3=0 items=1 ppid=17558 pid=17577 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782233507.601:449): auid=1000 ses=8 subj=unconfined op=add_rule key="privilege_change" list=4 res=1
+----
+time->Tue Jun 23 16:53:21 2026
+type=PROCTITLE msg=audit(1782233601.497:478): proctitle=757365726D6F64002D6147007375646F0068756E7475736572
+type=PATH msg=audit(1782233601.497:478): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=287774 dev=fc:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233601.497:478): item=0 name="/usr/sbin/usermod" inode=288674 dev=fc:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233601.497:478): cwd="/home/lab"
+type=EXECVE msg=audit(1782233601.497:478): argc=4 a0="usermod" a1="-aG" a2="sudo" a3="huntuser"
+type=SYSCALL msg=audit(1782233601.497:478): arch=c000003e syscall=59 success=yes exit=0 a0=5c9359301e00 a1=5c9359314500 a2=5c9359308f40 a3=8 items=2 ppid=17654 pid=17655 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="usermod" exe="/usr/sbin/usermod" subj=unconfined key="privilege_change"
+
+=== Identity file change audit events ===
+----
+time->Tue Jun 23 16:51:47 2026
+type=PROCTITLE msg=audit(1782233507.599:442): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782233507.599:442): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233507.599:442): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782233507.599:442): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782233507.599:442): arch=c000003e syscall=44 success=yes exit=1088 a0=3 a1=7ffe37087700 a2=440 a3=0 items=1 ppid=17558 pid=17577 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782233507.599:442): auid=1000 ses=8 subj=unconfined op=add_rule key="identity_file_change" list=4 res=1
+----
+time->Tue Jun 23 16:51:47 2026
+type=PROCTITLE msg=audit(1782233507.599:443): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782233507.599:443): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233507.599:443): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782233507.599:443): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782233507.599:443): arch=c000003e syscall=44 success=yes exit=1088 a0=3 a1=7ffe37087700 a2=440 a3=0 items=1 ppid=17558 pid=17577 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782233507.599:443): auid=1000 ses=8 subj=unconfined op=add_rule key="identity_file_change" list=4 res=1
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.647:459): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.647:459): item=0 name="/etc/passwd" inode=401318 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.647:459): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233547.647:459): arch=c000003e syscall=257 success=yes exit=5 a0=ffffffffffffff9c a1=60b324fc1080 a2=a0902 a3=0 items=1 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="identity_file_change"
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.670:461): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.670:461): item=0 name="/etc/shadow" inode=401319 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.670:461): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233547.670:461): arch=c000003e syscall=257 success=yes exit=10 a0=ffffffffffffff9c a1=60b324fc0c20 a2=a0902 a3=0 items=1 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="identity_file_change"
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.684:464): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.684:464): item=4 name="/etc/passwd" inode=401395 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=CREATE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.684:464): item=3 name="/etc/passwd" inode=401318 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.684:464): item=2 name="/etc/passwd+" inode=401395 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.684:464): item=1 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.684:464): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.684:464): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233547.684:464): arch=c000003e syscall=82 success=yes exit=0 a0=7ffcce850fd0 a1=60b324fc1080 a2=7ffcce850f40 a3=100 items=5 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="identity_file_change"
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.697:465): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.697:465): item=4 name="/etc/shadow" inode=401318 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=CREATE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.697:465): item=3 name="/etc/shadow" inode=401319 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.697:465): item=2 name="/etc/shadow+" inode=401318 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.697:465): item=1 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.697:465): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.697:465): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233547.697:465): arch=c000003e syscall=82 success=yes exit=0 a0=7ffcce850fd0 a1=60b324fc0c20 a2=7ffcce850f40 a3=100 items=5 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="identity_file_change"
+----
+time->Tue Jun 23 16:52:42 2026
+type=PROCTITLE msg=audit(1782233562.603:472): proctitle=7061737377640068756E7475736572
+type=PATH msg=audit(1782233562.603:472): item=4 name="/etc/shadow" inode=393700 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=CREATE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233562.603:472): item=3 name="/etc/shadow" inode=401318 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233562.603:472): item=2 name="/etc/nshadow" inode=393700 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233562.603:472): item=1 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233562.603:472): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233562.603:472): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233562.603:472): arch=c000003e syscall=82 success=yes exit=0 a0=77f5a71fc481 a1=77f5a71fc1ce a2=e a3=1e1 items=5 ppid=17628 pid=17629 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="passwd" exe="/usr/bin/passwd" subj=unconfined key="identity_file_change"
+----
+time->Tue Jun 23 16:53:21 2026
+type=PROCTITLE msg=audit(1782233601.505:479): proctitle=757365726D6F64002D6147007375646F0068756E7475736572
+type=PATH msg=audit(1782233601.505:479): item=0 name="/etc/passwd" inode=401395 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233601.505:479): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233601.505:479): arch=c000003e syscall=257 success=yes exit=5 a0=ffffffffffffff9c a1=56add242c020 a2=a0902 a3=0 items=1 ppid=17654 pid=17655 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="usermod" exe="/usr/sbin/usermod" subj=unconfined key="identity_file_change"
+----
+time->Tue Jun 23 16:53:21 2026
+type=PROCTITLE msg=audit(1782233601.511:480): proctitle=757365726D6F64002D6147007375646F0068756E7475736572
+type=PATH msg=audit(1782233601.511:480): item=0 name="/etc/shadow" inode=393700 dev=fc:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233601.511:480): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233601.511:480): arch=c000003e syscall=257 success=yes exit=6 a0=ffffffffffffff9c a1=56add242bbc0 a2=a0902 a3=0 items=1 ppid=17654 pid=17655 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="usermod" exe="/usr/sbin/usermod" subj=unconfined key="identity_file_change"
+
+=== Group file change audit events ===
+----
+time->Tue Jun 23 16:51:47 2026
+type=PROCTITLE msg=audit(1782233507.599:444): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782233507.599:444): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233507.599:444): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782233507.599:444): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782233507.599:444): arch=c000003e syscall=44 success=yes exit=1084 a0=3 a1=7ffe37087700 a2=43c a3=0 items=1 ppid=17558 pid=17577 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782233507.599:444): auid=1000 ses=8 subj=unconfined op=add_rule key="group_file_change" list=4 res=1
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.653:460): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.653:460): item=0 name="/etc/group" inode=401314 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.653:460): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233547.653:460): arch=c000003e syscall=257 success=yes exit=6 a0=ffffffffffffff9c a1=60b324fc14e0 a2=a0902 a3=0 items=1 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="group_file_change"
+----
+time->Tue Jun 23 16:52:27 2026
+type=PROCTITLE msg=audit(1782233547.705:466): proctitle=75736572616464002D6D0068756E7475736572
+type=PATH msg=audit(1782233547.705:466): item=4 name="/etc/group" inode=401319 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=CREATE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.705:466): item=3 name="/etc/group" inode=401314 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.705:466): item=2 name="/etc/group+" inode=401319 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.705:466): item=1 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233547.705:466): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233547.705:466): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233547.705:466): arch=c000003e syscall=82 success=yes exit=0 a0=7ffcce850fb0 a1=60b324fc14e0 a2=7ffcce850f20 a3=100 items=5 ppid=17611 pid=17612 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="useradd" exe="/usr/sbin/useradd" subj=unconfined key="group_file_change"
+----
+time->Tue Jun 23 16:53:21 2026
+type=PROCTITLE msg=audit(1782233601.514:481): proctitle=757365726D6F64002D6147007375646F0068756E7475736572
+type=PATH msg=audit(1782233601.514:481): item=0 name="/etc/group" inode=401319 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233601.514:481): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233601.514:481): arch=c000003e syscall=257 success=yes exit=7 a0=ffffffffffffff9c a1=56add242aa40 a2=a0902 a3=0 items=1 ppid=17654 pid=17655 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="usermod" exe="/usr/sbin/usermod" subj=unconfined key="group_file_change"
+----
+time->Tue Jun 23 16:53:21 2026
+type=PROCTITLE msg=audit(1782233601.524:484): proctitle=757365726D6F64002D6147007375646F0068756E7475736572
+type=PATH msg=audit(1782233601.524:484): item=4 name="/etc/group" inode=401393 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=CREATE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233601.524:484): item=3 name="/etc/group" inode=401319 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233601.524:484): item=2 name="/etc/group+" inode=401393 dev=fc:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 nametype=DELETE cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233601.524:484): item=1 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782233601.524:484): item=0 name="/etc/" inode=393217 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782233601.524:484): cwd="/home/lab"
+type=SYSCALL msg=audit(1782233601.524:484): arch=c000003e syscall=82 success=yes exit=0 a0=7ffea05a5ce0 a1=56add242aa40 a2=7ffea05a5c50 a3=100 items=5 ppid=17654 pid=17655 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=8 comm="usermod" exe="/usr/sbin/usermod" subj=unconfined key="group_file_change"

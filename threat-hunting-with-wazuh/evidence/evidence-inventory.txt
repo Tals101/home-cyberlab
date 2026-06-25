@@ -1,0 +1,53 @@
+﻿# Evidence Inventory
+
+## Architecture and Setup Evidence
+
+- evidence/lab-architecture.txt
+- evidence/lab-ip-inventory.txt
+
+## Reconnaissance Evidence
+
+- evidence/nmap-recon-command.txt
+- evidence/kali-ip-wazuh-hunt.txt
+- screenshots/kali-ip-wazuh-search.png
+
+## Authentication Evidence
+
+- evidence/failed-ssh-auth-events.txt
+- screenshots/failed-ssh-wazuh-alerts.png
+
+## Reverse-Shell-Style Evidence
+
+- evidence/reverse-shell-audit-events.txt
+- screenshots/reverse-shell-wazuh-events.png
+
+## User Creation and Privilege Change Evidence
+
+- evidence/user-creation-privilege-audit-events.txt
+- screenshots/user-creation-privilege-wazuh-events.png
+
+## Detection Logic Files
+
+- detections/failed-ssh-authentication-anomaly.md
+- detections/nmap-reconnaissance-hunt.md
+- detections/reverse-shell-style-activity.md
+- detections/user-creation-privilege-change.md
+
+## MITRE ATT&CK Mapping Files
+
+- mitre-mappings/failed-ssh-mitre-mapping.md
+- mitre-mappings/nmap-recon-mitre-mapping.md
+- mitre-mappings/reverse-shell-mitre-mapping.md
+- mitre-mappings/user-creation-privilege-mitre-mapping.md
+
+## Investigation Notes
+
+- investigations/failed-ssh-investigation-note.md
+- investigations/nmap-recon-investigation-note.md
+- investigations/reverse-shell-investigation-note.md
+- investigations/user-creation-privilege-investigation-note.md
+
+## Reports
+
+- reports/final-threat-hunting-with-wazuh-report.md
+- reports/lab-workflow.md

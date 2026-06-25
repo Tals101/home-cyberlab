@@ -1,0 +1,31 @@
+﻿# Evidence: Nmap Reconnaissance Scan
+
+## Activity Type
+
+Reconnaissance / Service Discovery
+
+## Attacker Machine
+
+Kali Linux
+
+## Target Machine
+
+wazuh-hunt-target
+IP Address: 192.168.56.118
+
+## Command Executed from Kali
+
+nmap -sV -Pn 192.168.56.118 -oN ~/threat-hunting-wazuh-evidence/nmap-scan-target.txt
+
+## Purpose
+
+This scan was used to simulate adversary reconnaissance against a monitored Linux server.
+
+The goal was to identify exposed services and generate activity that could be hunted in Wazuh.
+
+## Expected Hunt Focus
+
+- Unusual connection attempts
+- SSH service probing
+- Service/version discovery activity
+- Repeated network contact from Kali to the monitored target
