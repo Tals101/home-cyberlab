@@ -1,0 +1,28 @@
+﻿# Lab 2 Architecture
+
+## Wazuh Server
+
+Hostname: wazuh-server
+IP Address: 192.168.56.120
+Purpose: Wazuh manager, indexer, and dashboard
+
+## Monitored Target
+
+Hostname: wazuh-hunt-target
+IP Address: 192.168.56.118
+Purpose: Temporary Linux server running the Wazuh agent
+
+## Attacker Machine
+
+Hostname: Kali Linux
+Purpose: Simulate threat activity against the monitored target
+
+## Data Flow
+
+Kali Linux generates test activity against wazuh-hunt-target.
+
+wazuh-hunt-target records authentication, system, and security events.
+
+The Wazuh agent forwards telemetry to wazuh-server.
+
+Wazuh dashboard is used to hunt through the collected security data.

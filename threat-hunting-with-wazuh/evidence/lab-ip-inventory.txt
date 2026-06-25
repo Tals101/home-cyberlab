@@ -1,0 +1,19 @@
+﻿# Lab IP Inventory
+
+## Wazuh Server
+
+Hostname: wazuh-server
+IP Address: 192.168.56.120
+Role: Wazuh manager, indexer, and dashboard
+
+## Monitored Target
+
+Hostname: wazuh-hunt-target
+IP Address: 192.168.56.118
+Role: Linux endpoint running Wazuh agent
+
+## Attacker Machine
+
+Hostname: Kali Linux
+IP Address: 192.168.56.111
+Role: Simulated attacker system used for Nmap scans, failed SSH attempts, and other test activity

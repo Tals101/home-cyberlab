@@ -1,0 +1,11 @@
+2026-06-23T15:49:01.350708+00:00 wazuh-hunt-target sshd-session[15414]: Invalid user wronguser from 192.168.56.111 port 41230
+2026-06-23T15:49:06.412805+00:00 wazuh-hunt-target sshd-session[15414]: Failed password for invalid user wronguser from 192.168.56.111 port 41230 ssh2
+2026-06-23T15:49:17.432310+00:00 wazuh-hunt-target sshd-session[15414]: Failed password for invalid user wronguser from 192.168.56.111 port 41230 ssh2
+2026-06-23T15:49:23.536115+00:00 wazuh-hunt-target sshd-session[15414]: Failed password for invalid user wronguser from 192.168.56.111 port 41230 ssh2
+2026-06-23T15:49:23.659201+00:00 wazuh-hunt-target sshd-session[15414]: Connection closed by invalid user wronguser 192.168.56.111 port 41230 [preauth]
+2026-06-23T15:49:23.733520+00:00 wazuh-hunt-target sshd-session[15416]: Invalid user wronguser from 192.168.56.111 port 42774
+2026-06-23T15:49:29.492994+00:00 wazuh-hunt-target sshd-session[15416]: Failed password for invalid user wronguser from 192.168.56.111 port 42774 ssh2
+2026-06-23T15:49:35.717096+00:00 wazuh-hunt-target sshd-session[15416]: Failed password for invalid user wronguser from 192.168.56.111 port 42774 ssh2
+2026-06-23T15:49:39.102833+00:00 wazuh-hunt-target sshd-session[15416]: Connection closed by invalid user wronguser 192.168.56.111 port 42774 [preauth]
+2026-06-23T15:55:48.360129+00:00 wazuh-hunt-target sudo: lab : TTY=/dev/tty1 ; PWD=/home/lab ; USER=root ; COMMAND=/usr/bin/grep -i wronguser /var/log/auth.log
+2026-06-23T15:58:29.372019+00:00 wazuh-hunt-target sudo: lab : TTY=/dev/tty1 ; PWD=/home/lab ; USER=root ; COMMAND=/usr/bin/sh -c grep -i \"wronguser\" /var/log/auth.log | tail -30 > /home/lab/failed-ssh-auth-events.txt

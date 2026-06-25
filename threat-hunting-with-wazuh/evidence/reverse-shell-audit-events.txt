@@ -1,0 +1,32 @@
+=== Reverse shell tool execution audit events ===
+----
+time->Tue Jun 23 16:35:52 2026
+type=PROCTITLE msg=audit(1782232552.585:371): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=SYSCALL msg=audit(1782232552.585:371): arch=c000003e syscall=44 success=yes exit=1096 a0=3 a1=7ffeb9e57b70 a2=448 a3=0 items=0 ppid=17204 pid=17223 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=1 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782232552.585:371): auid=1000 ses=1 subj=unconfined op=add_rule key="reverse_shell_tool_execution" list=4 res=1
+----
+time->Tue Jun 23 16:35:52 2026
+type=PROCTITLE msg=audit(1782232552.585:372): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782232552.585:372): item=0 name="/usr/bin/" inode=262165 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782232552.585:372): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782232552.585:372): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782232552.585:372): arch=c000003e syscall=44 success=yes exit=1100 a0=3 a1=7ffeb9e57b70 a2=44c a3=0 items=1 ppid=17204 pid=17223 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=1 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782232552.585:372): auid=1000 ses=1 subj=unconfined op=add_rule key="reverse_shell_tool_execution" list=4 res=1
+ 
+=== Shell execution audit events ===
+----
+time->Tue Jun 23 16:35:52 2026
+type=PROCTITLE msg=audit(1782232552.585:373): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1782232552.585:373): item=0 name="/bin/" inode=262165 dev=fc:00 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782232552.585:373): cwd="/home/lab"
+type=SOCKADDR msg=audit(1782232552.585:373): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1782232552.585:373): arch=c000003e syscall=44 success=yes exit=1080 a0=3 a1=7ffeb9e57b70 a2=438 a3=0 items=1 ppid=17204 pid=17223 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=1 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1782232552.585:373): auid=1000 ses=1 subj=unconfined op=add_rule key="shell_execution" list=4 res=1
+----
+time->Tue Jun 23 16:38:48 2026
+type=PROCTITLE msg=audit(1782232728.450:379): proctitle=62617368002D63006563686F2022726576657273655F7368656C6C5F746573745F66726F6D5F77617A75685F68756E745F74617267657422207C206E63203139322E3136382E35362E3131312034343434
+type=PATH msg=audit(1782232728.450:379): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=287774 dev=fc:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1782232728.450:379): item=0 name="/usr/bin/bash" inode=262513 dev=fc:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1782232728.450:379): cwd="/home/lab"
+type=EXECVE msg=audit(1782232728.450:379): argc=3 a0="bash" a1="-c" a2=6563686F2022726576657273655F7368656C6C5F746573745F66726F6D5F77617A75685F68756E745F74617267657422207C206E63203139322E3136382E35362E3131312034343434
+type=SYSCALL msg=audit(1782232728.450:379): arch=c000003e syscall=59 success=yes exit=0 a0=5fab56d05e40 a1=5fab56d1e180 a2=5fab56d349c0 a3=61 items=2 ppid=1754 pid=17264 auid=1000 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=tty1 ses=1 comm="bash" exe="/usr/bin/bash" subj=unconfined key="shell_execution"

@@ -1,0 +1,48 @@
+﻿# Evidence: Kali Attacker IP Wazuh Hunt
+
+## Hunt Type
+
+Reconnaissance / attacker-source investigation
+
+## Search Performed
+
+The Wazuh dashboard was searched for the Kali attacker IP address:
+
+192.168.56.111
+
+## Systems Involved
+
+### Attacker Machine
+
+Kali Linux
+IP Address: 192.168.56.111
+
+### Target Machine
+
+wazuh-hunt-target
+IP Address: 192.168.56.118
+
+### Detection Platform
+
+wazuh-server
+IP Address: 192.168.56.120
+
+## Observed Result
+
+Wazuh returned security events associated with the Kali attacker IP address.
+
+This confirmed that attacker activity from Kali was visible in Wazuh and could be used for threat hunting.
+
+## Related Activity
+
+- Nmap service scan
+- Failed SSH login attempts
+- Authentication probing
+
+## Screenshot Evidence
+
+screenshots/kali-ip-wazuh-search.png
+
+## Analyst Note
+
+Searching by source IP is useful during threat hunting because it allows an analyst to pivot from one suspicious event into related activity from the same machine.
