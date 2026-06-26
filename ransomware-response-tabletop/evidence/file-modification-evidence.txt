@@ -1,0 +1,137 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260626103608
+Username: CyberHub\Tals' CyberHub
+RunAs User: CyberHub\Tals' CyberHub
+Configuration Name: 
+Machine: CYBERHUB (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1476
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is evidence\file-modification-evidence.txt
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Unusual File Modification Evidence Test Started ==="
+=== Unusual File Modification Evidence Test Started ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Host: $env:COMPUTERNAME"
+Host: CYBERHUB
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "User: $env:USERNAME"
+User: Tals' CyberHub
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Time: $(Get-Date)"
+Time: 06/26/2026 10:36:08
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Baseline File Listing Before Modifications ==="
+=== Baseline File Listing Before Modifications ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem .\lab-workspace -Recurse -File | Select-Object FullName, Length, LastWriteTime
+
+FullName
+--------
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\encoded-comma...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\bud...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\pla...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\conf...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\data...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\main.py
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Baseline File Hashes Before Modifications ==="
+=== Baseline File Hashes Before Modifications ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem .\lab-workspace -Recurse -File | Get-FileHash | Export-Csv evidence\file-hash-baseline.csv -NoTypeInformation
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-Content evidence\file-hash-baseline.csv
+"Algorithm","Hash","Path"
+"SHA256","9A20EB7A144EB49F879D02E4E588A473C5BC9EA469563ACDFD300B5B743FBA10","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\encoded-command-marker.txt"
+"SHA256","D94C13B2F1925ECE103C27497617C0C3FA6EF30C86170DA8F1B956469D15A59A","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\budget-notes.txt"
+"SHA256","460B6633D6B0F13A5323787D9803E32A74F235C6112A72A6B513AD1504F7AEA3","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\planning-notes.txt"
+"SHA256","1853A4C679232586C9050FF69DA74505ADD6EB636B8DEC52FA2A6F6ADBDE6477","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\config.txt"
+"SHA256","3FB7AE297E04A2BA3F13707EA7FEC127F3EDB89ABCF83243EB9E3DF3F6174410","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\database-env.txt"
+"SHA256","82D7BF48949E5E8D842EB1A24A50E35D8ED08702F568682DE2C7674E413D0767","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\main.py"
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Simulating Unusual File Modifications ==="
+=== Simulating Unusual File Modifications ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events = @()
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem .\lab-workspace\documents -File | ForEach-Object {
+    Add-Content -Path $_.FullName -Value "LAB MODIFICATION EVENT - $(Get-Date)"
+    $newName = "$($_.Name).locked-lab"
+    Rename-Item -Path $_.FullName -NewName $newName
+
+    $events += [PSCustomObject]@{
+        Time = Get-Date
+        OriginalFile = $_.Name
+        NewFile = $newName
+        Action = "Modified and renamed with locked-lab extension"
+        LabSafetyNote = "Safe tabletop simulation only"
+    }
+}
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem .\lab-workspace\projects -File | ForEach-Object {
+    Add-Content -Path $_.FullName -Value "LAB MODIFICATION EVENT - $(Get-Date)"
+
+    $events += [PSCustomObject]@{
+        Time = Get-Date
+        OriginalFile = $_.Name
+        NewFile = $_.Name
+        Action = "Modified file content"
+        LabSafetyNote = "Safe tabletop simulation only"
+    }
+}
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Export-Csv evidence\file-modification-events.csv -NoTypeInformation
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== File Modification Events ==="
+=== File Modification Events ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Format-Table -AutoSize
+
+Time                  OriginalFile       NewFile                       Action                                         L
+                                                                                                                      a
+                                                                                                                      b
+                                                                                                                      S
+                                                                                                                      a
+                                                                                                                      f
+                                                                                                                      e
+                                                                                                                      t
+                                                                                                                      y
+                                                                                                                      N
+                                                                                                                      o
+                                                                                                                      t
+                                                                                                                      e
+----                  ------------       -------                       ------                                         -
+6/26/2026 10:36:08 AM budget-notes.txt   budget-notes.txt.locked-lab   Modified and renamed with locked-lab extension S
+6/26/2026 10:36:08 AM planning-notes.txt planning-notes.txt.locked-lab Modified and renamed with locked-lab extension S
+6/26/2026 10:36:08 AM config.txt         config.txt                    Modified file content                          S
+6/26/2026 10:36:08 AM database-env.txt   database-env.txt              Modified file content                          S
+6/26/2026 10:36:08 AM main.py            main.py                       Modified file content                          S
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== File Listing After Modifications ==="
+=== File Listing After Modifications ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem .\lab-workspace -Recurse -File | Select-Object FullName, Length, LastWriteTime
+
+FullName
+--------
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\encoded-comma...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\bud...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\pla...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\conf...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\data...
+C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\main.py
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== File Hashes After Modifications ==="
+=== File Hashes After Modifications ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem .\lab-workspace -Recurse -File | Get-FileHash | Export-Csv evidence\file-hash-after-modification.csv -NoTypeInformation
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-Content evidence\file-hash-after-modification.csv
+"Algorithm","Hash","Path"
+"SHA256","9A20EB7A144EB49F879D02E4E588A473C5BC9EA469563ACDFD300B5B743FBA10","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\encoded-command-marker.txt"
+"SHA256","0275D6182A0BCE6CB567B6FD16DD82598A1AF0351F0E4FC3174E4B9444CF863A","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\budget-notes.txt.locked-lab"
+"SHA256","E1FAE0E496A3E9EB3A77E0F043A6471827CDAA10A09F39C4AD6C71A378493F02","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents\planning-notes.txt.locked-lab"
+"SHA256","5A526A8F6D1911BCA459A1AF9D293D6A071DF2854B0E6C675059EA3E5BC9CB80","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\config.txt"
+"SHA256","03DD3DE341D613FE7A2D44DF7763CA0F1DD9A656862EEF2134A819D9105F39C4","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\database-env.txt"
+"SHA256","53D003AE7045D6980FC00C5E6D5EB3150E63403ECD8B59A11782E0B211EDCC0C","C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects\main.py"
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Unusual File Modification Evidence Test Finished ==="
+=== Unusual File Modification Evidence Test Finished ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260626103613
+**********************

@@ -1,0 +1,295 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260626103715
+Username: CyberHub\Tals' CyberHub
+RunAs User: CyberHub\Tals' CyberHub
+Configuration Name: 
+Machine: CYBERHUB (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1476
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is evidence\network-traffic-evidence.txt
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Traffic Evidence Test Started ==="
+=== Outbound Network Traffic Evidence Test Started ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Host: $env:COMPUTERNAME"
+Host: CYBERHUB
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "User: $env:USERNAME"
+User: Tals' CyberHub
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Time: $(Get-Date)"
+Time: 06/26/2026 10:37:15
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Local Network Configuration ==="
+=== Local Network Configuration ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-NetIPConfiguration | Select-Object InterfaceAlias, IPv4Address, IPv4DefaultGateway, DNSServer
+
+InterfaceAlias               IPv4Address       IPv4DefaultGateway                                              DNSServe
+                                                                                                               r
+--------------               -----------       ------------------                                              --------
+Ethernet 3                   {192.168.39.1}                                                                    {MSFT...
+Ethernet                     {192.168.86.227}  {MSFT_NetRoute (InstanceID = ":8:8:8:9:55;?55;C?8;@B8B@8;55;")} {MSFT...
+Ethernet 2                   {192.168.56.1}                                                                    {MSFT...
+Wi-Fi                        {169.254.13.5}                                                                    {MSFT...
+Bluetooth Network Connection {169.254.195.241}                                                                 {MSFT...
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== DNS Resolution Evidence ==="
+=== DNS Resolution Evidence ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Resolve-DnsName example.com
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+example.com                                    AAAA   300   Answer     2606:4700:10::6814:179a
+example.com                                    AAAA   300   Answer     2606:4700:10::ac42:93f3
+example.com                                    A      300   Answer     104.20.23.154
+example.com                                    A      300   Answer     172.66.147.243
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Resolve-DnsName microsoft.com
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+microsoft.com                                  AAAA   3449  Answer     2603:1061:14:75::1
+microsoft.com                                  A      1750  Answer     150.171.109.73
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound HTTPS Connectivity Tests ==="
+=== Outbound HTTPS Connectivity Tests ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events = @()
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $targets = @(
+    @{Destination="example.com"; Port=443; Protocol="HTTPS"},
+    @{Destination="microsoft.com"; Port=443; Protocol="HTTPS"},
+    @{Destination="github.com"; Port=443; Protocol="HTTPS"}
+)
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> foreach ($target in $targets) {
+    $result = Test-NetConnection -ComputerName $target.Destination -Port $target.Port
+
+    $events += [PSCustomObject]@{
+        Time = Get-Date
+        SourceHost = $env:COMPUTERNAME
+        Destination = $target.Destination
+        RemoteAddress = $result.RemoteAddress
+        Port = $target.Port
+        Protocol = $target.Protocol
+        TcpTestSucceeded = $result.TcpTestSucceeded
+        EvidenceType = "Outbound network connection test"
+    }
+}
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Export-Csv evidence\outbound-network-events.csv -NoTypeInformation
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Events ==="
+=== Outbound Network Events ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Format-Table -AutoSize
+
+Time                  SourceHost Destination   RemoteAddress  Port Protocol TcpTestSucceeded EvidenceType
+----                  ---------- -----------   -------------  ---- -------- ---------------- ------------
+6/26/2026 10:37:18 AM CYBERHUB   example.com   104.20.23.154   443 HTTPS                True Outbound network connec...
+6/26/2026 10:37:19 AM CYBERHUB   microsoft.com 150.171.109.77  443 HTTPS                True Outbound network connec...
+6/26/2026 10:37:19 AM CYBERHUB   github.com    140.82.112.4    443 HTTPS                True Outbound network connec...
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Web Request Evidence ==="
+=== Web Request Evidence ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Invoke-WebRequest -Uri "https://example.com" -UseBasicParsing | Select-Object StatusCode, StatusDescription, Headers
+
+StatusCode StatusDescription Headers
+---------- ----------------- -------
+       200 OK                {[Transfer-Encoding, chunked], [Connection, keep-alive], [allow, GET, HEAD], [Age, 6298...
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Active TCP Connections Snapshot ==="
+=== Active TCP Connections Snapshot ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-NetTCPConnection | Where-Object {
+    $_.State -eq "Established"
+} | Select-Object LocalAddress, LocalPort, RemoteAddress, RemotePort, State, OwningProcess
+
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 60540
+RemoteAddress : 172.202.248.68
+RemotePort    : 443
+State         : Established
+OwningProcess : 13084
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 59009
+RemoteAddress : 3.208.225.31
+RemotePort    : 443
+State         : Established
+OwningProcess : 5180
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 52025
+RemoteAddress : 172.217.203.188
+RemotePort    : 5228
+State         : Established
+OwningProcess : 13060
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 49411
+RemoteAddress : 172.183.7.192
+RemotePort    : 443
+State         : Established
+OwningProcess : 5208
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 48672
+RemoteAddress : 104.20.23.154
+RemotePort    : 443
+State         : Established
+OwningProcess : 1476
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 48668
+RemoteAddress : 35.153.24.70
+RemotePort    : 443
+State         : Established
+OwningProcess : 19420
+
+LocalAddress  : 127.0.0.1
+LocalPort     : 42726
+RemoteAddress : 127.0.0.1
+RemotePort    : 37673
+State         : Established
+OwningProcess : 12816
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 42273
+RemoteAddress : 54.204.101.212
+RemotePort    : 443
+State         : Established
+OwningProcess : 25340
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 42272
+RemoteAddress : 104.18.39.21
+RemotePort    : 443
+State         : Established
+OwningProcess : 13060
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 38938
+RemoteAddress : 18.233.103.91
+RemotePort    : 443
+State         : Established
+OwningProcess : 19420
+
+LocalAddress  : 127.0.0.1
+LocalPort     : 37673
+RemoteAddress : 127.0.0.1
+RemotePort    : 42726
+State         : Established
+OwningProcess : 25340
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 35647
+RemoteAddress : 54.156.150.34
+RemotePort    : 443
+State         : Established
+OwningProcess : 15036
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 33863
+RemoteAddress : 104.18.32.47
+RemotePort    : 443
+State         : Established
+OwningProcess : 13060
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 29459
+RemoteAddress : 23.103.225.59
+RemotePort    : 443
+State         : Established
+OwningProcess : 13084
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 24827
+RemoteAddress : 18.239.225.35
+RemotePort    : 443
+State         : Established
+OwningProcess : 5912
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 19952
+RemoteAddress : 32.196.101.101
+RemotePort    : 443
+State         : Established
+OwningProcess : 12816
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 17148
+RemoteAddress : 172.183.7.194
+RemotePort    : 443
+State         : Established
+OwningProcess : 27304
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 16776
+RemoteAddress : 18.233.103.91
+RemotePort    : 443
+State         : Established
+OwningProcess : 19420
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 12525
+RemoteAddress : 34.236.174.2
+RemotePort    : 443
+State         : Established
+OwningProcess : 25340
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 12524
+RemoteAddress : 3.227.137.252
+RemotePort    : 443
+State         : Established
+OwningProcess : 25340
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 12523
+RemoteAddress : 34.236.248.64
+RemotePort    : 443
+State         : Established
+OwningProcess : 25340
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 12522
+RemoteAddress : 192.178.50.69
+RemotePort    : 443
+State         : Established
+OwningProcess : 13060
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 10159
+RemoteAddress : 172.64.144.52
+RemotePort    : 443
+State         : Established
+OwningProcess : 13060
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 5561
+RemoteAddress : 151.101.193.55
+RemotePort    : 443
+State         : Established
+OwningProcess : 6416
+
+LocalAddress  : 192.168.86.227
+LocalPort     : 1889
+RemoteAddress : 104.18.24.232
+RemotePort    : 443
+State         : Established
+OwningProcess : 13060
+
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Traffic Evidence Test Finished ==="
+=== Outbound Network Traffic Evidence Test Finished ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260626103723
+**********************

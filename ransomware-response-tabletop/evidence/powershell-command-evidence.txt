@@ -1,0 +1,81 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260626103434
+Username: CyberHub\Tals' CyberHub
+RunAs User: CyberHub\Tals' CyberHub
+Configuration Name: 
+Machine: CYBERHUB (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1476
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is evidence\powershell-command-evidence.txt
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Suspicious PowerShell Evidence Test Started ==="
+=== Suspicious PowerShell Evidence Test Started ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Host: $env:COMPUTERNAME"
+Host: CYBERHUB
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "User: $env:USERNAME"
+User: Tals' CyberHub
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Time: $(Get-Date)"
+Time: 06/26/2026 10:34:34
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== File Discovery Simulation ==="
+=== File Discovery Simulation ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-ChildItem -Path .\lab-workspace -Recurse
+
+
+    Directory: C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/26/2026  10:33 AM                documents
+d-----         6/26/2026  10:33 AM                projects
+
+
+    Directory: C:\Users\Tals'
+    CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\documents
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/26/2026  10:33 AM             30 budget-notes.txt
+-a----         6/26/2026  10:33 AM             26 planning-notes.txt
+
+
+    Directory: C:\Users\Tals'
+    CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop\lab-workspace\projects
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/26/2026  10:33 AM             26 config.txt
+-a----         6/26/2026  10:33 AM             34 database-env.txt
+-a----         6/26/2026  10:33 AM             32 main.py
+
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Encoded PowerShell Simulation ==="
+=== Encoded PowerShell Simulation ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $payload = 'Write-Output "Harmless encoded PowerShell command executed for ransomware tabletop evidence"; "encoded-command-marker" | Set-Content .\lab-workspace\encoded-command-marker.txt'
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($payload))
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand $encoded
+
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Suspicious Command Not Executed For Safety ==="
+=== Suspicious Command Not Executed For Safety ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Blocked destructive command example: vssadmin delete shadows /all /quiet"
+Blocked destructive command example: vssadmin delete shadows /all /quiet
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Reason: destructive recovery-inhibition command was documented but not executed."
+Reason: destructive recovery-inhibition command was documented but not executed.
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Suspicious PowerShell Evidence Test Finished ==="
+=== Suspicious PowerShell Evidence Test Finished ===
+PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260626103436
+**********************
