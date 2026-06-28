@@ -1,0 +1,30 @@
+customRules:
+  detection-engineering-custom-rules.yaml: |-
+    - rule: Suspicious User Management Command in Container
+      desc: Detect user or group management commands executed inside a container
+      condition: >
+        spawned_process and container and
+        proc.name in (useradd, adduser, usermod, groupadd, passwd)
+      output: >
+        Suspicious user management command executed in container
+        (user=%user.name user_uid=%user.uid command=%proc.cmdline
+        process=%proc.name parent=%proc.pname container_id=%container.id
+        container_name=%container.name image=%container.image.repository:%container.image.tag
+        k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+      priority: WARNING
+      tags: [container, users, persistence, detection_engineering_lab]
+
+    - rule: Host Filesystem Access Through Mounted HostPath
+      desc: Detect container process reading files through a mounted host filesystem path
+      condition: >
+        open_read and container and
+        fd.name startswith /host
+      output: >
+        Container accessed host filesystem through mounted hostPath
+        (user=%user.name user_uid=%user.uid command=%proc.cmdline
+        process=%proc.name parent=%proc.pname file=%fd.name
+        container_id=%container.id container_name=%container.name
+        image=%container.image.repository:%container.image.tag
+        k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+      priority: WARNING
+      tags: [container, hostpath, privilege_escalation, detection_engineering_lab]

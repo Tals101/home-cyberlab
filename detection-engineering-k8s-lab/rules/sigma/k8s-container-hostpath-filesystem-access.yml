@@ -1,0 +1,42 @@
+title: Kubernetes Container HostPath Filesystem Access
+id: 9c3f1a7b-3f6a-4d7c-8d2b-003-hostpath-k8s
+status: experimental
+description: Detects Kubernetes container access to host filesystem paths through a mounted hostPath.
+author: Detection Engineering Lab
+date: 2026/06/28
+references:
+  - https://attack.mitre.org/techniques/T1611/
+logsource:
+  product: falco
+  service: runtime
+detection:
+  selection_message:
+    message|contains: 'Container accessed host filesystem through mounted hostPath'
+  selection_path:
+    message|contains:
+      - 'file=/host/'
+      - '/host/etc/'
+      - '/host/root'
+  condition: selection_message or selection_path
+fields:
+  - user
+  - user_uid
+  - command
+  - process
+  - parent
+  - file
+  - container_name
+  - container_image_repository
+  - k8s_pod_name
+  - k8s_ns_name
+falsepositives:
+  - Authorized node debugging pods
+  - Security monitoring tools
+  - Forensic or backup tooling with approved hostPath mounts
+level: high
+tags:
+  - attack.privilege_escalation
+  - attack.t1611
+  - kubernetes
+  - container
+  - hostpath
