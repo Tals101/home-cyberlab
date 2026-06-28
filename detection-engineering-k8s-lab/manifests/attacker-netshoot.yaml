@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: attacker-netshoot
+  namespace: de-attacker
+  labels:
+    app: attacker-netshoot
+spec:
+  containers:
+  - name: attacker-netshoot
+    image: nicolaka/netshoot:latest
+    command: ["sleep"]
+    args: ["36000"]
+  restartPolicy: Never

@@ -1,0 +1,42 @@
+title: Kubernetes Container Reverse Shell Network Redirection
+id: ad4e2c9f-4a7b-4e2d-8f3c-004-reverse-shell-k8s
+status: experimental
+description: Detects shell stdin/stdout redirection to a network connection inside a Kubernetes container.
+author: Detection Engineering Lab
+date: 2026/06/28
+references:
+  - https://attack.mitre.org/techniques/T1059/
+logsource:
+  product: falco
+  service: runtime
+detection:
+  selection_message:
+    message|contains: 'Redirect stdout/stdin to network connection'
+  selection_shell:
+    message|contains:
+      - 'process=bash'
+      - '/dev/tcp/'
+      - 'bash -i'
+  condition: selection_message or selection_shell
+fields:
+  - user
+  - user_uid
+  - process
+  - command
+  - connection
+  - fd_proto
+  - container_name
+  - container_image_repository
+  - k8s_pod_name
+  - k8s_ns_name
+falsepositives:
+  - Authorized debugging sessions
+  - Rare legitimate remote shell redirection activity
+level: critical
+tags:
+  - attack.execution
+  - attack.command_and_control
+  - attack.t1059
+  - kubernetes
+  - container
+  - reverse_shell

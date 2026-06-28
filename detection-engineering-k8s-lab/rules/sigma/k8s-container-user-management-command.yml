@@ -1,0 +1,43 @@
+title: Kubernetes Container User Management Command
+id: 8b2e0d4a-2e5f-4b6b-9c1a-002-user-mgmt-k8s
+status: experimental
+description: Detects Linux user or group management commands executed inside a Kubernetes container.
+author: Detection Engineering Lab
+date: 2026/06/28
+references:
+  - https://attack.mitre.org/techniques/T1136/001/
+logsource:
+  product: falco
+  service: runtime
+detection:
+  selection_message:
+    message|contains: 'Suspicious user management command executed in container'
+  selection_process:
+    message|contains:
+      - 'process=useradd'
+      - 'process=adduser'
+      - 'process=usermod'
+      - 'process=groupadd'
+      - 'process=passwd'
+  condition: selection_message or selection_process
+fields:
+  - user
+  - user_uid
+  - command
+  - process
+  - parent
+  - container_name
+  - container_image_repository
+  - k8s_pod_name
+  - k8s_ns_name
+falsepositives:
+  - Authorized administrative containers
+  - Image initialization scripts
+  - Debugging or troubleshooting sessions
+level: high
+tags:
+  - attack.persistence
+  - attack.t1136.001
+  - kubernetes
+  - container
+  - user_creation

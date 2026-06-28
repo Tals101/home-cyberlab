@@ -1,0 +1,43 @@
+<group name="kubernetes,detection_engineering_lab,falco,">
+
+  <rule id="100700" level="10">
+    <decoded_as>json</decoded_as>
+    <match>Packet socket was created in a container</match>
+    <description>Kubernetes container created packet socket, possible Nmap or network reconnaissance activity</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+    <group>network_scan,reconnaissance,nmap,</group>
+  </rule>
+
+  <rule id="100701" level="12">
+    <decoded_as>json</decoded_as>
+    <match>Suspicious user management command executed in container</match>
+    <description>Kubernetes container executed user or group management command</description>
+    <mitre>
+      <id>T1136.001</id>
+    </mitre>
+    <group>persistence,user_creation,container,</group>
+  </rule>
+
+  <rule id="100702" level="12">
+    <decoded_as>json</decoded_as>
+    <match>Container accessed host filesystem through mounted hostPath</match>
+    <description>Kubernetes container accessed host filesystem through mounted hostPath</description>
+    <mitre>
+      <id>T1611</id>
+    </mitre>
+    <group>privilege_escalation,container_escape,hostpath,</group>
+  </rule>
+
+  <rule id="100703" level="14">
+    <decoded_as>json</decoded_as>
+    <match>Redirect stdout/stdin to network connection</match>
+    <description>Kubernetes container redirected shell stdin/stdout to network connection, possible reverse shell</description>
+    <mitre>
+      <id>T1059</id>
+    </mitre>
+    <group>reverse_shell,command_and_control,execution,</group>
+  </rule>
+
+</group>

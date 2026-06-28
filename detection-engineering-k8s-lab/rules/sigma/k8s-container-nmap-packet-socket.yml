@@ -1,0 +1,34 @@
+title: Kubernetes Container Nmap Packet Socket Activity
+id: 7e1d5e3f-1c5d-4c4b-9f8a-001-nmap-k8s
+status: experimental
+description: Detects Nmap execution inside a Kubernetes container based on Falco packet socket alerts.
+author: Detection Engineering Lab
+date: 2026/06/28
+references:
+  - https://attack.mitre.org/techniques/T1046/
+logsource:
+  product: falco
+  service: runtime
+detection:
+  selection:
+    message|contains:
+      - 'Packet socket was created in a container'
+      - 'process=nmap'
+  condition: selection
+fields:
+  - process
+  - command
+  - container_name
+  - container_image_repository
+  - k8s_pod_name
+  - k8s_ns_name
+falsepositives:
+  - Authorized network troubleshooting containers
+  - Security scanning tools used by administrators
+level: medium
+tags:
+  - attack.discovery
+  - attack.t1046
+  - kubernetes
+  - container
+  - nmap
