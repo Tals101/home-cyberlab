@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::513962983534:user/cloud-security-lab-cli"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
