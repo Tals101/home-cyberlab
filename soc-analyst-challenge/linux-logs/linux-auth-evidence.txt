@@ -1,0 +1,32 @@
+2026-06-30T15:51:33.079100+00:00 ubuntu-soc-lab passwd[846]: password for 'analyst' changed by 'root'
+2026-06-30T15:54:12.529517+00:00 ubuntu-soc-lab sshd[1280]: Accepted password for analyst from 192.168.56.1 port 58599 ssh2
+2026-06-30T15:55:01.973731+00:00 ubuntu-soc-lab CRON[1352]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-30T15:55:01.981443+00:00 ubuntu-soc-lab CRON[1352]: pam_unix(cron:session): session closed for user root
+2026-06-30T15:55:25.615821+00:00 ubuntu-soc-lab sudo:  analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/apt update
+2026-06-30T15:55:25.616321+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-30T15:55:28.605833+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-30T15:56:04.204638+00:00 ubuntu-soc-lab sudo:  analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/tail -30 /var/log/auth.log
+2026-06-30T15:56:04.205627+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-30T15:56:04.213934+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-30T16:05:01.010965+00:00 ubuntu-soc-lab CRON[1650]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-30T16:05:01.016405+00:00 ubuntu-soc-lab CRON[1650]: pam_unix(cron:session): session closed for user root
+2026-06-30T16:05:35.827900+00:00 ubuntu-soc-lab sshd[1654]: Invalid user oracle from 192.168.56.111 port 37284
+2026-06-30T16:05:44.789806+00:00 ubuntu-soc-lab sshd[1654]: Failed password for invalid user oracle from 192.168.56.111 port 37284 ssh2
+2026-06-30T16:05:51.690476+00:00 ubuntu-soc-lab sshd[1654]: Failed password for invalid user oracle from 192.168.56.111 port 37284 ssh2
+2026-06-30T16:05:59.885940+00:00 ubuntu-soc-lab sshd[1654]: Failed password for invalid user oracle from 192.168.56.111 port 37284 ssh2
+2026-06-30T16:06:01.814236+00:00 ubuntu-soc-lab sshd[1654]: Connection closed by invalid user oracle 192.168.56.111 port 37284 [preauth]
+2026-06-30T16:06:16.055982+00:00 ubuntu-soc-lab sshd[1657]: Invalid user test from 192.168.56.111 port 43268
+2026-06-30T16:06:26.948047+00:00 ubuntu-soc-lab sshd[1657]: Failed password for invalid user test from 192.168.56.111 port 43268 ssh2
+2026-06-30T16:06:33.530910+00:00 ubuntu-soc-lab sshd[1657]: Failed password for invalid user test from 192.168.56.111 port 43268 ssh2
+2026-06-30T16:06:41.564075+00:00 ubuntu-soc-lab sshd[1657]: Failed password for invalid user test from 192.168.56.111 port 43268 ssh2
+2026-06-30T16:06:41.590977+00:00 ubuntu-soc-lab sshd[1657]: Connection closed by invalid user test 192.168.56.111 port 43268 [preauth]
+2026-06-30T16:07:00.425629+00:00 ubuntu-soc-lab sshd[1663]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.56.111  user=root
+2026-06-30T16:07:02.659197+00:00 ubuntu-soc-lab sshd[1663]: Failed password for root from 192.168.56.111 port 42518 ssh2
+2026-06-30T16:07:22.609176+00:00 ubuntu-soc-lab sshd[1663]: message repeated 2 times: [ Failed password for root from 192.168.56.111 port 42518 ssh2]
+2026-06-30T16:07:24.362192+00:00 ubuntu-soc-lab sshd[1663]: Connection closed by authenticating user root 192.168.56.111 port 42518 [preauth]
+2026-06-30T16:07:24.362318+00:00 ubuntu-soc-lab sshd[1663]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.56.111  user=root
+2026-06-30T16:07:51.402137+00:00 ubuntu-soc-lab sudo:  analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/grep -Ei 'Failed password|invalid user|root' /var/log/auth.log
+2026-06-30T16:07:51.409495+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+2026-06-30T16:07:51.409518+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-06-30T16:08:00.823836+00:00 ubuntu-soc-lab sudo:  analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/grep -Ei 'Failed password|invalid user|root|Accepted password|sudo' /var/log/auth.log
+2026-06-30T16:08:00.824325+00:00 ubuntu-soc-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
