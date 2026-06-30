@@ -1,0 +1,41 @@
+﻿Folder PATH listing for volume Windows
+Volume serial number is 000000B9 D403:C900
+C:.
+ª   README.md
+ª   
++---evidence
+ª       evidence-hashes.txt
+ª       evidence-inventory.txt
+ª       nmap-recon-scan.txt
+ª       pcap-summary.txt
+ª       
++---investigation
+ª       lab-inventory.md
+ª       tier1-findings.md
+ª       timeline.md
+ª       
++---linux-logs
+ª       linux-auth-evidence.txt
+ª       
++---pcap
+ª       lab6-soc-capture.pcap
+ª       
++---reports
+ª       final-incident-report.md
+ª       
++---screenshots
+ª       Screenshot 2026-06-30 133659.png
+ª       Screenshot 2026-06-30 133737.png
+ª       Screenshot 2026-06-30 133818.png
+ª       Screenshot 2026-06-30 133855.png
+ª       Screenshot 2026-06-30 133927.png
+ª       Screenshot 2026-06-30 134000.png
+ª       
++---threat-intel
+ª       threat-intel-notes.md
+ª       
++---windows-logs
+        windows-auth-account-evidence.txt
+        windows-failed-logon-evidence.txt
+        windows-process-evidence.txt
+        

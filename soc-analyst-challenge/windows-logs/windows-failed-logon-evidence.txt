@@ -1,0 +1,2954 @@
+﻿
+
+TimeCreated  : 6/30/2026 12:34:57 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		administrator
+               	Account Domain:		WORKGROUP
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	KALI
+               	Source Network Address:	192.168.56.111
+               	Source Port:		36906
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:34:43 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		fakeadmin
+               	Account Domain:		WORKGROUP
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	KALI
+               	Source Network Address:	192.168.56.111
+               	Source Port:		40334
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:32:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Account currently disabled.
+               	Status:			0xC000006E
+               	Sub Status:		0xC0000072
+               
+               Process Information:
+               	Caller Process ID:	0x102c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		sshd
+               	Authentication Package:	MICROSOFT_AUTHENTICATION_PACKAGE_V1_0
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:32:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		FakeUser
+               	Account Domain:		FakeDomain
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x102c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:32:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Account currently disabled.
+               	Status:			0xC000006E
+               	Sub Status:		0xC0000072
+               
+               Process Information:
+               	Caller Process ID:	0x102c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		sshd
+               	Authentication Package:	MICROSOFT_AUTHENTICATION_PACKAGE_V1_0
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:32:10 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Account currently disabled.
+               	Status:			0xC000006E
+               	Sub Status:		0xC0000072
+               
+               Process Information:
+               	Caller Process ID:	0x28c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		sshd
+               	Authentication Package:	MICROSOFT_AUTHENTICATION_PACKAGE_V1_0
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:32:10 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		FakeUser
+               	Account Domain:		FakeDomain
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x28c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:32:10 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Account currently disabled.
+               	Status:			0xC000006E
+               	Sub Status:		0xC0000072
+               
+               Process Information:
+               	Caller Process ID:	0x28c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		sshd
+               	Authentication Package:	MICROSOFT_AUTHENTICATION_PACKAGE_V1_0
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:31:57 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x1964
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:31:52 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x1964
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:31:48 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x1964
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:26:52 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0xf78
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:26:09 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x1084
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:25:12 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x9bc
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:24:47 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x1408
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:24:25 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0xc40
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:24:23 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0xc40
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 6/30/2026 12:24:02 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		WIN-MALWARE-LAB$
+               	Account Domain:		WORKGROUP
+               	Logon ID:		0x3E7
+               
+               Logon Type:			8
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		NOUSER
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x132c
+               	Caller Process Name:	C:\Windows\System32\OpenSSH\sshd.exe
+               
+               Network Information:
+               	Workstation Name:	WIN-MALWARE-LAB
+               	Source Network Address:	-
+               	Source Port:		-
+               
+               Detailed Authentication Information:
+               	Logon Process:		Advapi  
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:28:35 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		guest
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		47244
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:28:35 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		test
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		47228
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:28:35 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		user
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		47204
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:28:35 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		admin
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		47192
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:28:35 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		administrator
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		47168
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:28:30 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		
+               
+               Failure Information:
+               	Failure Reason:		An Error occured during Logon.
+               	Status:			0x80090308
+               	Sub Status:		0x0
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		47148
+               
+               Detailed Authentication Information:
+               	Logon Process:		
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:24:11 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		guest
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		34574
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:24:11 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		test
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		34562
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:24:11 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		user
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		34552
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:24:11 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		admin
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		34538
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:24:11 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		administrator
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		34526
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:24:05 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		
+               
+               Failure Information:
+               	Failure Reason:		An Error occured during Logon.
+               	Status:			0x80090308
+               	Sub Status:		0x0
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35112
+               
+               Detailed Authentication Information:
+               	Logon Process:		
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:58 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		guest
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35092
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:58 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		test
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35064
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:58 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		user
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35048
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:58 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		admin
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35034
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:58 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		administrator
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35010
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:53 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		
+               
+               Failure Information:
+               	Failure Reason:		An Error occured during Logon.
+               	Status:			0x80090308
+               	Sub Status:		0x0
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		58514
+               
+               Detailed Authentication Information:
+               	Logon Process:		
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:41 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		guest
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		33448
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:41 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		test
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		33436
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:41 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		user
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		33432
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:41 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		admin
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		33418
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:41 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		administrator
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		33398
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 5:23:36 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		
+               
+               Failure Information:
+               	Failure Reason:		An Error occured during Logon.
+               	Status:			0x80090308
+               	Sub Status:		0x0
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		33370
+               
+               Detailed Authentication Information:
+               	Logon Process:		
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:28 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		guest
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		44562
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		test
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		44546
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		user
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		44532
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		admin
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		44508
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:27 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		administrator
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		44484
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:22 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		
+               	Account Domain:		
+               
+               Failure Information:
+               	Failure Reason:		An Error occured during Logon.
+               	Status:			0x80090308
+               	Sub Status:		0x0
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		44456
+               
+               Detailed Authentication Information:
+               	Logon Process:		
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:18 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		guest
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35800
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+TimeCreated  : 4/27/2026 2:17:18 PM
+Id           : 4625
+ProviderName : Microsoft-Windows-Security-Auditing
+Message      : An account failed to log on.
+               
+               Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+               
+               Logon Type:			3
+               
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		test
+               	Account Domain:		WIN-MALWARE-LAB
+               
+               Failure Information:
+               	Failure Reason:		Unknown user name or bad password.
+               	Status:			0xC000006D
+               	Sub Status:		0xC0000064
+               
+               Process Information:
+               	Caller Process ID:	0x0
+               	Caller Process Name:	-
+               
+               Network Information:
+               	Workstation Name:	-
+               	Source Network Address:	192.168.56.111
+               	Source Port:		35788
+               
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp 
+               	Authentication Package:	NTLM
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+               
+               This event is generated when a logon request fails. It is generated on the computer where access was 
+               attempted.
+               
+               The Subject fields indicate the account on the local system which requested the logon. This is most 
+               commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+               
+               The Logon Type field indicates the kind of logon that was requested. The most common types are 2 
+               (interactive) and 3 (network).
+               
+               The Process Information fields indicate which account and process on the system requested the logon.
+               
+               The Network Information fields indicate where a remote logon request originated. Workstation name is 
+               not always available and may be left blank in some cases.
+               
+               The authentication information fields provide detailed information about this specific logon request.
+               	- Transited services indicate which intermediate services have participated in this logon request.
+               	- Package name indicates which sub-protocol was used among the NTLM protocols.
+               	- Key length indicates the length of the generated session key. This will be 0 if no session key was 
+               requested.
+
+
+
