@@ -1,0 +1,5 @@
+"Id","Type","Severity","Title","CreatedAt","UpdatedAt"
+"46cf947228bd6c7ac2c5a958652f8b51","Policy:IAMUser/RootCredentialUsage","2.0","The API ListEnrollmentStatuses was invoked using root credentials.","2026-07-03T16:51:19.546Z","2026-07-03T19:16:42.457Z"
+"3ecf94ad6fe55473f62b1db9ee9b2225","UnauthorizedAccess:EC2/TorClient","8.0","The EC2 instance i-09d2d179f63f940de is communicating with a Tor entry node.","2026-07-03T19:00:49.226Z","2026-07-03T19:02:13.402Z"
+"4ecf94983d4d665aa3439d38656bc371","UnauthorizedAccess:EC2/TorClient","8.0","The EC2 instance i-02171cc9fc45e7ff2 is communicating with a Tor entry node.","2026-07-03T18:14:30.810Z","2026-07-03T18:15:20.491Z"
+"b2cf949421f35769e861cfbab741d6b6","Stealth:IAMUser/CloudTrailLoggingDisabled","2.0","An AWS CloudTrail trail GuardDutyTesterCloudTrail was disabled.","2026-07-03T18:05:32.518Z","2026-07-03T18:05:32.518Z"

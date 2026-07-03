@@ -1,0 +1,9 @@
+{
+  "Criterion": {
+    "type": {
+      "Eq": [
+        "PenTest:S3/KaliLinux"
+      ]
+    }
+  }
+}

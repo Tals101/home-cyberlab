@@ -1,0 +1,17 @@
+{
+  "Criterion": {
+    "type": {
+      "Eq": [
+        "Discovery:S3/MaliciousIPCaller.Custom",
+        "Discovery:S3/TorIPCaller",
+        "PenTest:S3/KaliLinux",
+        "Policy:S3/AccountBlockPublicAccessDisabled",
+        "Policy:S3/BucketBlockPublicAccessDisabled",
+        "Policy:S3/BucketPublicAccessGranted",
+        "Policy:S3/BucketAnonymousAccessGranted",
+        "UnauthorizedAccess:S3/MaliciousIPCaller.Custom",
+        "UnauthorizedAccess:S3/TorIPCaller"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "Criterion": {
+    "type": {
+      "Eq": [
+        "PenTest:IAMUser/KaliLinux",
+        "Recon:IAMUser/MaliciousIPCaller.Custom",
+        "Recon:IAMUser/TorIPCaller",
+        "Stealth:IAMUser/CloudTrailLoggingDisabled",
+        "Stealth:IAMUser/PasswordPolicyChange",
+        "UnauthorizedAccess:IAMUser/TorIPCaller",
+        "UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration.OutsideAWS",
+        "UnauthorizedAccess:IAMUser/MaliciousIPCaller.Custom"
+      ]
+    }
+  }
+}

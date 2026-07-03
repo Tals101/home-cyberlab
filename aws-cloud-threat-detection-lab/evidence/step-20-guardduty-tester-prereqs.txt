@@ -1,0 +1,19 @@
+# GuardDuty Tester Local Prerequisite Check
+
+git:
+git version 2.54.0.windows.1
+
+node:
+v24.11.1
+
+npm:
+11.6.2
+
+docker:
+Docker version 29.6.1, build 8900f1d
+
+aws:
+aws-cli/2.34.32 Python/3.14.4 Windows/11 exe/AMD64
+
+session-manager-plugin:
+
