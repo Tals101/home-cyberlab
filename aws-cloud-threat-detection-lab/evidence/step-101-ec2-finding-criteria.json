@@ -1,0 +1,26 @@
+{
+  "Criterion": {
+    "type": {
+      "Eq": [
+        "Backdoor:EC2/C&CActivity.B!DNS",
+        "Backdoor:EC2/DenialOfService.Udp",
+        "Backdoor:EC2/DenialOfService.Dns",
+        "CryptoCurrency:EC2/BitcoinTool.B!DNS",
+        "Impact:EC2/AbusedDomainRequest.Reputation",
+        "Impact:EC2/BitcoinDomainRequest.Reputation",
+        "Impact:EC2/MaliciousDomainRequest.Reputation",
+        "Impact:EC2/SuspiciousDomainRequest.Reputation",
+        "Recon:EC2/Portscan",
+        "Trojan:EC2/DropPoint!DNS",
+        "Trojan:EC2/DNSDataExfiltration",
+        "Trojan:EC2/BlackholeTraffic!DNS",
+        "Trojan:EC2/PhishingDomainRequest!DNS",
+        "Trojan:EC2/DriveBySourceTraffic!DNS",
+        "Trojan:EC2/DGADomainRequest.C!DNS",
+        "UnauthorizedAccess:EC2/SSHBruteForce",
+        "UnauthorizedAccess:EC2/RDPBruteForce",
+        "UnauthorizedAccess:EC2/MaliciousIPCaller.Custom"
+      ]
+    }
+  }
+}

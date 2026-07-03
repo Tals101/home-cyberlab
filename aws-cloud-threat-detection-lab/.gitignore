@@ -1,0 +1,20 @@
+# Ignore cloned GuardDuty Tester working repo
+/amazon-guardduty-tester/
+amazon-guardduty-tester/
+
+# Ignore generated dependency/build folders if ever created outside tester repo
+node_modules/
+cdk.out/
+
+# Ignore local/editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Ignore AWS/local secrets if accidentally created
+.aws/
+*.pem
+*.key
+credentials
+config

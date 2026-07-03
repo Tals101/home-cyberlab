@@ -1,0 +1,2 @@
+"Id","Type","Severity","Title","CreatedAt","UpdatedAt"
+"f4cf94bb0c709171445a05e8cce4e9fd","UnauthorizedAccess:EC2/MaliciousIPCaller.Custom","5.0","The EC2 instance i-013d107192681f40a is communicating with an IP address on a custom threat list.","2026-07-03T19:30:33.313Z","2026-07-03T19:31:43.962Z"

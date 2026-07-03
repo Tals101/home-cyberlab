@@ -1,0 +1,2 @@
+"Id","Type","Severity","Title","CreatedAt","UpdatedAt"
+"b2cf949421f35769e861cfbab741d6b6","Stealth:IAMUser/CloudTrailLoggingDisabled","2.0","An AWS CloudTrail trail GuardDutyTesterCloudTrail was disabled.","2026-07-03T18:05:32.518Z","2026-07-03T18:05:32.518Z"
