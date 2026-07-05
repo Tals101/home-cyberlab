@@ -1,0 +1,1 @@
+* * * * * /home/analyst/lab7-persistence/lab7-persistence-test.sh

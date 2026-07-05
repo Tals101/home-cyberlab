@@ -1,0 +1,86 @@
+Discovery Simulation
+
+Date:
+Sun Jul  5 04:18:56 PM UTC 2026
+
+whoami:
+analyst
+
+hostname:
+ubuntu-soc-lab
+
+id:
+uid=1000(analyst) gid=1000(analyst) groups=1000(analyst),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),101(lxd)
+
+uname -a:
+Linux ubuntu-soc-lab 6.8.0-124-generic #124-Ubuntu SMP PREEMPT_DYNAMIC Tue May 26 13:00:45 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+ip addr:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:cf:50:a9 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.121/24 metric 100 brd 192.168.56.255 scope global dynamic enp0s3
+       valid_lft 550sec preferred_lft 550sec
+    inet6 fe80::a00:27ff:fecf:50a9/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:19:ae:35 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.3.15/24 metric 100 brd 10.0.3.255 scope global dynamic enp0s8
+       valid_lft 77347sec preferred_lft 77347sec
+    inet6 fd17:625c:f037:3:a00:27ff:fe19:ae35/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 86165sec preferred_lft 14165sec
+    inet6 fe80::a00:27ff:fe19:ae35/64 scope link 
+       valid_lft forever preferred_lft forever
+
+ps aux sample:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.3  22516 13736 ?        Ss   13:47   0:02 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    13:47   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    13:47   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   13:47   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   13:47   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   13:47   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   13:47   0:00 [kworker/R-netns]
+root          12  0.0  0.0      0     0 ?        I<   13:47   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    13:47   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    13:47   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    13:47   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    13:47   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    13:47   0:00 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    13:47   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    13:47   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    13:47   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    13:47   0:00 [cpuhp/1]
+root          22  0.0  0.0      0     0 ?        S    13:47   0:00 [idle_inject/1]
+root          23  0.0  0.0      0     0 ?        S    13:47   0:00 [migration/1]
+root          24  0.0  0.0      0     0 ?        S    13:47   0:00 [ksoftirqd/1]
+root          29  0.0  0.0      0     0 ?        S    13:47   0:00 [kdevtmpfs]
+root          30  0.0  0.0      0     0 ?        I<   13:47   0:00 [kworker/R-inet_]
+root          31  0.0  0.0      0     0 ?        S    13:47   0:00 [kauditd]
+root          32  0.0  0.0      0     0 ?        S    13:47   0:00 [khungtaskd]
+
+home directories:
+total 12
+drwxr-xr-x  3 root    root    4096 Jun 30 15:48 .
+drwxr-xr-x 23 root    root    4096 Jun 30 15:47 ..
+drwxr-x---  7 analyst analyst 4096 Jul  5 16:18 analyst
+
+os release:
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
