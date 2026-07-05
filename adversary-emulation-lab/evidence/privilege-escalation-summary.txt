@@ -1,0 +1,23 @@
+Privilege Escalation Simulation
+
+Activity:
+Safe sudo commands were executed on the Ubuntu lab target.
+
+Target:
+Ubuntu Server - 192.168.56.121
+
+User:
+analyst
+
+Commands executed:
+- sudo whoami
+- sudo id
+- sudo ls /root
+
+Purpose:
+Generate safe privileged command telemetry for Wazuh detection validation.
+
+MITRE ATT&CK:
+- T1548 - Abuse Elevation Control Mechanism
+- T1548.003 - Sudo and Sudo Caching
+- T1078 - Valid Accounts

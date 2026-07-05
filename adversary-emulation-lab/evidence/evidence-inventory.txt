@@ -1,0 +1,66 @@
+# Evidence Inventory
+
+## Lab 7: Adversary Emulation
+
+| Evidence File | Description |
+|---|---|
+| evidence/target-reachability.txt | Reachability test for approved lab targets |
+| evidence/wazuh-manager-status.txt | Wazuh manager container status |
+| evidence/wazuh-agent-enrollment.txt | Ubuntu Wazuh agent enrollment evidence |
+| evidence/sysmon-validation.txt | Sysmon validation evidence from Windows VM |
+| evidence/falco-validation.txt | Falco validation evidence from Kubernetes detection-lab |
+| evidence/recon-scan-results.txt | Nmap recon scan output from Kali |
+| evidence/recon-evidence-summary.md | Recon phase summary and ATT&CK mapping |
+
+## Lab 7 Evidence Update
+
+### Reconnaissance Evidence
+- evidence/recon-scan-results.txt
+- evidence/recon-evidence-summary.md
+- evidence/wazuh-recon-alert-search.txt
+- evidence/sysmon-recon-alert-search.txt
+
+### Initial Access Evidence
+- evidence/failed-ssh-summary.txt
+- evidence/failed-ssh-attempt-time.txt
+- evidence/wazuh-initial-access-alert-search.txt
+
+### Persistence Evidence
+- evidence/persistence-summary.txt
+- evidence/persistence-crontab.txt
+- evidence/persistence-proof.txt
+- evidence/persistence-cleanup-summary.txt
+- evidence/wazuh-persistence-alert-search.txt
+
+### Privilege Escalation Evidence
+- evidence/privilege-escalation-summary.txt
+- evidence/privilege-escalation-time.txt
+- evidence/wazuh-privilege-escalation-alert-search.txt
+
+### Discovery Evidence
+- evidence/discovery-summary.txt
+- evidence/discovery-time.txt
+- evidence/discovery-command-output.txt
+- evidence/wazuh-discovery-alert-search.txt
+
+### Collection Evidence
+- evidence/collection-summary.txt
+- evidence/collection-time.txt
+- evidence/lab7-collected-files.tar.gz
+- evidence/wazuh-collection-alert-search.txt
+
+### Container Runtime Evidence
+- evidence/container-runtime-command-output.txt
+- evidence/container-runtime-pod-status.txt
+- evidence/falco-container-runtime-alert-search.txt
+- evidence/container-runtime-cleanup-summary.txt
+
+### Detection Analysis Files
+- detections/wazuh-recon-detection-gap.md
+- detections/sysmon-recon-detection-analysis.md
+- detections/wazuh-initial-access-detection-analysis.md
+- detections/wazuh-persistence-detection-analysis.md
+- detections/wazuh-privilege-escalation-detection-analysis.md
+- detections/wazuh-discovery-detection-analysis.md
+- detections/wazuh-collection-detection-analysis.md
+- detections/falco-container-runtime-detection-analysis.md

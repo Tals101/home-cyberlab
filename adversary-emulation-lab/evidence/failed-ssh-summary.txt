@@ -1,0 +1,22 @@
+Initial Access Simulation
+
+Activity:
+Controlled failed SSH login attempts were performed from Kali Linux against the Ubuntu Wazuh target.
+
+Source:
+Kali Linux - 192.168.56.111
+
+Target:
+Ubuntu Server - 192.168.56.121
+
+Usernames tested:
+- lab7fake
+- fakeadmin
+- testuser
+
+Purpose:
+Generate safe authentication failure telemetry for Wazuh detection validation.
+
+MITRE ATT&CK:
+- T1110 - Brute Force
+- T1078 - Valid Accounts

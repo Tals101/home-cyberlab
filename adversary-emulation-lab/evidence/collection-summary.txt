@@ -1,0 +1,33 @@
+Collection Simulation
+
+Activity:
+Fake lab files were created, copied into a collection folder, and archived.
+
+Target:
+Ubuntu Server - 192.168.56.121
+
+User:
+analyst
+
+Files created:
+- fake-customer-list.txt
+- fake-financial-notes.txt
+- fake-internal-plan.txt
+
+Collection folder:
+~/lab7-collection/collected-files
+
+Archive created:
+~/lab7-collection/lab7-collected-files.tar.gz
+
+Purpose:
+Generate safe collection telemetry for Wazuh detection validation.
+
+MITRE ATT&CK:
+- T1005 - Data from Local System
+- T1560 - Archive Collected Data
+- T1560.001 - Archive via Utility
+- T1083 - File and Directory Discovery
+
+Safety:
+All files contain fake lab data only.

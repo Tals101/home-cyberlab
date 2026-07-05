@@ -1,0 +1,19 @@
+# Nmap 7.95 scan initiated Sun Jul  5 10:45:28 2026 as: /usr/lib/nmap/nmap --privileged -Pn -sV -oN /home/naftali/lab7-recon/recon-scan-results.txt 192.168.56.121 192.168.56.113
+Nmap scan report for 192.168.56.121
+Host is up (0.0045s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.16 (Ubuntu Linux; protocol 2.0)
+MAC Address: 08:00:27:CF:50:A9 (PCS Systemtechnik/Oracle VirtualBox virtual NIC)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.56.113
+Host is up (0.0010s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE       VERSION
+22/tcp  open  ssh           OpenSSH for_Windows_9.5 (protocol 2.0)
+445/tcp open  microsoft-ds?
+MAC Address: 08:00:27:6F:E7:64 (PCS Systemtechnik/Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jul  5 10:45:40 2026 -- 2 IP addresses (2 hosts up) scanned in 11.86 seconds

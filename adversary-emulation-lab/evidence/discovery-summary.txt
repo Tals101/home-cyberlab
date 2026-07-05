@@ -1,0 +1,30 @@
+Discovery Simulation
+
+Activity:
+Safe host discovery commands were executed on the Ubuntu lab target.
+
+Target:
+Ubuntu Server - 192.168.56.121
+
+User:
+analyst
+
+Commands executed:
+- whoami
+- hostname
+- id
+- uname -a
+- ip addr
+- ps aux
+- ls -la /home
+- cat /etc/os-release
+
+Purpose:
+Generate safe discovery telemetry for Wazuh detection validation.
+
+MITRE ATT&CK:
+- T1033 - System Owner/User Discovery
+- T1082 - System Information Discovery
+- T1057 - Process Discovery
+- T1083 - File and Directory Discovery
+- T1016 - Network Configuration Discovery
