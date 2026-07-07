@@ -1,0 +1,46 @@
+customRules:
+  k8s-attack-lab-rules.yaml: |-
+    - rule: K8s Attack Lab Interactive Shell
+      desc: Detect an interactive shell launched inside a container in the attack-lab namespace
+      condition: >
+        container
+        and k8s.ns.name=attack-lab
+        and evt.type=execve
+        and proc.name in (sh, bash, ash, dash)
+      output: >
+        K8s Attack Lab interactive shell detected
+        (user=%user.name user_uid=%user.uid command=%proc.cmdline
+        pod=%k8s.pod.name namespace=%k8s.ns.name
+        container=%container.name image=%container.image.repository:%container.image.tag)
+      priority: NOTICE
+      tags: [container, shell, kubernetes, attack_lab, mitre_execution]
+
+    - rule: K8s Attack Lab Shadow File Read
+      desc: Detect attempts to read /etc/shadow inside containers in the attack-lab namespace
+      condition: >
+        container
+        and k8s.ns.name=attack-lab
+        and evt.type in (open, openat, openat2)
+        and fd.name=/etc/shadow
+      output: >
+        K8s Attack Lab sensitive file read detected
+        (file=%fd.name user=%user.name user_uid=%user.uid command=%proc.cmdline
+        pod=%k8s.pod.name namespace=%k8s.ns.name
+        container=%container.name image=%container.image.repository:%container.image.tag)
+      priority: WARNING
+      tags: [container, filesystem, credential_access, kubernetes, attack_lab, mitre_credential_access]
+
+    - rule: K8s Attack Lab Network Discovery Tool
+      desc: Detect network discovery tools launched inside containers in the attack-lab namespace
+      condition: >
+        container
+        and k8s.ns.name=attack-lab
+        and evt.type=execve
+        and proc.name in (nc, ncat, netcat, curl, wget)
+      output: >
+        K8s Attack Lab network discovery tool launched
+        (tool=%proc.name command=%proc.cmdline user=%user.name user_uid=%user.uid
+        pod=%k8s.pod.name namespace=%k8s.ns.name
+        container=%container.name image=%container.image.repository:%container.image.tag)
+      priority: WARNING
+      tags: [container, discovery, network, kubernetes, attack_lab, mitre_discovery]

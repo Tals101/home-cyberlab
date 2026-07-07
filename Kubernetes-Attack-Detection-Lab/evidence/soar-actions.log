@@ -1,0 +1,7 @@
+2026-07-07T21:47:07.874086Z STARTED Falco SOAR watcher
+2026-07-07T21:48:11.660257Z LABELED pod=hardened-busybox namespace=attack-lab rule=K8s Attack Lab Interactive Shell priority=Notice command=sh -c cat /etc/shadow; wget -qO- http://hardened-nginx.attack-lab.svc.cluster.local:8080 | head
+2026-07-07T21:48:11.743114Z LABELED pod=hardened-busybox namespace=attack-lab rule=K8s Attack Lab Shadow File Read priority=Warning command=cat /etc/shadow
+2026-07-07T21:48:11.822406Z LABELED pod=hardened-busybox namespace=attack-lab rule=K8s Attack Lab Network Discovery Tool priority=Warning command=wget -qO- http://hardened-nginx.attack-lab.svc.cluster.local:8080
+2026-07-07T21:49:17.705580Z STOPPED Falco SOAR watcher
+2026-07-07T21:52:08.736977Z STARTED Falco SOAR watcher
+2026-07-07T21:52:28.150997Z STOPPED Falco SOAR watcher
