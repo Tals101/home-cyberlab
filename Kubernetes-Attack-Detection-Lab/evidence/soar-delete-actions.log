@@ -1,0 +1,5 @@
+2026-07-07T21:52:21.140646Z STARTED Falco SOAR watcher
+2026-07-07T21:52:50.598747Z LABELED pod=soar-test-busybox namespace=attack-lab rule=K8s Attack Lab Interactive Shell priority=Notice command=sh -c cat /etc/shadow; wget -qO- http://hardened-nginx.attack-lab.svc.cluster.local:8080 | head
+2026-07-07T21:53:23.045561Z DELETED pod=soar-test-busybox namespace=attack-lab rule=K8s Attack Lab Interactive Shell
+2026-07-07T21:53:23.120636Z LABEL_FAILED pod=soar-test-busybox namespace=attack-lab rule=K8s Attack Lab Shadow File Read error=Error from server (NotFound): pods "soar-test-busybox" not found
+2026-07-07T21:53:23.196286Z LABEL_FAILED pod=soar-test-busybox namespace=attack-lab rule=K8s Attack Lab Network Discovery Tool error=Error from server (NotFound): pods "soar-test-busybox" not found

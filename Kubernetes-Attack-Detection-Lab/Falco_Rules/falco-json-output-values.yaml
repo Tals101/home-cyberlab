@@ -1,0 +1,4 @@
+falco:
+  json_output: true
+  json_include_output_property: true
+  time_format_iso_8601: true

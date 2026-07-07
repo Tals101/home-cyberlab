@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large/raw archives
+*.zip
+*.tar
+*.gz
+
+# Local runtime logs that may change often
+*.log
+
+# Keep important SOAR evidence logs
+!evidence/soar-actions.log
+!evidence/soar-delete-actions.log
+!evidence/soar-001-action-log.txt
+!evidence/soar-002-delete-mode-action-log.txt
