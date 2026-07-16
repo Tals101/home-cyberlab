@@ -1,0 +1,8 @@
+{
+  "bruteForceProtected" : true,
+  "permanentLockout" : false,
+  "maxFailureWaitSeconds" : 300,
+  "waitIncrementSeconds" : 60,
+  "maxDeltaTimeSeconds" : 600,
+  "failureFactor" : 3
+}

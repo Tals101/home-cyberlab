@@ -1,0 +1,18 @@
+[Unit]
+Description=Identity Attack and Defense Flask Demo App
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+User=analyst
+Group=analyst
+WorkingDirectory=/home/analyst/identity-attack-defense-lab/demo-app
+EnvironmentFile=/etc/identity-demo-app.env
+ExecStart=/home/analyst/identity-attack-defense-lab/demo-app/venv/bin/python3 /home/analyst/identity-attack-defense-lab/demo-app/app.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

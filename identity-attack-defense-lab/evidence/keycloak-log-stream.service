@@ -1,0 +1,13 @@
+[Unit]
+Description=Stream Keycloak container logs to Wazuh
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c '/usr/bin/docker logs --follow --since 1s identity-keycloak >> /home/analyst/identity-attack-defense-lab/keycloak-events.log 2>&1'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
