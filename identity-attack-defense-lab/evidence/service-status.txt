@@ -1,0 +1,10 @@
+Identity Attack and Defense Lab - Service Status
+Thu Jul 16 04:51:38 PM UTC 2026
+
+active
+active
+active
+active
+
+CONTAINER ID   IMAGE                              COMMAND                  CREATED             STATUS         PORTS                                                             NAMES
+dcd11864f4b9   quay.io/keycloak/keycloak:latest   "/opt/keycloak/bin/k…"   About an hour ago   Up 5 minutes   8443/tcp, 0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 9000/tcp   identity-keycloak

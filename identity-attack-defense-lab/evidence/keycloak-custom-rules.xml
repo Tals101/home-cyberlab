@@ -1,0 +1,51 @@
+<!-- Local rules -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!-- Example -->
+<group name="local,syslog,sshd,">
+
+  <!--
+  Dec 10 01:02:02 host sshd[1234]: Failed none for root from 1.1.1.1 port 1066 ssh2
+  -->
+  <rule id="100001" level="5">
+    <if_sid>5716</if_sid>
+    <srcip>1.1.1.1</srcip>
+    <description>sshd: authentication failed from IP 1.1.1.1.</description>
+    <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,</group>
+  </rule>
+
+</group>
+
+<group name="keycloak,authentication_failed,">
+  <rule id="100100" level="8">
+    <match>LOGIN_ERROR</match>
+    <description>Keycloak authentication failure detected.</description>
+    <group>authentication_failed,identity_access_management,</group>
+  </rule>
+</group>
+
+<group name="keycloak,authentication_success,">
+  <rule id="100101" level="3">
+    <match>type="LOGIN"</match>
+    <description>Keycloak successful authentication detected.</description>
+    <group>authentication_success,identity_access_management,</group>
+  </rule>
+</group>
+
+<group name="keycloak,authentication_failed,">
+  <rule id="100102" level="12" frequency="3" timeframe="120">
+    <if_matched_sid>100100</if_matched_sid>
+    <description>Multiple Keycloak authentication failures detected within two minutes.</description>
+    <group>authentication_failures,brute_force,identity_access_management,</group>
+  </rule>
+</group>
+
+<group name="keycloak,account_lockout,">
+  <rule id="100103" level="10">
+    <match>user_temporarily_disabled</match>
+    <description>Keycloak user temporarily locked after repeated authentication failures.</description>
+    <group>authentication_failures,account_lockout,identity_access_management,</group>
+  </rule>
+</group>

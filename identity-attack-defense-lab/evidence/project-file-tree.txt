@@ -1,0 +1,31 @@
+.env.example
+.gitignore
+demo-app
+demo-app\app.py
+docker-compose.yml
+docker-compose.yml.backup
+evidence
+evidence\evidence-hashes.txt
+evidence\evidence-inventory.txt
+evidence\identity-demo-app.service
+evidence\keycloak-auth-events.txt
+evidence\keycloak-brute-force-settings.txt
+evidence\keycloak-custom-rules.xml
+evidence\keycloak-log-stream.service
+evidence\service-status.txt
+README.md
+reports
+reports\architecture-workflow.md
+reports\attack-simulation.md
+reports\identity-attack-defense-report.md
+reports\identity-security-assessment.md
+reports\incident-investigation.md
+reports\lessons-learned.md
+reports\mitre-attack-mapping.md
+reports\rbac-permissions-matrix.md
+screenshots
+screenshots\Screenshot 2026-07-16 131339.png
+screenshots\Screenshot 2026-07-16 131510.png
+screenshots\Screenshot 2026-07-16 131548.png
+screenshots\Screenshot 2026-07-16 131627.png
+screenshots\Screenshot 2026-07-16 131849.png
