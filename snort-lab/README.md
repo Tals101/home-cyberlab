@@ -74,3 +74,7 @@ Planned next steps for this project include:
 - Generating traffic to trigger alerts
 - Reviewing alert output
 - Expanding documentation with screenshots and test results
+
+## Follow-Up Work
+
+The follow-up phase of this lab is documented in [next-steps/](next-steps/).

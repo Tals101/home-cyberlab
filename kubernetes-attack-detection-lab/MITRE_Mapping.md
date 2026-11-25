@@ -150,7 +150,7 @@ Hardened workloads were deployed with non-root users, read-only root filesystems
 3. K8s Attack Lab Network Discovery Tool
 
 ### Evidence
-- Falco_Rules/custom-falco-values.yaml
+- falco-rules/custom-falco-values.yaml
 - evidence/detection-001-falco-custom-rules-values.txt
 - evidence/detection-001-falco-custom-rules-loaded.txt
 - evidence/detection-002-custom-falco-rule-test-alerts.txt

@@ -107,3 +107,7 @@ This project demonstrates several foundational blue-team concepts:
 
 
 
+
+## Follow-Up Work
+
+The follow-up phase of this lab is documented in [next-steps/](next-steps/).
