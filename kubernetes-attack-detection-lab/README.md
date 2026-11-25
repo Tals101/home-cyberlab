@@ -202,7 +202,7 @@ The custom rules successfully detected:
 
 Evidence:
 
-- Falco_Rules/custom-falco-values.yaml
+- falco-rules/custom-falco-values.yaml
 - evidence/detection-001-falco-custom-rules-loaded.txt
 - evidence/detection-002-custom-falco-rule-test-alerts.txt
 - evidence/detection-002-custom-falco-rule-test-note.md
@@ -250,8 +250,8 @@ Evidence:
 
 Screenshots:
 
-- Screenshots/Screenshot 2026-07-07 164451.png
-- Screenshots/Screenshot 2026-07-07 173340.png
+- screenshots/Screenshot 2026-07-07 164451.png
+- screenshots/Screenshot 2026-07-07 173340.png
 
 ---
 
@@ -289,14 +289,14 @@ See:
 
 ## Project Structure
 
-Kubernetes-Attack-Detection-Lab/
+kubernetes-attack-detection-lab/
 - README.md
 - MITRE_Mapping.md
 - Hardening_Checklist.md
 - Lessons_Learned.md
-- Falco_Rules/
-- Kubernetes_YAML/
-- Screenshots/
+- falco-rules/
+- kubernetes-yaml/
+- screenshots/
 - evidence/
 - reports/
 - scripts/
