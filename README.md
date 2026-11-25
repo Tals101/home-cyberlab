@@ -10,7 +10,7 @@ Each project includes technical documentation, configurations, detection logic, 
 
 # Featured Cybersecurity Projects
 
-## 1. [Kubernetes Attack Detection Lab](./Kubernetes-Attack-Detection-Lab/)
+## 1. [Kubernetes Attack Detection Lab](./kubernetes-attack-detection-lab/)
 
 Built a Kubernetes attack-and-detection environment to identify suspicious container and workload activity.
 
