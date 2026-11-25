@@ -97,7 +97,7 @@ Alerts were observed in real time and matched expected rule behavior.
 ## Project Structure
 
 
-snort-lab next steps/
+next-steps/
 
 ├── configs/
 
