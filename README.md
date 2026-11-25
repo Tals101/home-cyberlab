@@ -1,329 +1,92 @@
 # Home Cybersecurity Lab
 
-Hands-on cybersecurity portfolio focused on **Security Engineering, Detection Engineering, Cloud Security, Kubernetes Security, Incident Response, and Security Automation**.
+Hands-on security projects built in my home lab: detection engineering, cloud and Kubernetes security, incident response and security automation. Each project includes its configurations, detection rules, evidence and a write-up, and the featured projects also have setup steps so you can run them yourself.
 
-This repository contains practical security projects built to simulate real-world environments, attack scenarios, detection workflows, investigations, and defensive engineering tasks.
+## Start Here
 
-Each project includes technical documentation, configurations, detection logic, evidence, screenshots, reports, or lessons learned where applicable.
+If you only have a few minutes, these three projects show the range of the lab:
 
----
+1. **[Kubernetes Attack Detection Lab](./kubernetes-attack-detection-lab/)**: attack, detect, contain and harden a Kubernetes cluster with Falco, Elasticsearch and Kibana. Default Falco rules missed internal network discovery (0 alerts), and three custom rules closed the gap (3 of 3 fired).
+2. **[Adversary Emulation Lab](./adversary-emulation-lab/)**: a six-phase attack chain against Linux and Windows targets, scored against Wazuh, Sysmon and Falco. Of 18 technique checks, 8 were detected, 3 partially detected and 7 not detected, and the README explains the gaps.
+3. **[AWS Cloud Threat Detection Lab](./aws-cloud-threat-detection-lab/)**: CloudTrail and GuardDuty with the GuardDuty Tester deployed through the AWS CDK. It produced 10 confirmed real findings across S3, IAM and EC2.
 
-# Featured Cybersecurity Projects
+## Featured Projects
 
-## 1. [Kubernetes Attack Detection Lab](./kubernetes-attack-detection-lab/)
+| Project | What it covers | Result |
+|---|---|---|
+| [Kubernetes Attack Detection](./kubernetes-attack-detection-lab/) | Falco, custom rules, Pod Security Standards, Fluent Bit to Elasticsearch and Kibana, SOAR-style response script | Pod Security `restricted` rejected the privileged hostPath pod for 7 policy violations |
+| [Detection Engineering: Kubernetes](./detection-engineering-k8s-lab/) | Falco, Sigma and Wazuh rules for four container attack scenarios | Coverage went from 2/4 to 4/4 scenarios, with 0 false positives on benign admin commands |
+| [AWS Cloud Threat Detection](./aws-cloud-threat-detection-lab/) | CloudTrail, GuardDuty, GuardDuty Tester (CDK, EKS, EC2) | 10 real GuardDuty findings: S3 8, IAM 1, EC2 1 |
+| [AWS IAM Detection](./aws-iam-detection-lab/) | CloudTrail to CloudWatch metric filter, alarm and SNS | A blocked AdministratorAccess escalation set off the alarm and an email alert |
+| [Cloud-Native SOC](./cloud-native-soc/) | Falco, Loki, Promtail, Grafana, Wazuh agent DaemonSet, Trivy | Shell alerts in 2/2 test pods; Trivy found 1 HIGH CVE in `ubuntu:22.04` and 0 in `busybox:1.36` |
+| [Adversary Emulation](./adversary-emulation-lab/) | Kali to Ubuntu and Windows attack chain; Wazuh, Sysmon, Falco | 8 detected, 3 partial, 7 not detected out of 18 checks |
 
-Built a Kubernetes attack-and-detection environment to identify suspicious container and workload activity.
+## More Projects
 
-**Focus areas:**
+### Detection Engineering and SOC
 
-* Kubernetes runtime security
-* Falco detection
-* Suspicious shell activity
-* Sensitive file access
-* Workload hardening
-* Detection validation
-
----
-
-## 2. [Detection Engineering — Kubernetes](./detection-engineering-k8s-lab/)
-
-Designed and tested detection logic for suspicious activity occurring inside Kubernetes workloads.
-
-**Focus areas:**
-
-* Detection engineering
-* Falco rules
-* Container behavior monitoring
-* Shell-spawn detection
-* Sensitive file access
-* Suspicious user-management activity
-* Detection testing and validation
-
----
-
-## 3. [AWS Cloud Threat Detection](./aws-cloud-threat-detection-lab/)
-
-Built cloud-security scenarios focused on identifying suspicious activity within AWS environments.
-
-**Focus areas:**
-
-* AWS security monitoring
-* CloudTrail
-* IAM activity
-* Threat detection
-* Security-event investigation
-* Cloud logging and visibility
-
----
-
-## 4. [AWS IAM Detection Lab](./aws-iam-detection-lab/)
-
-Simulated IAM-related attack behavior and developed detection workflows around suspicious identity and access activity.
-
-**Focus areas:**
-
-* AWS IAM
-* Privilege-related activity
-* CloudTrail logging
-* CloudWatch monitoring
-* Detection logic
-* Alert generation
-* Security-event validation
-
----
-
-## 5. [Cloud-Native SOC](./cloud-native-soc/)
-
-Built a cloud-native Security Operations environment for monitoring Kubernetes workloads and security events.
-
-**Focus areas:**
-
-* Kubernetes
-* Falco
-* Grafana
-* Loki
-* Promtail
-* Security monitoring
-* Container runtime detection
-* SOC visibility
-
----
-
-## 6. [Adversary Emulation Lab](./adversary-emulation-lab/)
-
-Simulated attacker behavior across Linux and Windows systems and validated defensive telemetry using security-monitoring tools.
-
-**Focus areas:**
-
-* Adversary emulation
-* Wazuh
-* Windows Sysmon
-* Linux monitoring
-* Reconnaissance detection
-* Persistence activity
-* Runtime security
-* Detection validation
-
----
-
-# Additional Security Projects
+- [Threat Detection Engineering Portfolio](./threat-detection-engineering-portfolio/): custom detections written and tested for Sigma, Wazuh and Falco
+- [Falco Detection Engineering](./falco-detection-engineering/): Falco rule development in a local Minikube cluster
+- [Purple Team Kubernetes Lab](./purple-team-kubernetes-lab/): red-team attacks against Kubernetes followed by blue-team detection and response
+- [Kubernetes Web Security Lab](./kubernetes-web-security-lab/): deployment, misconfiguration exploitation, kube-bench and kube-hunter audits, and Falco runtime detection
+- [Threat Hunting with Wazuh](./threat-hunting-with-wazuh/): hypothesis-driven hunts in Wazuh instead of alert review only
+- [Home SOC Lab with Wazuh](./wazuh-lab/): SIEM monitoring and alert investigation, with a [follow-up phase](./wazuh-lab/next-steps/)
+- [Windows Brute Force Detection](./windows-bruteforce-detection/): detecting password spraying against Windows with Wazuh
+- [Snort Lab](./snort-lab/): Snort built from source, with custom rules and [alert validation](./snort-lab/next-steps/)
+- [SOC Analyst Challenge](./soc-analyst-challenge/): a Tier 1 SOC investigation using logs, PCAP and threat intelligence
 
 ### Cloud Security
 
-* [AWS Cloud Security Monitoring](./aws-cloud-security-monitoring-lab/)
-  AWS logging, monitoring, and security-visibility lab.
+- [AWS Cloud Security Monitoring](./aws-cloud-security-monitoring-lab/): AWS logging, detection, alerting and validation with native services
+- [Cloud Security Operator Lab](./cloud-security-operator-lab/): risky IAM configuration, unused credentials, CloudTrail telemetry and cleanup
 
-* [Cloud Security Operator Lab](./cloud-security-operator-lab/)
-  Hands-on AWS security configuration, IAM review, S3 protection, CloudTrail, and GuardDuty.
+### Identity Security
 
----
+- [Identity Attack and Defense Lab](./identity-attack-defense-lab/): Keycloak, a Flask app and Wazuh for identity attack detection
+- [Identity Security Lab](./identity-security-lab/): Keycloak, PostgreSQL and a custom SSO test application
 
-### Container & Kubernetes Security
+### Incident Response and Forensics
 
-* [Container Image Security Pipeline](./container-image-security-pipeline/)
-  Container-security scanning and secure image pipeline concepts.
+- [Ransomware Response Tabletop](./ransomware-response-tabletop/): a full detection, containment, eradication and recovery playbook with safe simulated evidence
+- [Suspicious Insider Investigation](./insider-investigation-lab/): investigating a user suspected of copying sensitive files before leaving
+- [Compromised Linux Recovery](./compromised-linux-recovery-lab/): responding to and hardening a compromised Ubuntu server
+- [Malware Analysis Lab](./malware-analysis-lab/): EICAR analysis with REMnux, Procmon and Wireshark, plus [follow-up analysis](./malware-analysis-lab/next-steps/)
+- [Threat Intelligence Fusion Lab](./threat-intelligence-fusion-lab/): IOC research, reputation data and ATT&CK mapping
 
-* [Advanced Docker Lab](./advanced-docker-lab/)
-  Docker security, configuration, and container-hardening exercises.
+### Vulnerability Management and Offensive Security
 
-* [Docker Web Attack Lab](./docker-web-attack-lab/)
-  Controlled web-application attack and detection environment using containers.
+- [Vulnerability Assessment Lab](./vulnerability-assessment-lab/): Nmap, OpenVAS and Wireshark, with [remediation validation](./vulnerability-assessment-lab/next-steps/)
+- [Metasploitable Hardening Lab](./metasploitable-hardening-lab/): exploiting, fixing and re-testing critical vulnerabilities
+- [Beginner Pentest Lab](./beginner-pentest-lab/): reconnaissance, enumeration and exploitation against Metasploitable 2
+- [Docker Web Attack Lab](./docker-web-attack-lab/): attacks against DVWA and OWASP Juice Shop in containers
+- [Advanced Docker Lab](./advanced-docker-lab/): infrastructure misconfigurations, weak authentication and internal network access
 
----
+### DevSecOps and Container Security
 
-### Incident Response & System Security
+- [Secure CI/CD Docker Pipeline](./secure-cicd-docker-pipeline/): security gates that block a release until secret, dependency and image scans pass
+- [Secure Software Supply Chain](./secure-software-supply-chain/): a supply chain pipeline built with GitHub Actions
+- [Container Image Security Pipeline](./container-image-security-pipeline/): Docker, Trivy and GitHub Actions
+- [Secure-by-Default Docker Web App](./secure-docker-webapp-lab/): hardening an insecure Dockerized Flask API
 
-* [Compromised Linux Recovery Lab](./compromised-linux-recovery-lab/)
-  Investigated and recovered a simulated compromised Linux system while implementing security hardening.
+### AI-Assisted Security Automation
 
----
+- [AI Log Analysis Agent](./log-agent/): a local LLM (Ollama) that summarizes Linux authentication logs into a SOC-style report
+- [AI Vulnerability Scanner Agent](./vuln-scan-agent/): a local LLM that turns Nmap results into a security assessment
+- [Red vs Blue AI Agent Lab](./red-blue-agent-lab/): local AI agents that generate attack ideas and matching defenses
 
-### Offensive Security
+### Tools
 
-* [Beginner Pentest Lab](./beginner-pentest-lab/)
-  Practiced reconnaissance, enumeration, vulnerability identification, and exploitation in a controlled environment.
+- [HashVault](./hashvault/): a Bash file integrity checker with encrypted SHA-256 manifests
 
----
+### Archive
 
-# Security Skills Demonstrated
+Earlier projects that overlap with newer ones, plus QA test automation work, are in [`archive/`](./archive/).
 
-### Detection Engineering
+## Tools Used
 
-* Designing detection logic
-* Writing and testing detection rules
-* Establishing behavioral baselines
-* Identifying suspicious authentication activity
-* Validating alerts against simulated attacks
-* Reducing false positives
-
-### Cloud Security
-
-* AWS IAM security
-* CloudTrail logging
-* CloudWatch monitoring
-* GuardDuty
-* S3 security
-* Cloud threat detection
-* Security misconfiguration analysis
-
-### Kubernetes & Container Security
-
-* Kubernetes workload security
-* Falco runtime detection
-* Docker security
-* Container hardening
-* Kubernetes RBAC
-* Pod security controls
-* Container image scanning
-
-### Security Operations
-
-* Wazuh SIEM
-* Log analysis
-* Alert triage
-* Threat hunting
-* Incident investigation
-* Evidence collection
-* Technical timelines
-
-### Endpoint & Host Security
-
-* Linux security
-* Windows Sysmon
-* Authentication-log analysis
-* SSH investigations
-* Persistence detection
-* System hardening
-
-### Security Automation
-
-* Bash
-* PowerShell
-* Python
-* Cron
-* CI/CD security concepts
-* Automated monitoring and validation
-
----
-
-# Technologies & Tools
-
-**Security & Detection**
-
-`Wazuh` • `Falco` • `Sysmon` • `Snort` • `Trivy`
-
-**Cloud**
-
-`AWS` • `IAM` • `CloudTrail` • `CloudWatch` • `GuardDuty` • `S3` • `SQS` • `Lambda`
-
-**Containers & Orchestration**
-
-`Docker` • `Kubernetes` • `Minikube` • `Helm` • `kubectl`
-
-**Operating Systems**
-
-`Linux` • `Ubuntu` • `Windows`
-
-**Automation & Development**
-
-`Bash` • `PowerShell` • `Python` • `Git` • `GitHub` • `GitHub Actions`
-
-**Monitoring & Analysis**
-
-`Grafana` • `Loki` • `Promtail` • `Wireshark` • `Nmap`
-
----
-
-# Repository Structure
-
-This repository functions as a **multi-project cybersecurity portfolio**.
-
-Individual project folders may contain:
-
-```text
-project-name/
-│
-├── README.md
-├── evidence/
-│   ├── screenshots/
-│   ├── logs/
-│   └── alerts/
-│
-├── reports/
-├── scripts/
-├── rules/
-├── manifests/
-├── configurations/
-└── diagrams/
-```
-
-Project structures vary depending on the type of security exercise.
-
----
-
-# Project Methodology
-
-Many of the labs follow the same engineering process:
-
-**1. Build**
-Create the environment, infrastructure, workload, or security control.
-
-**2. Establish a Baseline**
-Determine what normal system or user behavior looks like.
-
-**3. Simulate Activity**
-Generate controlled suspicious or malicious activity.
-
-**4. Collect Evidence**
-Capture logs, alerts, screenshots, network activity, and system events.
-
-**5. Detect**
-Develop or configure detection logic based on observed behavior.
-
-**6. Validate**
-Confirm that the detection identifies the intended activity without excessive false positives.
-
-**7. Investigate**
-Analyze the event as a security analyst or engineer would during a real incident.
-
-**8. Document**
-Produce technical notes, reports, evidence, lessons learned, and recommendations.
-
----
-
-# What This Portfolio Demonstrates
-
-These projects demonstrate the ability to:
-
-* Build realistic cybersecurity lab environments
-* Configure security monitoring and detection tools
-* Analyze Linux, Windows, cloud, and Kubernetes telemetry
-* Simulate attacker behavior safely
-* Engineer and validate security detections
-* Investigate suspicious system activity
-* Collect and preserve technical evidence
-* Troubleshoot security infrastructure
-* Harden systems and workloads
-* Automate security and operational workflows
-* Communicate technical findings through structured documentation
-
----
-
-# Areas of Focus
-
-I am continuing to build practical experience in:
-
-* **Security Engineering**
-* **Detection Engineering**
-* **Cloud Security**
-* **Kubernetes & Container Security**
-* **Security Operations**
-* **Incident Response**
-* **Threat Hunting**
-* **Security Automation**
-
----
-
-## Explore the Projects
-
-Start with the **Featured Cybersecurity Projects** above for examples of my strongest work in detection engineering, cloud security, Kubernetes security, and security operations.
+- **Detection:** Wazuh, Falco, Sysmon, Snort, Sigma, Trivy
+- **Cloud:** AWS (IAM, CloudTrail, CloudWatch, GuardDuty, S3, EC2, EKS, CDK)
+- **Containers:** Docker, Kubernetes, Minikube, Helm
+- **Logging:** Elasticsearch, Kibana, Fluent Bit, Grafana, Loki, Promtail
+- **Scripting and CI:** Bash, PowerShell, Python, GitHub Actions
+- **Network and analysis:** Nmap, Wireshark, OpenVAS
