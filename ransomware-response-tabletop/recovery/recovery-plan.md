@@ -9,7 +9,7 @@ In this lab, no real ransomware was executed. Recovery focuses on documenting ho
 ## Affected Host
 
 - Hostname: CYBERHUB
-- User: Tals' CyberHub
+- User: [REDACTED-ACCOUNT]
 - Suspected System Type: Developer Workstation
 - Incident Type: Ransomware-like activity
 

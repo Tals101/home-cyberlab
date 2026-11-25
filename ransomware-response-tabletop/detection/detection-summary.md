@@ -11,7 +11,7 @@ During the ransomware response tabletop lab, three categories of suspicious beha
 ## Affected Host
 
 - Hostname: CYBERHUB
-- User: Tals' CyberHub
+- User: [REDACTED-ACCOUNT]
 - Operating System: Windows
 - Lab Folder: ransomware-response-tabletop
 

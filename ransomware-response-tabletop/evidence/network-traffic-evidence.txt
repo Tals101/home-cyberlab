@@ -1,8 +1,8 @@
 ﻿**********************
 Windows PowerShell transcript start
 Start time: 20260626103715
-Username: CyberHub\Tals' CyberHub
-RunAs User: CyberHub\Tals' CyberHub
+Username: [REDACTED-HOST]\[REDACTED-ACCOUNT]
+RunAs User: [REDACTED-HOST]\[REDACTED-ACCOUNT]
 Configuration Name: 
 Machine: CYBERHUB (Microsoft Windows NT 10.0.26200.0)
 Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
@@ -17,17 +17,17 @@ PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
 Transcript started, output file is evidence\network-traffic-evidence.txt
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Traffic Evidence Test Started ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Traffic Evidence Test Started ==="
 === Outbound Network Traffic Evidence Test Started ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Host: $env:COMPUTERNAME"
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Host: $env:COMPUTERNAME"
 Host: CYBERHUB
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "User: $env:USERNAME"
-User: Tals' CyberHub
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Time: $(Get-Date)"
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "User: $env:USERNAME"
+User: [REDACTED-ACCOUNT]
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "Time: $(Get-Date)"
 Time: 06/26/2026 10:37:15
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Local Network Configuration ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Local Network Configuration ==="
 === Local Network Configuration ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-NetIPConfiguration | Select-Object InterfaceAlias, IPv4Address, IPv4DefaultGateway, DNSServer
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-NetIPConfiguration | Select-Object InterfaceAlias, IPv4Address, IPv4DefaultGateway, DNSServer
 
 InterfaceAlias               IPv4Address       IPv4DefaultGateway                                              DNSServe
                                                                                                                r
@@ -39,9 +39,9 @@ Wi-Fi                        {169.254.13.5}                                     
 Bluetooth Network Connection {169.254.195.241}                                                                 {MSFT...
 
 
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== DNS Resolution Evidence ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== DNS Resolution Evidence ==="
 === DNS Resolution Evidence ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Resolve-DnsName example.com
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Resolve-DnsName example.com
 
 Name                                           Type   TTL   Section    IPAddress
 ----                                           ----   ---   -------    ---------
@@ -51,7 +51,7 @@ example.com                                    A      300   Answer     104.20.23
 example.com                                    A      300   Answer     172.66.147.243
 
 
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Resolve-DnsName microsoft.com
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Resolve-DnsName microsoft.com
 
 Name                                           Type   TTL   Section    IPAddress
 ----                                           ----   ---   -------    ---------
@@ -59,15 +59,15 @@ microsoft.com                                  AAAA   3449  Answer     2603:1061
 microsoft.com                                  A      1750  Answer     150.171.109.73
 
 
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound HTTPS Connectivity Tests ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound HTTPS Connectivity Tests ==="
 === Outbound HTTPS Connectivity Tests ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events = @()
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $targets = @(
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events = @()
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $targets = @(
     @{Destination="example.com"; Port=443; Protocol="HTTPS"},
     @{Destination="microsoft.com"; Port=443; Protocol="HTTPS"},
     @{Destination="github.com"; Port=443; Protocol="HTTPS"}
 )
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> foreach ($target in $targets) {
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> foreach ($target in $targets) {
     $result = Test-NetConnection -ComputerName $target.Destination -Port $target.Port
 
     $events += [PSCustomObject]@{
@@ -81,10 +81,10 @@ PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-respon
         EvidenceType = "Outbound network connection test"
     }
 }
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Export-Csv evidence\outbound-network-events.csv -NoTypeInformation
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Events ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Export-Csv evidence\outbound-network-events.csv -NoTypeInformation
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Events ==="
 === Outbound Network Events ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Format-Table -AutoSize
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> $events | Format-Table -AutoSize
 
 Time                  SourceHost Destination   RemoteAddress  Port Protocol TcpTestSucceeded EvidenceType
 ----                  ---------- -----------   -------------  ---- -------- ---------------- ------------
@@ -93,18 +93,18 @@ Time                  SourceHost Destination   RemoteAddress  Port Protocol TcpT
 6/26/2026 10:37:19 AM CYBERHUB   github.com    140.82.112.4    443 HTTPS                True Outbound network connec...
 
 
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Web Request Evidence ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Web Request Evidence ==="
 === Web Request Evidence ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Invoke-WebRequest -Uri "https://example.com" -UseBasicParsing | Select-Object StatusCode, StatusDescription, Headers
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Invoke-WebRequest -Uri "https://example.com" -UseBasicParsing | Select-Object StatusCode, StatusDescription, Headers
 
 StatusCode StatusDescription Headers
 ---------- ----------------- -------
        200 OK                {[Transfer-Encoding, chunked], [Connection, keep-alive], [allow, GET, HEAD], [Age, 6298...
 
 
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Active TCP Connections Snapshot ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Active TCP Connections Snapshot ==="
 === Active TCP Connections Snapshot ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-NetTCPConnection | Where-Object {
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Get-NetTCPConnection | Where-Object {
     $_.State -eq "Established"
 } | Select-Object LocalAddress, LocalPort, RemoteAddress, RemotePort, State, OwningProcess
 
@@ -286,9 +286,9 @@ OwningProcess : 13060
 
 
 
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Traffic Evidence Test Finished ==="
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Write-Output "=== Outbound Network Traffic Evidence Test Finished ==="
 === Outbound Network Traffic Evidence Test Finished ===
-PS C:\Users\Tals' CyberHub\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Stop-Transcript
+PS C:\Users\[REDACTED-ACCOUNT]\Documents\GitHub\home-soc-lab-wazuh\ransomware-response-tabletop> Stop-Transcript
 **********************
 Windows PowerShell transcript end
 End time: 20260626103723
