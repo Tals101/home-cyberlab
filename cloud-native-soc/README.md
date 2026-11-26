@@ -4,6 +4,50 @@
 
 This project builds a cloud-native SOC lab for Kubernetes workloads. The goal is to simulate suspicious Kubernetes activity, detect runtime behavior, investigate logs, scan container images, validate Wazuh detections, and document the full attack-detect-investigate workflow.
 
+## Result
+
+Falco flagged interactive shells in **2 of 2** test pods, and Wazuh rule **5710** matched a failed SSH login test event and mapped it to MITRE T1110.001. Trivy found **1 HIGH** vulnerability in `ubuntu:22.04` (a `libssl3` issue with a fix available) and **0** in `busybox:1.36`.
+
+## Screenshots
+
+Falco alerts for shells spawned inside the test pods:
+
+![Falco shell alerts](screenshots/Screenshot%202026-06-14%20130400.png)
+
+Wazuh decoding a failed-login test event and matching rule 5710:
+
+![Wazuh rule 5710 match](screenshots/Screenshot%202026-06-14%20130500.png)
+
+## How to Run
+
+**What you need:** Docker Desktop, Minikube, `kubectl`, Helm and Trivy. PowerShell is optional; it's only needed for the helper scripts.
+
+1. Start a cluster and create the namespaces:
+   ```bash
+   minikube start
+   kubectl create namespace soc-system
+   kubectl create namespace soc-workloads
+   ```
+2. Install Falco and the Loki stack (Loki, Promtail and Grafana):
+   ```bash
+   helm repo add falcosecurity https://falcosecurity.github.io/charts
+   helm repo add grafana https://grafana.github.io/helm-charts
+   helm install falco falcosecurity/falco -n soc-system
+   helm install loki grafana/loki-stack -n soc-system --set grafana.enabled=true
+   ```
+3. Run the Wazuh manager in Docker, then deploy the agent DaemonSet, which connects to the manager at `host.minikube.internal`:
+   ```bash
+   docker run -d --name wazuh-manager -p 1514:1514 -p 1515:1515 wazuh/wazuh-manager:4.14.1
+   kubectl apply -f manifests/wazuh-agent-daemonset.yaml
+   ```
+4. Deploy the test workloads and open a shell to trigger Falco:
+   ```bash
+   kubectl apply -f manifests/privileged-test-pod.yaml -f manifests/suspicious-container.yaml
+   kubectl exec -it -n soc-workloads privileged-test-pod -- bash
+   ```
+5. Scan the images with `trivy image ubuntu:22.04` and `trivy image busybox:1.36`.
+6. Check everything with `scripts/validate-cloud-native-soc.ps1`, and clean up with `scripts/cleanup-cloud-native-soc.ps1`.
+
 ## Core Components
 
 - Kubernetes / Minikube
@@ -18,28 +62,30 @@ This project builds a cloud-native SOC lab for Kubernetes workloads. The goal is
 
 ## Architecture
 
-Developer / Analyst
-        |
-        v
-Kubernetes Cluster
-        |
-        +-- soc-workloads namespace
-        |       |
-        |       +-- soc-test-pod
-        |       +-- privileged-test-pod
-        |       +-- suspicious-container
-        |       +-- demo-api-secret
-        |
-        +-- soc-system namespace
-                |
-                +-- Falco runtime detection
-                +-- Loki log storage
-                +-- Promtail log collection
-                +-- Grafana investigation view
-                +-- Wazuh agent DaemonSet
-                        |
-                        v
-                Wazuh Manager Docker Container
+```mermaid
+flowchart LR
+    subgraph cluster["Minikube cluster"]
+        subgraph wl["soc-workloads"]
+            P1["soc-test-pod"]
+            P2["privileged-test-pod"]
+            P3["suspicious-container"]
+            SEC["demo-api-secret"]
+        end
+        subgraph sys["soc-system"]
+            F["Falco<br/>runtime detection"]
+            PT["Promtail"]
+            LK["Loki"]
+            GF["Grafana"]
+            WA["Wazuh agent<br/>DaemonSet"]
+        end
+    end
+    WM["Wazuh manager<br/>Docker container"]
+    TV["Trivy<br/>image scans"]
+    wl -- "syscalls" --> F
+    wl -- "container logs" --> PT --> LK --> GF
+    WA -- "agent events" --> WM
+    TV -. "ubuntu:22.04, busybox:1.36" .-> wl
+```
 
 ## Simulations Completed
 

@@ -8,6 +8,71 @@ The lab simulates a compromised Kubernetes environment where suspicious activity
 
 ---
 
+## Result
+
+Default Falco rules raised **0 alerts** for `wget`/`nc` network discovery inside a pod. Three custom Falco rules closed that gap and **fired 3 of 3** in testing. Pod Security Standards (`restricted`) then rejected the privileged hostPath pod for **7 policy violations**, and after hardening the same attack could no longer read `/etc/shadow`.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph cluster["Minikube cluster"]
+        W["attack-lab workloads<br/>BusyBox, nginx, Juice Shop"]
+        F["Falco<br/>default + 3 custom rules"]
+        FB["Fluent Bit"]
+        ES["Elasticsearch"]
+        KB["Kibana dashboard"]
+        PSS["Pod Security Standards<br/>restricted profile"]
+        P["Privileged hostPath pod"]
+    end
+    SOAR["SOAR script<br/>label or delete pod"]
+    W -- "syscalls" --> F
+    F -- "JSON alerts" --> FB --> ES --> KB
+    F -- "alerts" --> SOAR -- "kubectl" --> W
+    PSS -. "blocks" .-> P
+```
+
+## Screenshots
+
+Falco alerts from the custom rules, forwarded to Elasticsearch and viewed in Kibana:
+
+![Falco alerts in Kibana](screenshots/Screenshot%202026-07-07%20164451.png)
+
+Pod Security Standards rejecting the privileged hostPath pod:
+
+![Pod Security Standards blocking the privileged pod](screenshots/readme-pod-security-blocked.png)
+
+## How to Run
+
+**What you need:** Docker Desktop, Minikube, `kubectl`, Helm, and Python 3 (for the SOAR script). The lab was built on Windows 11; the same commands work on Linux or macOS.
+
+1. Start a cluster and create the lab namespace:
+   ```bash
+   minikube start
+   kubectl create namespace attack-lab
+   ```
+2. Install Falco with the custom rules and JSON output:
+   ```bash
+   helm repo add falcosecurity https://falcosecurity.github.io/charts
+   helm install falco falcosecurity/falco -n falco --create-namespace \
+     -f falco-rules/custom-falco-values.yaml -f falco-rules/falco-json-output-values.yaml
+   ```
+3. Deploy the target workloads:
+   ```bash
+   kubectl apply -f kubernetes-yaml/base-workloads.yaml
+   ```
+4. Run an attack from the BusyBox pod and watch Falco:
+   ```bash
+   kubectl exec -n attack-lab busybox -- sh -c "id; cat /etc/shadow; wget -qO- http://nginx"
+   kubectl logs -n falco -l app.kubernetes.io/name=falco -c falco --tail 20
+   ```
+5. Optional: deploy the logging stack (`elasticsearch.yaml`, `fluent-bit-falco-to-elasticsearch.yaml`, `kibana.yaml`), or run the SOAR watcher in safe label-only mode with `python scripts/falco_soar_response.py`.
+6. To test hardening, label the namespace with `pod-security.kubernetes.io/enforce=restricted` and apply `kubernetes-yaml/privileged-hostpath-pod.yaml`. It should be rejected.
+
+Clean up with `minikube delete`.
+
+---
+
 ## Lab Goals
 
 The goals of this project were to:
@@ -336,11 +401,7 @@ Completed:
 - MITRE mapping
 - Incident report draft
 - Lessons learned
-
-Pending:
-
-- SOAR-style Python auto-response script completed
-- Final Git commit and push
+- SOAR-style Python auto-response script
 
 
 ---
