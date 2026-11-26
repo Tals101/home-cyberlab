@@ -28,7 +28,7 @@ Reason:
 | Field | Value |
 |---|---|
 | Hostname | CYBERHUB |
-| User | Tals' CyberHub |
+| User | [REDACTED-ACCOUNT] |
 | System Type | Developer Workstation |
 | Incident Type | Ransomware-like Activity |
 | Lab Folder | ransomware-response-tabletop |

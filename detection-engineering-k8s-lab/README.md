@@ -3,6 +3,69 @@
 ## Overview
 This lab demonstrates a Kubernetes-focused detection engineering workflow. The goal was to simulate attacker behavior, collect evidence, identify detection gaps, create custom rules, and measure detection coverage.
 
+## Result
+
+Default Falco rules detected **2 of 4** attack scenarios. Two custom Falco rules closed the gaps (user creation and hostPath filesystem access), raising coverage to **4 of 4**, with **0 false positives** in a benign admin-command test. Coverage applies to these four lab scenarios only.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph cluster["Minikube cluster"]
+        subgraph att["de-attacker"]
+            A["attacker-netshoot<br/>nmap, netcat"]
+        end
+        subgraph tgt["de-target"]
+            T["vulnerable-web"]
+            AT["admin-toolbox<br/>benign baseline"]
+            PD["privileged-debugger<br/>hostPath mount"]
+        end
+        subgraph det["de-detection"]
+            F["Falco<br/>default + 2 custom rules"]
+        end
+    end
+    R["Rule set<br/>Falco, Sigma, Wazuh"]
+    A -- "scan, reverse shell" --> T
+    T & AT & PD -- "syscalls" --> F
+    F -- "alerts and gaps" --> R
+```
+
+## Screenshot
+
+Falco running in the `de-detection` namespace, deployed with Helm:
+
+![Falco deployed in the detection namespace](screenshots/readme-falco-deployed.png)
+
+## How to Run
+
+**What you need:** Docker Desktop, Minikube, `kubectl` and Helm.
+
+1. Start a cluster and create the three namespaces:
+   ```bash
+   minikube start
+   kubectl create namespace de-target
+   kubectl create namespace de-attacker
+   kubectl create namespace de-detection
+   ```
+2. Install Falco with the two custom rules:
+   ```bash
+   helm repo add falcosecurity https://falcosecurity.github.io/charts
+   helm install falco falcosecurity/falco -n de-detection -f rules/falco/custom-rules-values.yaml
+   ```
+3. Deploy the target and attacker pods:
+   ```bash
+   kubectl apply -f manifests/
+   ```
+4. Run a scenario, for example the internal Nmap scan, and check Falco:
+   ```bash
+   kubectl exec -n de-attacker attacker-netshoot -- nmap -sV vulnerable-web.de-target.svc.cluster.local
+   kubectl logs -n de-detection -l app.kubernetes.io/name=falco -c falco --tail 20
+   ```
+   The commands for the other three scenarios are in [`attacks/`](attacks/).
+5. Clean up with `scripts/cleanup-lab.ps1` (PowerShell) or `minikube delete`.
+
+The Sigma and Wazuh versions of each rule are in [`rules/`](rules/).
+
 ## Lab Objectives
 - Simulate realistic Kubernetes attack behaviors
 - Collect raw telemetry and alert evidence

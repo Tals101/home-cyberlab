@@ -9,7 +9,7 @@ In this lab, no real malware was executed. The suspicious behavior was safely ge
 ## Affected Host
 
 - Hostname: CYBERHUB
-- User: Tals' CyberHub
+- User: [REDACTED-ACCOUNT]
 - Suspected System Type: Developer Workstation
 - Incident Type: Ransomware-like activity
 
