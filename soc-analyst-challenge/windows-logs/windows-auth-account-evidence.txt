@@ -20,7 +20,7 @@ Message      : An account was successfully logged on.
                Impersonation Level:		Impersonation
                
                New Logon:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -90,7 +90,7 @@ Message      : An account was successfully logged on.
                Impersonation Level:		Impersonation
                
                New Logon:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3C00
@@ -216,13 +216,13 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A member was added to a security-enabled local group.
                
                Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
                
                Member:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		-
                
                Group:
@@ -239,13 +239,13 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A member was added to a security-enabled local group.
                
                Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
                
                Member:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		-
                
                Group:
@@ -262,13 +262,13 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A user account was created.
                
                Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
                
                New Account:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                
@@ -377,7 +377,7 @@ Message      : An account was successfully logged on.
                Impersonation Level:		Impersonation
                
                New Logon:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDDFC8C
@@ -576,7 +576,7 @@ Message      : An account was successfully logged on.
                Impersonation Level:		Impersonation
                
                New Logon:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDDF175
@@ -974,7 +974,7 @@ Message      : An account was successfully logged on.
                Impersonation Level:		Impersonation
                
                New Logon:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDCBC07

@@ -6,7 +6,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -50,7 +50,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -93,7 +93,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -136,7 +136,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -179,7 +179,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -224,7 +224,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -268,7 +268,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -311,7 +311,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -354,7 +354,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -397,7 +397,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -440,7 +440,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -483,7 +483,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1002
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1002
                	Account Name:		soclab
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0xDE3D16
@@ -526,7 +526,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -569,7 +569,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -612,7 +612,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -655,7 +655,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -698,7 +698,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -741,7 +741,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -784,7 +784,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -829,7 +829,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -874,7 +874,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -919,7 +919,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -968,7 +968,7 @@ Message      : A new process has been created.
                	Logon ID:		0x3E7
                
                Target Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -1005,7 +1005,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -1050,7 +1050,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -1095,7 +1095,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -1140,7 +1140,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -1185,7 +1185,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
@@ -1230,7 +1230,7 @@ ProviderName : Microsoft-Windows-Security-Auditing
 Message      : A new process has been created.
                
                Creator Subject:
-               	Security ID:		S-1-5-21-478588547-2897349267-337048646-1001
+               	Security ID:		S-1-5-21-[REDACTED-SID]-1001
                	Account Name:		Wodin
                	Account Domain:		WIN-MALWARE-LAB
                	Logon ID:		0x6DB71
