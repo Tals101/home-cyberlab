@@ -92,7 +92,7 @@ intermediate-real-test-suite-lab/
 ├── utils/
 │   └── testData.ts
 ├── .dockerignore
-├── .env
+├── .env.example
 ├── Dockerfile
 ├── package.json
 ├── playwright.config.ts
@@ -176,14 +176,14 @@ This improves:
 
 ## Environment Variables
 
-Reusable configuration values are stored in `.env`.
+Reusable configuration values are read from a local `.env` file, which is not committed. Copy `.env.example` to `.env` to run the tests. The credentials are the public demo accounts published on saucedemo.com.
 
 Example:
 
 ```env
 BASE_URL=https://www.saucedemo.com
 VALID_USERNAME=standard_user
-VALID_PASSWORD=secret_sauce
+VALID_PASSWORD=<public demo password from saucedemo.com>
 INVALID_USERNAME=locked_out_user
 INVALID_PASSWORD=wrong_password
 ```

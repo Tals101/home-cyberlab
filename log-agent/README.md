@@ -64,7 +64,8 @@ The agent reads authentication logs, looks for suspicious activity, and produces
     │   ├── 03-script.png
     │   ├── 04-agent-run.png
     │   ├── 05-report-output.png
-    │   └── 06-ollama-working.png
+    │   ├── 06-ollama-working.png
+    │   └── 07-ollama-service.png
     └── scripts/
         └── log_agent.py
 
@@ -104,4 +105,24 @@ The agent reads authentication logs, looks for suspicious activity, and produces
 
 ---
 
+## Screenshots
 
+The sample authentication log the agent reads (failed SSH logins, a failed sudo attempt and a successful login):
+
+![Sample authentication log](screenshots/02-sample-log.png)
+
+Two runs of the agent against the same log. The model rated it Moderate in one run and High in the other:
+
+![First agent run](screenshots/04-agent-run.png)
+
+![Second agent run](screenshots/05-report-output.png)
+
+Ollama serving Llama 3.2 3B locally:
+
+![Ollama service running](screenshots/07-ollama-service.png)
+
+The project structure, script and first Ollama test are in [`screenshots/`](screenshots/) as `01`, `03` and `06`.
+
+## Limitations
+
+The model's output is saved as generated, and not all of its advice is correct. For example, the second run recommends raising a `MaxFailAttempts` setting in `sshd_config`, but sshd has no such option (the real one, `MaxAuthTries`, should be lowered, not raised). Its reports need an analyst's review, which is why the agent only drafts the summary.

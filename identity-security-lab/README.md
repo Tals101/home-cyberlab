@@ -43,6 +43,15 @@ PostgreSQL Database
 
 ---
 
+## Running the Lab
+
+Passwords are not stored in `docker-compose.yml`. Copy `.env.example` to `.env`, set your own values, then start the lab:
+
+```bash
+cp .env.example .env
+docker compose up -d
+```
+
 ## Users and Roles
 
 | User | Role |
