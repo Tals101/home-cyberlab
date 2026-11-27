@@ -51,6 +51,16 @@ insider-investigation-lab
 
 The investigation confirmed that jsmith accessed sensitive files and copied a large sensitive export file along with multiple sensitive documents. USB-style mount activity occurred shortly before the copy activity, supporting a possible insider data exfiltration scenario.
 
+## Screenshots
+
+Investigation timeline built from the audit and auth logs:
+
+![Investigation timeline built from the audit and auth logs](screenshots/Screenshot%202026-06-22%20141557.png)
+
+Findings with severity and supporting evidence:
+
+![Findings with severity and supporting evidence](screenshots/Screenshot%202026-06-22%20141646.png)
+
 ## Skills Demonstrated
 
 - Linux log review

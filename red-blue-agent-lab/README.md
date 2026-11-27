@@ -72,6 +72,22 @@ red-blue-agent-lab/
 
 The project uses a sample target profile based on a controlled lab system. A Python script sends that target information to a local model through Ollama twice: once with a red team prompt and once with a blue team prompt. The result is a side-by-side style security exercise showing both offensive and defensive thinking.
 
+## Screenshots
+
+The target profile both agents receive (Metasploitable 2 and its open services):
+
+![Target profile](screenshots/01-target-profile.png)
+
+The red team agent's analysis:
+
+![Red agent output](screenshots/03-agent-run.png)
+
+The blue team agent's analysis of the same target:
+
+![Blue agent output](screenshots/04-report-output.png)
+
+The script that sends both prompts to the local model is shown in [`screenshots/02-script.png`](screenshots/02-script.png).
+
 ## Skills Demonstrated
 
 - Virtual lab setup

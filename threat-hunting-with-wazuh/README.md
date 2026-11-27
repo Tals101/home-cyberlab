@@ -84,6 +84,24 @@ A new user named huntuser was created and added to the sudo group.
 
 Wazuh captured auditd events related to account creation, identity file changes, group changes, and privilege changes.
 
+## Screenshots
+
+Hunt 1: failed SSH logins with invalid user names (rule 5710):
+
+![Hunt 1: failed SSH logins with invalid user names (rule 5710)](screenshots/failed-ssh-wazuh-alerts.png)
+
+Hunt 2: all activity from the Kali IP 192.168.56.111:
+
+![Hunt 2: all activity from the Kali IP 192.168.56.111](screenshots/kali-ip-wazuh-search.png)
+
+Hunt 3: events for /usr/bin/nc, the reverse-shell-style activity:
+
+![Hunt 3: events for /usr/bin/nc, the reverse-shell-style activity](screenshots/reverse-shell-wazuh-events.png)
+
+Hunt 4: sudo to root by the new user (rule 5402):
+
+![Hunt 4: sudo to root by the new user (rule 5402)](screenshots/user-creation-privilege-wazuh-events.png)
+
 ## Project Structure
 
 threat-hunting-with-wazuh/

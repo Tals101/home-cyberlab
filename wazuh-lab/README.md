@@ -95,11 +95,14 @@ This project demonstrates several foundational blue-team concepts:
 - Saw how controlled attack simulation can be used to test visibility and detection
 
 ## Future Improvements
-- Enable Sysmon for enhanced Windows event visibility
-- Add failed login monitoring and brute-force detection scenarios
-- Create custom Wazuh detection rules
 - Expand the lab with additional monitored endpoints
 - Perform more structured alert tuning to reduce noise
+
+Several earlier "future" items were done in later labs:
+
+- **Custom Wazuh rules:** this lab's [follow-up rule](next-steps/rule.xml), plus rules in the [Threat Detection Engineering Portfolio](../threat-detection-engineering-portfolio/rules/wazuh/local_rules.xml), [Detection Engineering: Kubernetes](../detection-engineering-k8s-lab/rules/wazuh/kubernetes-detection-engineering-rules.xml) and the [Identity Attack and Defense Lab](../identity-attack-defense-lab/evidence/keycloak-custom-rules.xml)
+- **Sysmon:** used with Wazuh in the [Adversary Emulation Lab](../adversary-emulation-lab/)
+- **Brute-force detection:** [Windows Brute Force Detection](../windows-bruteforce-detection/) and [Threat Hunting with Wazuh](../threat-hunting-with-wazuh/)
 
 
 

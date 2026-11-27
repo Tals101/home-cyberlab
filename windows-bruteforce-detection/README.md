@@ -74,6 +74,20 @@ Wazuh detected the activity using:
 
 ---
 
+## Screenshots
+
+Password spray from Kali with CrackMapExec (password removed); every attempt fails:
+
+![Password spray from Kali with CrackMapExec (password removed); every attempt fails](screenshots/Screenshot%202026-04-27%20112438.png)
+
+Windows Event 4625 for one failed logon, showing the Kali source address:
+
+![Windows Event 4625 for one failed logon, showing the Kali source address](screenshots/Screenshot%202026-04-27%20112752.png)
+
+Wazuh alerts (rule 60122) for the failed logons:
+
+![Wazuh alerts (rule 60122) for the failed logons](screenshots/Screenshot%202026-04-27%20173714.png)
+
 ## Skills Demonstrated
 
 * SIEM deployment and troubleshooting

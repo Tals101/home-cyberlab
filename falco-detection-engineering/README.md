@@ -44,7 +44,6 @@ The lab used Falco to detect suspicious container activity and custom Falco rule
 falco-detection-engineering/
 
 - evidence/ - saved command output, Falco logs, alert output, and inventory files
-- manifests/ - Kubernetes manifest files if added later
 - reports/ - final Markdown alert documentation
 - rules/ - custom Falco detection rules
 - screenshots/ - screenshots of alerts and validation evidence
@@ -130,9 +129,7 @@ Evidence file:
 
     evidence/alert-terminal-shell.txt
 
-Screenshot:
-
-    screenshots/01-terminal-shell-alert.png
+![Falco alert for a shell in a container](screenshots/01-terminal-shell-alert.png)
 
 ---
 
@@ -148,9 +145,7 @@ Evidence file:
 
     evidence/alert-sensitive-file.txt
 
-Screenshot:
-
-    screenshots/02-sensitive-file-alert.png
+![Falco alert for /etc/shadow being read](screenshots/02-sensitive-file-alert.png)
 
 ---
 
@@ -198,9 +193,7 @@ Evidence file:
 
     evidence/custom-rules-loaded.txt
 
-Screenshot:
-
-    screenshots/03-custom-rules-loaded.png
+![Custom rules file loaded](screenshots/03-custom-rules-loaded.png)
 
 ---
 
@@ -216,9 +209,7 @@ Evidence file:
 
     evidence/custom-shell-rule-alert.txt
 
-Screenshot:
-
-    screenshots/05-custom-shell-rule-alert.png
+![Custom rule alert for a shell in the demo namespace](screenshots/05-custom-shell-rule-alert.png)
 
 ---
 
@@ -232,9 +223,7 @@ Evidence file:
 
     evidence/custom-rule-alerts.txt
 
-Screenshot:
-
-    screenshots/04-custom-rule-alert.png
+![Custom rule alert for a sensitive file read](screenshots/04-custom-rule-alert.png)
 
 ---
 
