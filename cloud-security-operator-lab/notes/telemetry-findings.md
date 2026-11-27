@@ -2,7 +2,7 @@
 
 ## Account Investigated
 
-- AWS Account ID: 513962983534
+- AWS Account ID: [REDACTED-AWS-ACCOUNT]
 - Region Used for Investigation: us-east-1
 - CloudTrail Name: cloud-security-operator-trail
 

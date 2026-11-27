@@ -6,7 +6,7 @@ What would an attacker do if they gained access to an overly permissive IAM role
 
 ## Lab Context
 
-- AWS Account ID: 513962983534
+- AWS Account ID: [REDACTED-AWS-ACCOUNT]
 - Overly Permissive Role: CloudSecurityOperatorLab-OverPermissiveRole
 - Simulated Session Name: CloudSecLab-AttackerSimulation
 

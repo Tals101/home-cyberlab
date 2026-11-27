@@ -97,6 +97,16 @@ The system’s attack surface was significantly reduced.
 
 ---
 
+## Screenshots
+
+Disabling a vulnerable service and confirming the port is closed:
+
+![Disabling a vulnerable service and confirming the port is closed](screenshots/Screenshot%202026-04-26%20170611.png)
+
+Service scan after remediation:
+
+![Service scan after remediation](screenshots/Screenshot%202026-04-26%20172240.png)
+
 ## Skills Demonstrated
 
 - Vulnerability identification and prioritization

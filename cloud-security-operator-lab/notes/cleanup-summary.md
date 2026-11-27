@@ -37,7 +37,7 @@ The intentionally risky AWS lab resources were removed or remediated.
 
 ### CloudTrail S3 Bucket
 
-- Bucket: cloud-security-operator-lab-513962983534-us-east-1
+- Bucket: cloud-security-operator-lab-[REDACTED-AWS-ACCOUNT]-us-east-1
 - Action Taken: Object versions deleted
 - Action Taken: Bucket deleted
 - Evidence:
@@ -47,12 +47,12 @@ The intentionally risky AWS lab resources were removed or remediated.
 
 ## Remaining Security Note
 
-The temporary CLI user cloud-security-lab-cli still exists and should be deleted from the AWS Console after the lab is fully committed, unless it is needed for another lab.
+The temporary CLI user [REDACTED-USER] still exists and should be deleted from the AWS Console after the lab is fully committed, unless it is needed for another lab.
 
 
 ### Temporary CLI User
 
-- User: cloud-security-lab-cli
+- User: [REDACTED-USER]
 - Action Taken: AdministratorAccess removed
 - Action Taken: Access key deleted
 - Action Taken: IAM user deleted from AWS Console

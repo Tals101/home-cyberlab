@@ -46,6 +46,16 @@ This project can serve as a starting point for:
 - Security reporting
 - Local/private AI security workflows
 
+## Screenshots
+
+Nmap service scan of the Metasploitable 2 target that the agent reads:
+
+![Nmap service scan of the Metasploitable 2 target that the agent reads](screenshots/Screenshot%202026-03-22%20173050.png)
+
+The agent's analysis from the local model:
+
+![The agent's analysis from the local model](screenshots/Screenshot%202026-03-22%20174639.png)
+
 ## Skills Demonstrated
 - Virtual lab setup
 - Network scanning

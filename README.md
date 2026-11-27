@@ -2,6 +2,36 @@
 
 Hands-on security projects built in my home lab: detection engineering, cloud and Kubernetes security, incident response and security automation. Each project includes its configurations, detection rules, evidence and a write-up, and the featured projects also have setup steps so you can run them yourself.
 
+## The Lab at a Glance
+
+```mermaid
+flowchart LR
+    K["Kali Linux<br/>attacker VM"]
+    subgraph targets["Targets"]
+        U["Ubuntu Server"]
+        W["Windows VMs<br/>with Sysmon"]
+        M["Metasploitable 2"]
+        KC["Minikube<br/>Kubernetes cluster"]
+        AWS["AWS account<br/>S3, IAM, EC2, EKS"]
+    end
+    subgraph detect["Detection"]
+        WZ["Wazuh"]
+        FA["Falco"]
+        SN["Snort"]
+        GD["CloudTrail,<br/>GuardDuty, CloudWatch"]
+    end
+    subgraph analyze["Analysis and response"]
+        KI["Kibana, Grafana"]
+        R["Reports, rules,<br/>SOAR script"]
+    end
+    K --> U & W & M & KC
+    U & W --> WZ
+    KC --> FA
+    targets -. "network traffic" .-> SN
+    AWS --> GD
+    WZ & FA & GD --> KI --> R
+```
+
 ## Start Here
 
 If you only have a few minutes, these three projects show the range of the lab:

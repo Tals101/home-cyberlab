@@ -8,10 +8,10 @@
         "Service": "cloudtrail.amazonaws.com"
       },
       "Action": "s3:GetBucketAcl",
-      "Resource": "arn:aws:s3:::cloud-security-operator-lab-513962983534-us-east-1",
+      "Resource": "arn:aws:s3:::cloud-security-operator-lab-[REDACTED-AWS-ACCOUNT]-us-east-1",
       "Condition": {
         "StringEquals": {
-          "aws:SourceArn": "arn:aws:cloudtrail:us-east-1:513962983534:trail/cloud-security-operator-trail"
+          "aws:SourceArn": "arn:aws:cloudtrail:us-east-1:[REDACTED-AWS-ACCOUNT]:trail/cloud-security-operator-trail"
         }
       }
     },
@@ -22,11 +22,11 @@
         "Service": "cloudtrail.amazonaws.com"
       },
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::cloud-security-operator-lab-513962983534-us-east-1/AWSLogs/513962983534/*",
+      "Resource": "arn:aws:s3:::cloud-security-operator-lab-[REDACTED-AWS-ACCOUNT]-us-east-1/AWSLogs/[REDACTED-AWS-ACCOUNT]/*",
       "Condition": {
         "StringEquals": {
           "s3:x-amz-acl": "bucket-owner-full-control",
-          "aws:SourceArn": "arn:aws:cloudtrail:us-east-1:513962983534:trail/cloud-security-operator-trail"
+          "aws:SourceArn": "arn:aws:cloudtrail:us-east-1:[REDACTED-AWS-ACCOUNT]:trail/cloud-security-operator-trail"
         }
       }
     }

@@ -1,7 +1,7 @@
 Cloud Security Operator Lab - Investigation Timeline
 ====================================================
 
-Account ID: 513962983534
+Account ID: [REDACTED-AWS-ACCOUNT]
 Region: us-east-1
 Trail Name: cloud-security-operator-trail
 
@@ -17,7 +17,7 @@ Timeline Summary:
 --- Source Evidence: step-22-cloudtrail-assume-role-events.json ---
 - Time: 2026-06-29T10:24:43-04:00
   Event Name: AssumeRole
-  Username: cloud-security-lab-cli
+  Username: [REDACTED-USER]
   Event ID: 5e79a850-b031-4568-be3f-cc81f063df39
 
 - Time: 2026-06-29T10:12:17-04:00
@@ -235,7 +235,7 @@ Timeline Summary:
 
 - Time: 2026-06-29T10:06:43-04:00
   Event Name: DescribeTrails
-  Username: cloud-security-lab-cli
+  Username: [REDACTED-USER]
   Event ID: f32f9f78-ae9d-454b-8947-7a95d2c280e0
 
 - Time: 2026-06-29T09:47:04-04:00

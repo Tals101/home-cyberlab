@@ -1,0 +1,2 @@
+# Archived Playwright labs are kept for reference; exclude them from language statistics
+archive/** linguist-vendored

@@ -3,10 +3,10 @@
 The lab initially detected the wrong AWS account.
 
 Wrong account previously observed:
-- 142787170222
+- [REDACTED-AWS-ACCOUNT]
 
 Correct paid AWS account now observed:
-- 513962983534
+- [REDACTED-AWS-ACCOUNT]
 
 The AWS CLI profile being used for this lab is:
 

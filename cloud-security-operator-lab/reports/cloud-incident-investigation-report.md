@@ -6,7 +6,7 @@ Lab 4: Cloud Security Operator Lab
 
 ## Account Investigated
 
-- AWS Account ID: 513962983534
+- AWS Account ID: [REDACTED-AWS-ACCOUNT]
 - Region: us-east-1
 - CloudTrail Trail: cloud-security-operator-trail
 

@@ -81,8 +81,8 @@ The intentionally risky lab resources were cleaned up:
 - The unused-key IAM user was deleted
 - The CloudTrail trail was stopped and deleted
 - The CloudTrail S3 bucket was emptied and deleted
-- The temporary CLI user `cloud-security-lab-cli` was deleted
+- The temporary CLI user `[REDACTED-USER]` was deleted
 
 ## Security Note
 
-The temporary CLI user `cloud-security-lab-cli` was created to run the lab and was deleted after cleanup was completed.
+The temporary CLI user `[REDACTED-USER]` was created to run the lab and was deleted after cleanup was completed.

@@ -4,7 +4,7 @@
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::513962983534:user/cloud-security-lab-cli"
+        "AWS": "arn:aws:iam::[REDACTED-AWS-ACCOUNT]:user/[REDACTED-USER]"
       },
       "Action": "sts:AssumeRole"
     }

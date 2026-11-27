@@ -34,7 +34,7 @@ The lab simulates an attacker generating repeated failed login attempts and vali
 The attack was executed using:
 
 ```bash
-crackmapexec smb 192.168.56.113 -u users.txt -p 'Winter2024!'
+crackmapexec smb 192.168.56.113 -u users.txt -p '<password>'
 ```
 
 This generated multiple failed authentication attempts against the Windows system.
@@ -73,6 +73,20 @@ Wazuh detected the activity using:
 * **Fix:** Re-registered agent and cleaned stale entries
 
 ---
+
+## Screenshots
+
+Password spray from Kali with CrackMapExec (password removed); every attempt fails:
+
+![Password spray from Kali with CrackMapExec (password removed); every attempt fails](screenshots/Screenshot%202026-04-27%20112438.png)
+
+Windows Event 4625 for one failed logon, showing the Kali source address:
+
+![Windows Event 4625 for one failed logon, showing the Kali source address](screenshots/Screenshot%202026-04-27%20112752.png)
+
+Wazuh alerts (rule 60122) for the failed logons:
+
+![Wazuh alerts (rule 60122) for the failed logons](screenshots/Screenshot%202026-04-27%20173714.png)
 
 ## Skills Demonstrated
 

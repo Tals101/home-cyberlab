@@ -34,7 +34,7 @@ An attacker machine generated repeated failed authentication attempts against a 
 The attack was executed using CrackMapExec:
 
 ```bash
-crackmapexec smb 192.168.56.113 -u users.txt -p 'Winter2024!'
+crackmapexec smb 192.168.56.113 -u users.txt -p '<password>'
 ```
 
 This generated multiple failed login attempts using different usernames.

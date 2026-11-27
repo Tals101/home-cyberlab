@@ -28,8 +28,8 @@ The dashboard recommends removing weak secret permissions, restricting cross-nam
 - evidence/grafana-access-url.txt
 - evidence/grafana-http-test.txt
 - evidence/grafana-dashboard-created.txt
-- screenshots/Screenshot 2026-06-18 134109.png
-- screenshots/Screenshot 2026-06-18 134235.png
+- screenshots/grafana-home.png
+- screenshots/grafana-purple-team-dashboard.png
 
 ## Analyst Conclusion
 Grafana was successfully deployed and used to present the purple-team attack, detection, visibility gap, and response workflow in dashboard form.

@@ -141,18 +141,15 @@ Attacker Action → CloudTrail Log → CloudWatch Detection → Alarm → SNS Al
 
 ## Project Evidence
 
-Screenshots to add:
+Screenshots in [`screenshots/`](screenshots/):
 
-- CloudTrail configuration
+- [CloudTrail trail configuration](screenshots/Screenshot%202026-04-19%20143423.png)
+- [CloudWatch log streams receiving CloudTrail events](screenshots/Screenshot%202026-04-19%20143607.png)
+- [CloudTrail events in the log group](screenshots/Screenshot%202026-04-19%20143746.png)
+- [AccessDenied metric filter](screenshots/Screenshot%202026-04-19%20143826.png)
+- [AccessDenied-Alert alarm](screenshots/Screenshot%202026-04-19%20143940.png)
+- [SNS alarm email](screenshots/Screenshot%202026-04-19%20144004.png)
 
-- Log group activity
-
-- Metric filter setup
-
-- Alarm configuration
-
-- SNS alert email
-
-- CLI attack commands
+The attack command itself (`aws iam attach-user-policy` as `lab-user`) is listed in [How to Run](#how-to-run) and [`reports/incident-report.md`](reports/incident-report.md).
 
 

@@ -1,4 +1,4 @@
-# Snort Lab | Network Intrusion Detection and Traffic Inspection
+# Snort Lab | Installation, Setup and First Custom Rule
 
 ## Project Summary
 This project documents my Snort lab setup and initial configuration in a home cybersecurity lab environment. The purpose of this lab was to install Snort from source, validate the installation, configure the required directories and files, and prepare the system for network traffic inspection and alert generation.
@@ -68,13 +68,23 @@ snort-lab/
 ## Outcome
 This lab established a working Snort foundation inside the cyber lab and prepared the system for future rule creation, alert validation, and packet inspection exercises. It also strengthened practical experience with Linux administration, IDS deployment, and step-by-step troubleshooting in a controlled environment.
 
+## First Custom Rule (Follow-Up)
+
+In the [follow-up phase](next-steps/), one custom rule was written and validated: an ICMP rule (`sid:1000001`) added to `local.rules`. Pinging the sensor produced a matching `ICMP Ping Detected` alert in console mode. A second rule for HTTP traffic is in [`next-steps/rules/snort-rules.txt`](next-steps/rules/snort-rules.txt) but has no recorded alert.
+
+The custom rule in `local.rules`:
+
+![Custom ICMP rule](next-steps/screenshots/Screenshot%202026-04-15%20111244.png)
+
+Snort console output, ending with the custom rule's alert:
+
+![ICMP Ping Detected alert](next-steps/screenshots/Screenshot%202026-04-15%20111918.png)
+
+Rule counts after the Snort 3 build in the first phase:
+
+![Snort 3 rule counts](screenshots/Screenshot%202026-03-08%20150050.png)
+
 ## Next Steps
-Planned next steps for this project include:
-- Creating and testing Snort rules
-- Generating traffic to trigger alerts
-- Reviewing alert output
-- Expanding documentation with screenshots and test results
 
-## Follow-Up Work
-
-The follow-up phase of this lab is documented in [next-steps/](next-steps/).
+- Record an alert for the HTTP rule and add rules for other traffic
+- Generate attack traffic from Kali and compare Snort alerts with the expected detections
