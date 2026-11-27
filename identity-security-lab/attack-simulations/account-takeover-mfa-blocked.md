@@ -5,7 +5,7 @@ A simulated attacker has obtained Alice's username and password.
 
 ## Target Account
 - Username: alice
-- Known Password: <test-user-password>
+- Known Password: the test user's lab password (not published)
 
 ## Attack Attempt
 The attacker attempted to log in through the SSO test application using Alice's password.

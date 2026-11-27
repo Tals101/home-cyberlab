@@ -580,7 +580,7 @@ Docker Events provided visibility into administrative activity, including intera
 | Evidence Item | Description |
 |---|---|
 | /whoami baseline screenshot | Showed uid 0 and user root |
-| /env screenshot | Showed exposed SECRET_KEY=<demo value> |
+| /env screenshot | Showed the exposed hard-coded SECRET_KEY value |
 | docker inspect screenshot | Showed Privileged true, ReadonlyRootfs false, and no user |
 | Post-fix inspect screenshot | Showed Privileged false |
 | Trivy insecure scan screenshot | Showed Total 154 with 141 HIGH and 13 CRITICAL |
@@ -598,7 +598,7 @@ Docker Events provided visibility into administrative activity, including intera
 
 | Risk | Explanation |
 |---|---|
-| Secret still present as environment variable | SECRET_KEY=<demo value> is still stored insecurely |
+| Secret still present as environment variable | SECRET_KEY was still hard-coded in the Dockerfile (resolved November 27, 2026; see section 20) |
 | Flask development server still used | A production WSGI server should be used instead |
 | API directly exposed to host | Nginx reverse proxy should be added |
 | No database separation yet | PostgreSQL should be added on a backend-only network |
@@ -626,3 +626,9 @@ The most measurable improvements were:
 - Docker Events detected interactive shell access.
 
 This lab demonstrates the practical value of secure-by-default container configuration and provides a strong foundation for future Docker, Kubernetes, DevSecOps, and cloud security projects.
+
+---
+
+## 20. Follow-up: Secret Removed from the Dockerfile (November 27, 2026)
+
+The hard-coded `SECRET_KEY` line was removed from `config/Dockerfile` and from the final Dockerfile shown in the README. The value is now supplied when the container starts, for example `docker run -e SECRET_KEY=...` or a Docker secret, so it is no longer stored in the image or its history. The demo value that appeared in this report and in one screenshot has been replaced with `<demo value>` or covered. The other remaining risks in section 18 are unchanged.

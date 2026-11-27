@@ -43,7 +43,7 @@ The first version of the container had several intentional weaknesses:
 |---|---|
 | Ran as root | `/whoami` showed `uid: 0`, `user: root` |
 | Privileged mode enabled | `docker inspect` showed `Privileged: true` |
-| Secret exposed | `/env` showed `SECRET_KEY=<demo value>` |
+| Secret exposed | `/env` showed a hard-coded `SECRET_KEY` value |
 | Large base image | Image size was about `1.62GB` |
 | High vulnerability count | Trivy found `154` HIGH/CRITICAL findings |
 | Writable filesystem | Root filesystem was writable |
@@ -94,7 +94,7 @@ The container was hardened by applying the following controls:
 
     USER appuser
 
-    ENV SECRET_KEY=<demo value>
+    # SECRET_KEY is supplied at run time (docker run -e or Docker secrets), never stored in the image
 
     CMD ["flask", "--app", "app", "run", "--host=0.0.0.0"]
 
