@@ -109,7 +109,7 @@ The completed version focused on the Flask API container, Docker image hardening
 
     RUN pip install flask
 
-    ENV SECRET_KEY=supersecret
+    ENV SECRET_KEY=<demo value>
 
     CMD ["flask", "--app", "app", "run", "--host=0.0.0.0"]
 
@@ -140,7 +140,7 @@ This confirmed that the containerized Flask application was running as root.
 
 The /env endpoint exposed environment variables, including:
 
-    SECRET_KEY=supersecret
+    SECRET_KEY=<demo value>
     FLASK_ENV=development
     HOME=/root
 
@@ -222,7 +222,7 @@ The host-level docker inspect output confirmed:
     "Privileged": true
     "ReadonlyRootfs": false
     "User": ""
-    "SECRET_KEY=supersecret"
+    "SECRET_KEY=<demo value>"
     "HostPort": "5000"
 
 These findings confirmed that the baseline configuration was insecure.
@@ -322,7 +322,7 @@ The updated Dockerfile was:
 
     RUN pip install --no-cache-dir flask
 
-    ENV SECRET_KEY=supersecret
+    ENV SECRET_KEY=<demo value>
 
     CMD ["flask", "--app", "app", "run", "--host=0.0.0.0"]
 
@@ -373,7 +373,7 @@ The Dockerfile was updated to create a dedicated non-root user:
 
     USER appuser
 
-    ENV SECRET_KEY=supersecret
+    ENV SECRET_KEY=<demo value>
 
     CMD ["flask", "--app", "app", "run", "--host=0.0.0.0"]
 
@@ -526,7 +526,7 @@ Unexpected shell access into a production container may indicate troubleshooting
 
     USER appuser
 
-    ENV SECRET_KEY=supersecret
+    ENV SECRET_KEY=<demo value>
 
     CMD ["flask", "--app", "app", "run", "--host=0.0.0.0"]
 
@@ -580,7 +580,7 @@ Docker Events provided visibility into administrative activity, including intera
 | Evidence Item | Description |
 |---|---|
 | /whoami baseline screenshot | Showed uid 0 and user root |
-| /env screenshot | Showed exposed SECRET_KEY=supersecret |
+| /env screenshot | Showed the exposed hard-coded SECRET_KEY value |
 | docker inspect screenshot | Showed Privileged true, ReadonlyRootfs false, and no user |
 | Post-fix inspect screenshot | Showed Privileged false |
 | Trivy insecure scan screenshot | Showed Total 154 with 141 HIGH and 13 CRITICAL |
@@ -598,7 +598,7 @@ Docker Events provided visibility into administrative activity, including intera
 
 | Risk | Explanation |
 |---|---|
-| Secret still present as environment variable | SECRET_KEY=supersecret is still stored insecurely |
+| Secret still present as environment variable | SECRET_KEY was still hard-coded in the Dockerfile (resolved November 27, 2026; see section 20) |
 | Flask development server still used | A production WSGI server should be used instead |
 | API directly exposed to host | Nginx reverse proxy should be added |
 | No database separation yet | PostgreSQL should be added on a backend-only network |
@@ -626,3 +626,9 @@ The most measurable improvements were:
 - Docker Events detected interactive shell access.
 
 This lab demonstrates the practical value of secure-by-default container configuration and provides a strong foundation for future Docker, Kubernetes, DevSecOps, and cloud security projects.
+
+---
+
+## 20. Follow-up: Secret Removed from the Dockerfile (November 27, 2026)
+
+The hard-coded `SECRET_KEY` line was removed from `config/Dockerfile` and from the final Dockerfile shown in the README. The value is now supplied when the container starts, for example `docker run -e SECRET_KEY=...` or a Docker secret, so it is no longer stored in the image or its history. The demo value that appeared in this report and in one screenshot has been replaced with `<demo value>` or covered. The other remaining risks in section 18 are unchanged.

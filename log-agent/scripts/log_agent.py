@@ -10,7 +10,7 @@ def read_log_file(path, max_lines=80):
     try:
         lines = p.read_text(errors="ignore").splitlines()
         return "\n".join(lines[-max_lines:])
-    except Exeption as e:
+    except Exception as e:
         return f"Error reading log file: {e}"
 
 def main():
