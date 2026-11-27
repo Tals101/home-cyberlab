@@ -40,6 +40,22 @@ If you only have a few minutes, these three projects show the range of the lab:
 2. **[Adversary Emulation Lab](./adversary-emulation-lab/)**: a six-phase attack chain against Linux and Windows targets, scored against Wazuh, Sysmon and Falco. Of 18 technique checks, 8 were detected, 3 partially detected and 7 not detected, and the README explains the gaps.
 3. **[AWS Cloud Threat Detection Lab](./aws-cloud-threat-detection-lab/)**: CloudTrail and GuardDuty with the GuardDuty Tester deployed through the AWS CDK. It produced 10 confirmed real findings across S3, IAM and EC2.
 
+## Resume Projects
+
+Each project on my resume, and the lab folders behind it:
+
+| Resume entry | Where to find it |
+|---|---|
+| CyberOps Defense Group Professional Development Program (AI-generated simulation; fictional company) | [Separate repository](https://github.com/Tals101/cyberops-defense-group-professional-development-program) with all 12 tickets |
+| AI-Assisted Security Log Analysis | [log-agent](./log-agent/) |
+| SIEM & Detection Engineering Labs | [wazuh-lab](./wazuh-lab/), [threat-detection-engineering-portfolio](./threat-detection-engineering-portfolio/), [detection-engineering-k8s-lab](./detection-engineering-k8s-lab/), [falco-detection-engineering](./falco-detection-engineering/), [cloud-native-soc](./cloud-native-soc/), [archive/k8s-mini-soc-logging-lab](./archive/k8s-mini-soc-logging-lab/); the 597 → 7 tuning is [CyberOps Ticket 008](https://github.com/Tals101/cyberops-defense-group-professional-development-program/tree/main/ticket-008-the-alert-nobody-reads) |
+| Purple Team Kubernetes Detection & Response Lab | [purple-team-kubernetes-lab](./purple-team-kubernetes-lab/) |
+| AWS Cloud Threat Detection Labs | [aws-cloud-threat-detection-lab](./aws-cloud-threat-detection-lab/), [aws-iam-detection-lab](./aws-iam-detection-lab/), [aws-cloud-security-monitoring-lab](./aws-cloud-security-monitoring-lab/), [cloud-security-operator-lab](./cloud-security-operator-lab/) |
+| Container Security & Secure Software Supply Chain | [secure-cicd-docker-pipeline](./secure-cicd-docker-pipeline/), [secure-software-supply-chain](./secure-software-supply-chain/), [container-image-security-pipeline](./container-image-security-pipeline/), [secure-docker-webapp-lab](./secure-docker-webapp-lab/) |
+| Vulnerability Assessment & Offensive Security Labs | [vulnerability-assessment-lab](./vulnerability-assessment-lab/), [beginner-pentest-lab](./beginner-pentest-lab/), [metasploitable-hardening-lab](./metasploitable-hardening-lab/), [docker-web-attack-lab](./docker-web-attack-lab/), [advanced-docker-lab](./advanced-docker-lab/), [kubernetes-web-security-lab](./kubernetes-web-security-lab/) |
+| Incident Response & Threat Hunting Portfolio | [ransomware-response-tabletop](./ransomware-response-tabletop/), [malware-analysis-lab](./malware-analysis-lab/), [insider-investigation-lab](./insider-investigation-lab/), [windows-bruteforce-detection](./windows-bruteforce-detection/), [threat-hunting-with-wazuh](./threat-hunting-with-wazuh/) |
+| Test Automation Framework | [archive/playwright-lab](./archive/playwright-lab/), [archive/playwright-live-automation-confidence-lab](./archive/playwright-live-automation-confidence-lab/), [archive/intermediate-real-test-suite-lab](./archive/intermediate-real-test-suite-lab/) (120 + 20 + 13 passing tests) |
+
 ## Featured Projects
 
 | Project | What it covers | Result |
