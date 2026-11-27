@@ -1,53 +1,38 @@
 # AI Log Analysis Agent
 
-A beginner-friendly AI security project that uses a local LLM through Ollama to analyze Linux authentication logs and generate a SOC-style incident summary.
+A small Python script that sends a Linux authentication log to a local Llama 3.2 model through Ollama and prints a SOC-style report.
+
+**What it does:** auth log → Llama 3.2 3B (local, via Ollama) → report with a severity level, a summary of suspicious activity, an attack hypothesis and recommended mitigations.
 
 ---
 
-## Project Summary
+## How It Works
 
-This project was built in a home cybersecurity lab to combine:
+[`scripts/log_agent.py`](scripts/log_agent.py) does four things:
 
-- Linux log analysis
-- Python automation
-- Local LLM inference
-- SOC-style incident reporting
+1. Reads the last 80 lines of an authentication log (`samples/auth_sample.log`).
+2. Puts them into a prompt that asks for a severity level, a suspicious activity summary, an attack hypothesis and mitigation steps.
+3. Sends the prompt to `llama3.2:3b` running locally in Ollama, using the `langchain-ollama` package.
+4. Prints the model's answer to the terminal.
 
-The agent reads authentication logs, looks for suspicious activity, and produces a structured security assessment with severity, attack hypothesis, and mitigation guidance.
+The script does not parse or score the log itself; all of the analysis comes from the model. The two saved reports in [`reports/`](reports/) are the printed output of two runs, saved by redirecting the output to a file.
 
----
+## Lab Setup
 
-## Objectives
+- Ubuntu Server VM in VirtualBox, running Ollama and the script
+- Python 3 with `langchain-ollama`
+- Ollama with the `llama3.2:3b` model
+- The sample log comes from failed SSH and sudo attempts against the Ubuntu VM in the same lab, from 192.168.56.1 and 192.168.56.111
 
-- Build a simple AI-assisted SOC workflow
-- Analyze Linux authentication logs locally
-- Use Ollama for private LLM inference
-- Create a portfolio-ready cybersecurity automation project
+## How to Run
 
----
+```bash
+ollama pull llama3.2:3b
+pip install langchain-ollama
+python scripts/log_agent.py > reports/soc_report.txt
+```
 
-## Tools Used
-
-- Kali Linux
-- Ubuntu Server
-- Metasploitable2
-- VirtualBox
-- Python 3
-- Ollama
-- Llama 3.2 3B
-- LangChain
-
----
-
-## Features
-
-- Reads Linux authentication log data
-- Detects suspicious login behavior
-- Produces SOC-style analysis
-- Works fully in a local lab
-- Saves report output for documentation and review
-
----
+The log path is set by `LOG_FILE` at the top of the script; change it to point to your own copy of `samples/auth_sample.log`.
 
 ## Project Structure
 
@@ -69,42 +54,6 @@ The agent reads authentication logs, looks for suspicious activity, and produces
     └── scripts/
         └── log_agent.py
 
----
-
-## How It Works
-
-1. A sample authentication log is provided to the Python script.
-2. The script sends the log content to a local Ollama model.
-3. The model analyzes the log data.
-4. The agent returns:
-   - Severity level
-   - Suspicious activity summary
-   - Attack hypothesis
-   - Recommended mitigation steps
-
----
-
-## Example Workflow
-
-- Review authentication logs
-- Identify repeated failed login attempts
-- Flag suspicious access patterns
-- Generate a short incident-style response
-
----
-
-## Skills Demonstrated
-
-- Virtual lab setup
-- Linux command-line usage
-- Python scripting
-- Local LLM deployment
-- AI-assisted log analysis
-- Security reporting
-- Basic SOC workflow automation
-
----
-
 ## Screenshots
 
 The sample authentication log the agent reads (failed SSH logins, a failed sudo attempt and a successful login):
@@ -125,4 +74,19 @@ The project structure, script and first Ollama test are in [`screenshots/`](scre
 
 ## Limitations
 
-The model's output is saved as generated, and not all of its advice is correct. For example, the second run recommends raising a `MaxFailAttempts` setting in `sshd_config`, but sshd has no such option (the real one, `MaxAuthTries`, should be lowered, not raised). Its reports need an analyst's review, which is why the agent only drafts the summary.
+- The model's output is saved as generated, and not all of its advice is correct. For example, the second run recommends raising a `MaxFailAttempts` setting in `sshd_config`, but sshd has no such option (the real one, `MaxAuthTries`, should be lowered, not raised).
+- The same log produced different severity ratings on two runs, so the output is a draft for an analyst to review, not a verdict.
+
+## Future Enhancements
+
+- Count failed logins per source IP in Python before calling the model, so the report rests on measured numbers
+- Pass the log path as a command-line argument instead of editing the script
+- Save each report automatically with a timestamp
+- Ask the model for structured output (JSON) so reports can be compared between runs
+
+## Skills Demonstrated
+
+- Python scripting
+- Running a local LLM with Ollama
+- Prompt design for log analysis
+- Reviewing AI output critically

@@ -136,12 +136,21 @@ aws-cloud-security-monitoring-lab/
 
 ## Screenshots
 
-The `screenshots` folder contains evidence for the completed lab, including:
+The four CloudWatch alarms, with AccessKeyCreated in alarm after the test:
 
-- Alarm overview
-- Alarm history
-- SNS email alert
-- Metric data point
+![CloudWatch alarms overview](screenshots/alarms-overview.png)
+
+The AccessKeyCreated alarm's history, from creation to the SNS action (topic ARN partly hidden):
+
+![AccessKeyCreated alarm history](screenshots/accesskeycreated-alarm-history.png)
+
+The SNS email alert:
+
+![SNS email alert](screenshots/sns-email-alert.png)
+
+The AccessKeyCreated metric data point that triggered the alarm:
+
+![AccessKeyCreated metric](screenshots/securitylab-metric.png)
 
 ---
 
